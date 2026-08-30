@@ -1,0 +1,191 @@
+"""Build the public static pages from the content files exported by admin/."""
+from html import escape
+import json
+from pathlib import Path
+
+
+ROOT = Path(__file__).parent
+
+
+def read_json(name):
+	with (ROOT / name).open(encoding="utf-8") as source:
+		return json.load(source)
+
+
+def text(value):
+	return escape(str(value or ""))
+
+
+def asset(path, prefix, fallback="images/sports-card.svg"):
+	value = (path or fallback).lstrip("/")
+	if value.startswith(("http://", "https://", "data:")):
+		return value
+	if not value.startswith("images/"):
+		value = f"images/{value}"
+	return f"{prefix}{value}"
+
+
+def write(path, content):
+	target = ROOT / path
+	target.parent.mkdir(parents=True, exist_ok=True)
+	target.write_text(content, encoding="utf-8")
+
+
+def nav(prefix, language, active, settings, products):
+	english = language == "en"
+	labels = {
+		"home": "Home" if english else "หน้าแรก",
+		"products": "Products" if english else "ผลิตภัณฑ์",
+		"projects": "Projects" if english else "โครงการ",
+		"certificates": "Certificate" if english else "ใบรับรองมาตรฐาน",
+		"blog": "Blog" if english else "บทความ",
+		"contact": "Contact Us" if english else "ติดต่อเรา",
+	}
+	base = "en/" if english else ""
+	links = {
+		"home": f"{prefix}{base}index.html",
+		"products": f"{prefix}{base}products/index.html",
+		"projects": f"{prefix}{base}projects/index.html",
+		"certificates": f"{prefix}{base}certificates/index.html",
+		"blog": f"{prefix}{base}blog/index.html",
+		"contact": f"{prefix}{base}index.html#contact",
+	}
+	category_labels = {
+		"safety": "Safety Flooring" if english else "พื้นนิรภัย",
+		"sports": "Sports Flooring" if english else "พื้นสนามกีฬา",
+		"materials": "Materials" if english else "วัสดุสำหรับระบบพื้น",
+	}
+	product_groups = "".join(
+		f'<section class="product-menu-group"><h3>{category_labels.get(category, category.title())}</h3>'
+		+ "".join(
+			f'<a href="{prefix}{base}products/{text(product["slug"])}/index.html">{text(product.get("en" if english else "th"))}</a>'
+			for product in products if product.get("cat") == category
+		) + "</section>"
+		for category in category_labels
+	)
+	product_menu = f'''<div class="nav-dropdown"><button class="nav-dropdown-toggle" type="button" aria-expanded="false">{labels['products']}<span aria-hidden="true">⌄</span></button><div class="product-menu"><a class="product-menu-all" href="{links['products']}">{"All Products" if english else "ดูผลิตภัณฑ์ทั้งหมด"}</a><div class="product-menu-groups">{product_groups}</div></div></div>'''
+	nav_links = "".join(
+		product_menu if key == "products" else f'<a class="{"active" if key == active else ""}" href="{url}">{labels[key]}</a>'
+		for key, url in links.items()
+	)
+	phone = text(settings.get("phone_display", "087 707 0280"))
+	email = text(settings.get("contact_email", "info@hkssurfaces.com"))
+	language_link = f"{prefix}index.html" if english else f"{prefix}en/index.html"
+	language_label = "TH" if english else "EN"
+	return f'''<div class="topbar"><div class="container"><div class="left"><a href="tel:+66877070280">{phone}</a><a href="mailto:{email}">{email}</a></div><div class="right"><a href="{language_link}">{language_label}</a></div></div></div>
+<header class="mainnav"><div class="container"><a href="{links['home']}" class="logo-wrap"><img src="{asset(settings.get('logo'), prefix, 'images/hks-surfaces-logo.png')}" alt="HKS Surfaces"></a><button class="menu" aria-label="Menu">☰</button><nav>{nav_links}</nav><a class="quote-btn" href="{links['contact']}">{"Request a Quote" if english else "ขอใบเสนอราคา"}</a></div></header>'''
+
+
+def footer(prefix, language, settings):
+	contact = "Contact Us" if language == "en" else "ติดต่อเรา"
+	privacy = "Privacy Policy" if language == "en" else "นโยบายความเป็นส่วนตัว"
+	social_label = "Follow us" if language == "en" else "ติดตามเรา"
+	return f'''<footer class="site-footer"><div class="container footer-grid"><div><img src="{asset(settings.get('logo'), prefix, 'images/hks-surfaces-logo.png')}" alt="HKS Surfaces" style="width:120px;border-radius:50%"></div><div><h3>{text(settings.get('site_name', 'HKS Surfaces'))}</h3><address>{text(settings.get('business_address'))}</address></div><div><h3>{contact}</h3><p><a href="tel:+66877070280">{text(settings.get('phone_display', '087 707 0280'))}</a><br><a href="mailto:{text(settings.get('contact_email'))}">{text(settings.get('contact_email'))}</a></p><div class="social-links" aria-label="{social_label}"><a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a><a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a><a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a><a href="#" aria-label="LINE"><i class="bi bi-line"></i></a><a href="#" aria-label="X"><i class="bi bi-twitter-x"></i></a><a href="#" aria-label="Threads"><i class="bi bi-threads"></i></a></div></div></div><p class="privacy-footer-link"><a href="{prefix}{'en/' if language == 'en' else ''}privacy-policy/index.html">{privacy}</a></p></footer>'''
+
+
+def document(title, description, prefix, language, active, body, settings, products):
+	return f'''<!doctype html><html lang="{language}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{text(title)} | HKS Surfaces</title><meta name="description" content="{text(description)}"><meta name="robots" content="index,follow"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"><link rel="stylesheet" href="{prefix}assets/styles.css"><link rel="icon" href="{prefix}images/hks-surfaces-logo.png"></head><body>{nav(prefix, language, active, settings, products)}{body}{footer(prefix, language, settings)}<script src="{prefix}assets/site.js"></script></body></html>'''
+
+
+def hero(title, description, eyebrow):
+	return f'<section class="page-hero"><div class="container"><div class="eyebrow">{text(eyebrow)}</div><h1>{text(title)}</h1><p>{text(description)}</p></div></section>'
+
+
+def product_image(product, prefix):
+	images = product.get("images") or []
+	primary = next((image for image in images if image.get("primary")), images[0] if images else {})
+	return asset(primary.get("file") or product.get("image"), prefix)
+
+
+def build_homepage(homepage, products, settings, language):
+	english = language == "en"
+	prefix = "../" if english else ""
+	title = homepage.get(f"hero_title_{language}")
+	subtitle = homepage.get(f"hero_subtitle_{language}")
+	description = homepage.get(f"hero_text_{language}")
+	product_cards = "".join(
+		f'<a class="cat-card" href="{prefix}{"en/" if english else ""}products/{text(product["slug"])}/index.html"><div class="cat-img" style="background-image:url(\'{product_image(product, prefix)}\')"></div><div class="cat-body"><h3>{text(product.get("en" if english else "th"))}</h3><small>{text(product.get("cat", "SURFACES")).upper()}</small><b>→</b></div></a>'
+		for product in products[:6]
+	)
+	gallery = "".join(f'<img src="{asset(image.get("file"), prefix)}" alt="{text(image.get("alt_en" if english else "alt_th"))}" loading="lazy">' for image in homepage.get("gallery_images", []))
+	body = f'''<main><section class="hero" style="background-image:url('{asset(homepage.get('hero_image'), prefix, 'images/home/hks-surfaces-playground-pickleball-hero.png')}')"><div class="container"><div class="hero-copy"><h1>{text(title)}</h1><h2>{text(subtitle)}</h2><div class="tagline">SAFETY &amp; SPORTS SURFACE SPECIALIST</div><p>{text(description)}</p><div class="hero-actions"><a class="btn green" href="{prefix}{'en/' if english else ''}products/index.html">{"Explore Products" if english else "ดูผลิตภัณฑ์ของเรา"} →</a><a class="btn outline" href="#contact">{"Request a Quote" if english else "ขอใบเสนอราคา"} →</a></div></div><form class="quote-card" id="contact"><h3>{"Request a Quote" if english else "ขอใบเสนอราคา"}</h3><input placeholder="{"Name" if english else "ชื่อ-นามสกุล"}"><input placeholder="{"Phone" if english else "เบอร์โทรศัพท์"}"><input placeholder="Email"><textarea rows="4" placeholder="{"Project details" if english else "รายละเอียดโครงการ"}"></textarea><button class="btn green" type="button">{"Send Enquiry" if english else "ส่งข้อมูล"}</button></form></div></section><section class="category-strip"><div class="container category-grid">{product_cards}</div></section><section class="section"><div class="container"><div class="section-head"><h2>{text(homepage.get(f'gallery_title_{language}'))}</h2></div><div class="home-gallery-grid">{gallery}</div></div></section><section class="section" id="about"><div class="container"><div class="section-head"><h2>{text(homepage.get(f'about_title_{language}'))}</h2><p>{text(homepage.get(f'about_text_{language}'))}</p></div></div></section></main>'''
+	write(("en/" if english else "") + "index.html", document(title, description, prefix, language, "home", body, settings, products))
+
+
+def build_products(products, settings, language):
+	english = language == "en"
+	prefix = "../../" if english else "../"
+	title = "Products & Surface Systems" if english else "ผลิตภัณฑ์และระบบพื้น"
+	description = "Safety, sports, and specialty surface systems." if english else "ระบบพื้นนิรภัย พื้นสนามกีฬา และวัสดุสำหรับงานพื้น"
+	cards = "".join(f'<a class="card" href="{text(product["slug"])}/index.html"><div class="media" style="background-image:url(\'{product_image(product, prefix)}\')"></div><div class="card-body"><span class="pill">{text(product.get("cat"))}</span><h2>{text(product.get("en" if english else "th"))}</h2><p>{text(product.get("den" if english else "dth"))}</p></div></a>' for product in products)
+	body = hero(title, description, "PRODUCTS & SYSTEMS") + f'<main class="section"><div class="container"><div class="grid-3">{cards}</div></div></main>'
+	root = ("en/" if english else "") + "products/index.html"
+	write(root, document(title, description, prefix, language, "products", body, settings, products))
+	for product in products:
+		detail_prefix = "../../../" if english else "../../"
+		product_title = product.get("en" if english else "th")
+		product_description = product.get("den" if english else "dth")
+		features = product.get("fen" if english else "fth", [])
+		feature_list = "".join(f"<li>{text(feature)}</li>" for feature in features)
+		detail = hero(product_title, product_description, "HKS SURFACES") + f'<main class="section"><div class="container"><div class="product-layout"><img src="{product_image(product, detail_prefix)}" alt="{text(product_title)}"><div><span class="pill">{text(product.get("cat"))}</span><h2>{text(product_title)}</h2><p>{text(product_description)}</p><h3>{"Key features" if english else "จุดเด่น"}</h3><ul class="feature-list">{feature_list}</ul><a class="btn green" href="{detail_prefix}{"en/" if english else ""}index.html#contact">{"Request a Quote" if english else "ขอใบเสนอราคา"}</a></div></div></div></main>'
+		path = ("en/" if english else "") + f'products/{product["slug"]}/index.html'
+		write(path, document(product_title, product_description, detail_prefix, language, "products", detail, settings, products))
+
+
+def build_projects(projects, settings, language):
+	english = language == "en"
+	prefix = "../../" if english else "../"
+	title = "Our Projects" if english else "โครงการของเรา"
+	description = "Examples of HKS Surfaces installations." if english else "ผลงานระบบพื้นนิรภัย พื้น EPDM และพื้นสนามกีฬา"
+	cards = "".join(f'<article class="card"><div class="media" style="background-image:url(\'{asset(project.get("image"), prefix, "images/sports-card.svg")}\')"></div><div class="card-body"><span class="pill">{text(project.get("loc_en" if english else "loc_th"))}</span><h2>{text(project.get("title_en" if english else "title_th"))}</h2><p>{text(project.get("desc_en" if english else "desc_th"))}</p></div></article>' for project in projects)
+	body = hero(title, description, "OUR PROJECTS") + f'<main class="section"><div class="container"><div class="grid-3">{cards}</div></div></main>'
+	write(("en/" if english else "") + "projects/index.html", document(title, description, prefix, language, "projects", body, settings, products))
+
+
+def build_certificates(certificates, products, settings, language):
+	english = language == "en"
+	prefix = "../../" if english else "../"
+	title = certificates.get(f"title_{language}")
+	description = certificates.get(f"description_{language}")
+	intro = certificates.get(f"intro_{language}")
+	cards = "".join(f'<article class="content-card"><h3>{text(item.get(f"title_{language}"))}</h3><p>{text(item.get(f"text_{language}"))}</p></article>' for item in certificates.get("items", []))
+	body = hero(title, description, "HKS SURFACES") + f'<main class="section"><div class="container"><div class="section-head"><h2>{text(title)}</h2><p>{text(intro)}</p></div><div class="content-grid">{cards}</div></div></main>'
+	write(("en/" if english else "") + "certificates/index.html", document(title, description, prefix, language, "certificates", body, settings, products))
+
+
+def build_blogs(blogs, settings, language):
+	english = language == "en"
+	prefix = "../../" if english else "../"
+	title = "Blog & Knowledge" if english else "บทความและความรู้"
+	description = "Guidance on safety and sports surface systems." if english else "ข้อมูลเกี่ยวกับพื้น EPDM พื้นสนามเด็กเล่น และพื้นสนามกีฬา"
+	cards = "".join(f'<a class="card" href="{text(blog["slug"])}/index.html"><div class="media" style="background-image:url(\'{asset(blog.get("image"), prefix)}\')"></div><div class="card-body"><span class="meta">{text(blog.get("date"))}</span><h2>{text(blog.get("title_en" if english else "title_th"))}</h2><p>{text(blog.get("excerpt_en" if english else "excerpt_th"))}</p></div></a>' for blog in blogs)
+	body = hero(title, description, "BLOG & KNOWLEDGE") + f'<main class="section"><div class="container"><div class="grid-3">{cards}</div></div></main>'
+	write(("en/" if english else "") + "blog/index.html", document(title, description, prefix, language, "blog", body, settings, products))
+	for blog in blogs:
+		detail_prefix = "../../../" if english else "../../"
+		blog_title = blog.get("title_en" if english else "title_th")
+		sections = blog.get("body_en" if english else "body_th", [])
+		article = "".join(f"<h2>{text(section[0])}</h2><p>{text(section[1])}</p>" for section in sections if len(section) > 1)
+		body = hero(blog_title, blog.get("excerpt_en" if english else "excerpt_th"), "HKS SURFACES") + f'<main class="section"><article class="article"><div class="meta">{text(blog.get("date"))}</div><img src="{asset(blog.get("image"), detail_prefix)}" alt="{text(blog_title)}">{article}</article></main>'
+		path = ("en/" if english else "") + f'blog/{blog["slug"]}/index.html'
+		write(path, document(blog_title, blog.get("excerpt_en" if english else "excerpt_th"), detail_prefix, language, "blog", body, settings, products))
+
+
+def main():
+	homepage = read_json("homepage-data.json")
+	products = read_json("products-data.json")
+	projects = read_json("projects-data.json")
+	blogs = read_json("blog-data.json")
+	certificates = read_json("certificates-data.json")
+	settings = read_json("site-config.json")
+	for language in ("th", "en"):
+		build_homepage(homepage, products, settings, language)
+		build_products(products, settings, language)
+		build_projects(projects, settings, language)
+		build_certificates(certificates, products, settings, language)
+		build_blogs(blogs, settings, language)
+	print("Built public pages from JSON content files.")
+
+
+if __name__ == "__main__":
+	main()

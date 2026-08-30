@@ -1,0 +1,37 @@
+{
+  "hero_title_th": "พื้นปลอดภัย แข็งแรง มาตรฐานระดับมืออาชีพ",
+  "hero_title_en": "Safe, Durable Surfaces Built for Professional Performance",
+  "hero_subtitle_th": "ผู้เชี่ยวชาญด้านพื้นนิรภัยและพื้นสนามกีฬา",
+  "hero_subtitle_en": "Safety Flooring & Sports Surface Specialist",
+  "hero_text_th": "ออกแบบ จัดจำหน่าย และติดตั้งระบบพื้นคุณภาพสูง สำหรับสนามเด็กเล่น สนามกีฬา ฟิตเนส โรงเรียน สวนสาธารณะ และโครงการเชิงพาณิชย์ทั่วประเทศไทย",
+  "hero_text_en": "Design, supply and installation of high-quality surface systems for playgrounds, sports facilities, gyms, schools, parks and commercial projects throughout Thailand.",
+  "about_title_th": "ระบบพื้นสำหรับทุกโครงการ",
+  "about_title_en": "Flooring Systems for Every Project",
+  "about_text_th": "HKS Surfaces ให้บริการตั้งแต่การเลือกวัสดุ ออกแบบระบบพื้น จัดจำหน่าย ไปจนถึงการติดตั้ง โดยเน้นความปลอดภัย ความทนทาน และประสิทธิภาพในการใช้งาน",
+  "about_text_en": "HKS Surfaces supports projects from material selection and flooring system design through supply and installation, with a focus on safety, durability and performance.",
+  "hero_image": "images/home/hks-surfaces-playground-pickleball-hero.png",
+  "hero_alt_th": "พื้นสนามเด็กเล่น EPDM และสนามพิคเคิลบอล HKS Surfaces",
+  "hero_alt_en": "HKS Surfaces EPDM playground and pickleball court",
+  "gallery_title_th": "ตัวอย่างงานและระบบพื้น",
+  "gallery_title_en": "Featured Surfaces & Projects",
+  "gallery_images": [
+    {
+      "file": "images/playground-card.svg",
+      "alt_th": "ตัวอย่างพื้นสนามเด็กเล่น",
+      "alt_en": "Playground safety flooring example",
+      "featured": true
+    },
+    {
+      "file": "images/sports-card.svg",
+      "alt_th": "ตัวอย่างพื้นสนามกีฬา",
+      "alt_en": "Sports flooring example",
+      "featured": false
+    },
+    {
+      "file": "images/track-card.svg",
+      "alt_th": "ตัวอย่างพื้นลู่วิ่ง",
+      "alt_en": "Running track flooring example",
+      "featured": false
+    }
+  ]
+}
