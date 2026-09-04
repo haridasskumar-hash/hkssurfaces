@@ -18,7 +18,162 @@
       "Custom colours and graphics",
       "Suitable for outdoor use"
     ],
-    "images": []
+    "images": [],
+    "images_en": [
+      {"file": "images/Playground Safety Flooring En.jpg", "primary": true}
+    ],
+    "detail_sections_en": [
+      {
+        "heading": "Safe • Durable • Colorful",
+        "paragraphs": [
+          "HKS Surfaces provides impact-absorbing playground safety flooring for playgrounds, schools, kindergartens, parks and recreational areas."
+        ]
+      },
+      {
+        "heading": "EPDM Wet-Pour Flooring",
+        "paragraphs": [
+          "Our most popular playground system combines a shock-absorbing SBR rubber base with a durable, coloured EPDM top layer."
+        ],
+        "list": [
+          "Impact absorbing",
+          "Seamless and slip resistant",
+          "UV and weather resistant",
+          "Wide range of colours",
+          "Custom patterns and designs",
+          "Easy to maintain"
+        ]
+      },
+      {
+        "heading": "Safety First",
+        "paragraphs": [
+          "Flooring thickness can be designed according to the playground equipment's Critical Fall Height (CFH) and applicable EN 1177 requirements."
+        ]
+      },
+      {
+        "heading": "Other Safety Flooring",
+        "sections": [
+          {
+            "title": "SBR Rubber Flooring",
+            "text": "An economical black rubber surface with good impact absorption."
+          },
+          {
+            "title": "Rubber Safety Tiles",
+            "text": "Durable modular rubber tiles that are easy to install, maintain and replace."
+          }
+        ]
+      },
+      {
+        "heading": "Create Your Own Playground",
+        "paragraphs": [
+          "Choose from multiple EPDM colours to create custom patterns, activity zones, educational graphics and themed playground designs."
+        ]
+      },
+      {
+        "heading": "Safer Surfaces. Better Play."
+      }
+    ],
+    "images_th": [
+      {"file": "images/Playground Safety Flooring TH.jpg", "primary": true}
+    ],
+    "detail_sections_th": [
+      {
+        "heading": "พื้นยางนิรภัยสำหรับสนามเด็กเล่น",
+        "paragraphs": [
+          "ปลอดภัย • ทนทาน • สีสันสวยงาม",
+          "พื้นยางดูดซับแรงกระแทก ช่วยลดความเสี่ยงจากการบาดเจ็บจากการล้ม เหมาะสำหรับสนามเด็กเล่น โรงเรียน และพื้นที่ชุมชน"
+        ]
+      },
+      {
+        "heading": "ผ่านมาตรฐาน EN 1177",
+        "paragraphs": [
+          "ผ่านการทดสอบ Critical Fall Height (HIC) เพื่อช่วยลดการบาดเจ็บจากการล้ม"
+        ]
+      },
+      {
+        "heading": "ปลอดภัยและมั่นใจ",
+        "paragraphs": [
+          "ชั้นยางดูดซับแรงกระแทก ออกแบบเพื่อเพิ่มความปลอดภัยสูงสุด"
+        ]
+      },
+      {
+        "heading": "ทนทานต่อสภาพอากาศและรังสี UV",
+        "paragraphs": [
+          "ทนแดด ทนฝน และช่วยลดการซีดจางของสี"
+        ]
+      },
+      {
+        "heading": "ออกแบบได้อย่างอิสระ",
+        "paragraphs": [
+          "เลือกสีและลวดลายได้หลากหลาย เพื่อสร้างพื้นที่เล่นที่สวยงามและน่าสนใจ"
+        ]
+      },
+      {
+        "heading": "1. พื้นยางนิรภัย EPDM แบบ Wet-Pour",
+        "list": [
+          "พื้นผิวไร้รอยต่อ เรียบสวย",
+          "มีสีและลวดลายให้เลือกหลากหลาย",
+          "ทนต่อรังสี UV และสภาพอากาศ",
+          "ทำความสะอาดและดูแลรักษาง่าย"
+        ],
+        "paragraphs": [
+          "เหมาะสำหรับ: โรงเรียน สวนสาธารณะ สนามเด็กเล่น โรงเรียนอนุบาล และพื้นที่นันทนาการ",
+          "โครงสร้าง: ชั้นผิว EPDM สี, สารยึดเกาะ PU, ชั้นฐานยาง SBR"
+        ]
+      },
+      {
+        "heading": "2. พื้นยาง SBR",
+        "list": [
+          "ประหยัดและใช้งานได้จริง",
+          "ดูดซับแรงกระแทกได้ดี",
+          "ทนทานและกันลื่น",
+          "เหมาะสำหรับพื้นที่ที่ไม่เน้นสีสันและการตกแต่ง"
+        ],
+        "paragraphs": [
+          "เหมาะสำหรับ: พื้นที่ออกกำลังกายกลางแจ้ง สนามเด็กเล่นทั่วไป โรงเรียน และพื้นที่อเนกประสงค์"
+        ]
+      },
+      {
+        "heading": "3. แผ่นยางปูพื้น (Rubber Tiles)",
+        "list": [
+          "ติดตั้งง่ายและรวดเร็ว",
+          "เปลี่ยนหรือซ่อมแซมเฉพาะจุดได้ง่าย",
+          "ดูดซับแรงกระแทกได้ดี",
+          "เหมาะสำหรับการใช้งานทั้งชั่วคราวและถาวร"
+        ],
+        "paragraphs": [
+          "เหมาะสำหรับ: สนามเด็กเล่นบนดาดฟ้า ศูนย์เด็กเล็ก งานปรับปรุงพื้นที่ และพื้นที่อเนกประสงค์"
+        ]
+      },
+      {
+        "heading": "EN 1177 / ความสูงวิกฤตจากการตก (HIC)",
+        "paragraphs": [
+          "ความหนาของพื้นยางต้องเลือกให้เหมาะสมกับความสูงจากการตกสูงสุดของเครื่องเล่น และผลการทดสอบตามมาตรฐาน EN 1177",
+          "ความหนาที่เหมาะสมขึ้นอยู่กับระบบพื้น ผลการทดสอบ และสภาพพื้นที่ของแต่ละโครงการ"
+        ]
+      },
+      {
+        "heading": "โครงสร้างระบบพื้นโดยทั่วไป",
+        "list": [
+          "ชั้นผิว EPDM สี",
+          "สารยึดเกาะ PU",
+          "ชั้นฐานยาง SBR (ยางรีไซเคิล)",
+          "Primer",
+          "พื้นคอนกรีต"
+        ]
+      },
+      {
+        "heading": "สี EPDM",
+        "paragraphs": [
+          "มีสีให้เลือกหลากหลาย สามารถผสมสีและออกแบบลวดลายตามความต้องการของโครงการได้"
+        ]
+      },
+      {
+        "heading": "HKS SURFACES",
+        "paragraphs": [
+          "พื้นผิวที่ปลอดภัย เพื่อการเล่นที่ดีกว่า"
+        ]
+      }
+    ]
   },
   {
     "slug": "epdm-flooring",
@@ -332,6 +487,142 @@
       "Colour options"
     ],
     "images": []
+  },
+  {
+    "slug": "padel-court-flooring",
+    "cat": "sports",
+    "th": "โซลูชันพื้นสนามพาเดล",
+    "en": "Padel Court Flooring Solutions",
+    "dth": "ระบบพื้นสนามพาเดลแบบครบวงจรสำหรับสนามในร่มและกลางแจ้ง พร้อมตัวเลือกหญ้าเทียม โพลียูรีเทน (PU) และอะคริลิก",
+    "den": "Professional padel court flooring solutions for indoor and outdoor facilities, with Artificial Grass, Polyurethane (PU) and Acrylic systems.",
+    "fth": [
+      "หญ้าเทียมสำหรับการเล่นที่สบายและควบคุมได้ดี",
+      "โพลียูรีเทน (PU) ดูดซับแรงกระแทกได้ดี",
+      "อะคริลิกสำหรับการเล่นที่รวดเร็วและตอบสนองดี",
+      "บริการครบวงจรตั้งแต่การเตรียมพื้นฐานจนถึงการติดตั้ง"
+    ],
+    "fen": [
+      "Artificial Grass for comfortable and controlled play",
+      "Polyurethane (PU) with excellent shock absorption",
+      "Acrylic for fast and responsive play",
+      "Complete service from base preparation through installation"
+    ],
+    "detail_sections_en": [
+      {
+        "heading": "Artificial Grass",
+        "paragraphs": [
+          "The Popular Choice",
+          "Short-pile synthetic turf with silica sand infill provides consistent ball response, comfortable movement and reliable grip."
+        ],
+        "list": [
+          "Comfortable & controlled play",
+          "Durable & low maintenance",
+          "Indoor & outdoor use"
+        ],
+        "list_title": "Best for: Padel clubs, hotels, resorts and residential courts."
+      },
+      {
+        "heading": "Polyurethane (PU)",
+        "paragraphs": [
+          "Comfort & Multi-Use",
+          "A seamless, resilient surface offering excellent shock absorption and player comfort, particularly for indoor and multi-purpose facilities."
+        ],
+        "list": [
+          "Excellent shock absorption",
+          "Comfortable underfoot",
+          "Easy to clean & maintain"
+        ],
+        "list_title": "Best for: Indoor courts, schools, clubs and multi-sport facilities."
+      },
+      {
+        "heading": "Acrylic",
+        "paragraphs": [
+          "Fast & Responsive",
+          "A durable court system providing a firmer, faster playing experience. Surface texture can be adjusted to achieve the required grip and playing speed."
+        ],
+        "list": [
+          "Fast & responsive play",
+          "Adjustable grip & speed",
+          "Durable & weather resistant"
+        ],
+        "list_title": "Best for: Outdoor courts and multi-sport facilities."
+      },
+      {
+        "heading": "Complete Padel Court Solutions",
+        "paragraphs": [
+          "From base preparation and drainage to surfacing and installation, HKS Surfaces delivers complete solutions tailored to your project.",
+          "Need help choosing the right padel surface? Contact HKS Surfaces to discuss your project.",
+          "Better Surfaces. Brighter Tomorrows."
+        ]
+      }
+    ],
+    "detail_sections_th": [
+      {
+        "heading": "หญ้าเทียม",
+        "paragraphs": [
+          "ตัวเลือกยอดนิยมสำหรับสนามพาเดล",
+          "หญ้าเทียมขนสั้นพร้อมทรายซิลิกาช่วยให้การกระดอนของลูกสม่ำเสมอ เคลื่อนไหวได้อย่างคล่องตัว และยึดเกาะพื้นได้ดี"
+        ],
+        "list": [
+          "เล่นได้อย่างสบายและควบคุมการเคลื่อนไหวได้ดี",
+          "ทนทานและดูแลรักษาง่าย",
+          "เหมาะสำหรับทั้งสนามในร่มและกลางแจ้ง"
+        ],
+        "list_title": "เหมาะสำหรับ: สโมสรพาเดล โรงแรม รีสอร์ท และสนามพาเดลภายในที่พักอาศัย"
+      },
+      {
+        "heading": "โพลียูรีเทน (PU)",
+        "paragraphs": [
+          "นุ่มสบายและรองรับการใช้งานอเนกประสงค์",
+          "พื้นผิวแบบไร้รอยต่อที่มีความยืดหยุ่น ให้การดูดซับแรงกระแทกและความสบายแก่ผู้เล่นได้ดีเยี่ยม เหมาะเป็นพิเศษสำหรับสนามในร่มและพื้นที่กีฬาอเนกประสงค์"
+        ],
+        "list": [
+          "ดูดซับแรงกระแทกได้ดีเยี่ยม",
+          "นุ่มสบายขณะเล่น",
+          "ทำความสะอาดและดูแลรักษาง่าย"
+        ],
+        "list_title": "เหมาะสำหรับ: สนามในร่ม โรงเรียน สโมสร และศูนย์กีฬาอเนกประสงค์"
+      },
+      {
+        "heading": "อะคริลิก",
+        "paragraphs": [
+          "รวดเร็วและตอบสนองดี",
+          "ระบบพื้นสนามที่แข็งแรงและทนทาน ให้รูปแบบการเล่นที่รวดเร็วและตอบสนองได้ดี สามารถปรับพื้นผิวเพื่อให้ได้ระดับการยึดเกาะและความเร็วในการเล่นตามต้องการ"
+        ],
+        "list": [
+          "เหมาะสำหรับการเล่นที่รวดเร็วและตอบสนองดี",
+          "ปรับระดับการยึดเกาะและความเร็วได้",
+          "ทนทานต่อสภาพอากาศ"
+        ],
+        "list_title": "เหมาะสำหรับ: สนามกลางแจ้งและสนามกีฬาอเนกประสงค์"
+      },
+      {
+        "heading": "โซลูชันสนามพาเดลแบบครบวงจร",
+        "paragraphs": [
+          "ตั้งแต่การเตรียมพื้นฐาน ระบบระบายน้ำ การติดตั้งพื้นสนาม ไปจนถึงงานติดตั้งและเก็บรายละเอียด HKS Surfaces พร้อมให้บริการโซลูชันที่เหมาะสมกับความต้องการของแต่ละโครงการ",
+          "ต้องการคำแนะนำในการเลือกพื้นสนามพาเดลที่เหมาะสม? ติดต่อ HKS Surfaces เพื่อพูดคุยเกี่ยวกับโครงการของคุณ",
+          "Better Surfaces. Brighter Tomorrows."
+        ]
+      }
+    ],
+    "images": [
+      {
+        "file": "images/Padel Court Solution EN.jpg",
+        "primary": true
+      }
+    ],
+    "images_en": [
+      {
+        "file": "images/Padel Court Solution EN.jpg",
+        "primary": true
+      }
+    ],
+    "images_th": [
+      {
+        "file": "images/Padel Court Solution TH.jpg",
+        "primary": true
+      }
+    ]
   },
   {
     "slug": "multi-sport-court-flooring",

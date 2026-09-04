@@ -31,7 +31,7 @@ def write(path, content):
 	target.write_text(content, encoding="utf-8")
 
 
-def nav(prefix, language, active, settings, products):
+def nav(prefix, language, active, settings, products, show_quote=True):
 	english = language == "en"
 	labels = {
 		"home": "Home" if english else "หน้าแรก",
@@ -81,8 +81,9 @@ def nav(prefix, language, active, settings, products):
 	language_link = f"{prefix}index.html" if english else f"{prefix}en/index.html"
 	language_label = "TH" if english else "EN"
 	mobile_language_link = f'<a class="mobile-language" href="{language_link}">{language_label}</a>'
+	quote_button = f'<a class="quote-btn" href="{links["contact"]}">{"Request a Quote" if english else "ขอใบเสนอราคา"}</a>' if show_quote else ""
 	return f'''<div class="topbar"><div class="container"><div class="left"><a href="tel:+66877070280">{phone}</a><a href="mailto:{email}">{email}</a></div><div class="right"><a href="{language_link}">{language_label}</a></div></div></div>
-<header class="mainnav"><div class="container"><a href="{links['home']}" class="logo-wrap"><img src="{asset(settings.get('logo'), prefix, 'images/hks-surfaces-logo.png')}" alt="HKS Surfaces"></a><a class="header-language" href="{language_link}" aria-label="Switch language">{language_label}</a><button class="menu" aria-label="Menu">☰</button><nav>{nav_links}{mobile_language_link}</nav><a class="quote-btn" href="{links['contact']}">{"Request a Quote" if english else "ขอใบเสนอราคา"}</a></div></header>'''
+	<header class="mainnav"><div class="container"><a href="{links['home']}" class="logo-wrap"><img src="{asset(settings.get('logo'), prefix, 'images/hks-surfaces-logo.png')}" alt="HKS Surfaces"></a><a class="header-language" href="{language_link}" aria-label="Switch language">{language_label}</a><button class="menu" aria-label="Menu">☰</button><nav>{nav_links}{mobile_language_link}</nav>{quote_button}</div></header>'''
 
 
 def footer(prefix, language, settings):
@@ -92,8 +93,8 @@ def footer(prefix, language, settings):
 	return f'''<footer class="site-footer"><div class="container footer-grid"><div><img src="{asset(settings.get('logo'), prefix, 'images/hks-surfaces-logo.png')}" alt="HKS Surfaces" style="width:120px;border-radius:50%"></div><div><h3>{text(settings.get('site_name', 'HKS Surfaces'))}</h3><address>{text(settings.get('business_address'))}</address></div><div><h3>{contact}</h3><p><a href="tel:+66877070280">{text(settings.get('phone_display', '087 707 0280'))}</a><br><a href="mailto:{text(settings.get('contact_email'))}">{text(settings.get('contact_email'))}</a></p><div class="social-links" aria-label="{social_label}"><a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a><a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a><a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a><a href="#" aria-label="LINE"><i class="bi bi-line"></i></a><a href="#" aria-label="X"><i class="bi bi-twitter-x"></i></a><a href="#" aria-label="Threads"><i class="bi bi-threads"></i></a></div></div></div><p class="privacy-footer-link"><a href="{prefix}{'en/' if language == 'en' else ''}privacy-policy/index.html">{privacy}</a></p></footer>'''
 
 
-def document(title, description, prefix, language, active, body, settings, products):
-	return f'''<!doctype html><html lang="{language}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{text(title)} | HKS Surfaces</title><meta name="description" content="{text(description)}"><meta name="robots" content="index,follow"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"><link rel="stylesheet" href="{prefix}assets/styles.css"><link rel="icon" href="{prefix}images/hks-surfaces-logo.png"></head><body>{nav(prefix, language, active, settings, products)}{body}{footer(prefix, language, settings)}<script src="{prefix}assets/site.js"></script></body></html>'''
+def document(title, description, prefix, language, active, body, settings, products, show_quote=True):
+	return f'''<!doctype html><html lang="{language}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{text(title)} | HKS Surfaces</title><meta name="description" content="{text(description)}"><meta name="robots" content="index,follow"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"><link rel="stylesheet" href="{prefix}assets/styles.css"><link rel="icon" href="{prefix}images/hks-surfaces-logo.png"></head><body>{nav(prefix, language, active, settings, products, show_quote)}{body}{footer(prefix, language, settings)}<script src="{prefix}assets/site.js"></script></body></html>'''
 
 
 def hero(title, description, eyebrow):
@@ -175,11 +176,15 @@ def build_products(products, settings, language):
 		is_running_track = product.get("slug") == "running-track-flooring"
 		is_pu_binder = product.get("slug") == "polyurethane-binder"
 		is_basketball = product.get("slug") == "basketball-court-flooring"
-		uses_image_first_layout = is_epdm_granules or is_epdm_flooring or is_sbr_granules or is_running_track or is_pu_binder
+		is_padel = product.get("slug") == "padel-court-flooring"
+		is_playground_safety = product.get("slug") == "playground-safety-flooring"
+		uses_image_first_layout = is_epdm_granules or is_epdm_flooring or is_sbr_granules or is_running_track or is_pu_binder or is_playground_safety
 		right_column_content = product_detail_sections(product, language, 0, 2) if is_epdm_granules else ""
 		below_content = product_detail_sections(product, language, 2) if is_epdm_granules else extra_content
 		layout_class = "product-layout product-layout--image-first" if uses_image_first_layout else "product-layout"
 		layout_class += " product-layout--basketball" if is_basketball else ""
+		layout_class += " product-layout--padel" if is_padel else ""
+		layout_class += " product-layout--playground-safety" if is_playground_safety else ""
 		image_stack_class = "product-image-stack product-image-stack--epdm-granules" if is_epdm_granules else "product-image-stack"
 		image_stack_class += " product-image-stack--epdm-flooring" if is_epdm_flooring else ""
 		image_stack_class += " product-image-stack--running-track" if is_running_track else ""
@@ -188,13 +193,13 @@ def build_products(products, settings, language):
 		feature_heading = "Key features" if english else "จุดเด่น"
 		category = text(product.get("cat"))
 		detail_images = product_detail_images(product, detail_prefix, product_title, language)
-		quote_cta = "" if is_basketball else f'<a class="btn green" href="{detail_prefix}{contact_prefix}index.html#contact">{cta_label}</a>'
+		quote_cta = "" if is_basketball or is_padel else f'<a class="btn green" href="{detail_prefix}{contact_prefix}index.html#contact">{cta_label}</a>'
 		intro_content = right_column_content if is_epdm_granules else f'<span class="pill">{category}</span><h2>{text(product_title)}</h2><p>{text(product_description)}</p><h3>{feature_heading}</h3><ul class="feature-list">{feature_list}</ul>{quote_cta}{right_column_content}'
 		hero_content = "" if uses_image_first_layout else hero(product_title, product_description, "HKS SURFACES")
-		intro_column = "" if is_epdm_flooring or is_sbr_granules or is_running_track or is_pu_binder or is_basketball else f'<div>{intro_content}</div>'
+		intro_column = "" if is_epdm_flooring or is_sbr_granules or is_running_track or is_pu_binder or is_basketball or is_playground_safety else f'<div>{intro_content}</div>'
 		detail = hero_content + f'<main class="section"><div class="container"><div class="{layout_class}"><div class="{image_stack_class}">{detail_images}</div>{intro_column}</div>{below_content}</div></main>'
 		path = ("en/" if english else "") + f'products/{product["slug"]}/index.html'
-		write(path, document(product_title, product_description, detail_prefix, language, "products", detail, settings, products))
+		write(path, document(product_title, product_description, detail_prefix, language, "products", detail, settings, products, show_quote=not is_padel))
 
 
 def build_projects(projects, products, settings, language):

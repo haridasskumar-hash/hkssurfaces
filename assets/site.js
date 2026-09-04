@@ -24,6 +24,7 @@ const products=[
 	['sports','tennis-court-flooring','พื้นสนามเทนนิส','Tennis Court Flooring'],
 	['sports','basketball-court-flooring','พื้นสนามบาสเกตบอล','Basketball Court Flooring'],
 	['sports','pickleball-court-flooring','พื้นสนามพิคเคิลบอล','Pickleball Court Flooring'],
+	['sports','padel-court-flooring','โซลูชันพื้นสนามพาเดล','Padel Court Flooring Solutions'],
 	['sports','multi-sport-court-flooring','พื้นสนามกีฬาอเนกประสงค์','Multi-Sport Court Flooring'],
 	['sports','running-track-flooring','พื้นลู่วิ่งสังเคราะห์','Running Track Flooring'],
 	['sports','gym-flooring','พื้นฟิตเนสและยิม','Gym Flooring'],

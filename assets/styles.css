@@ -3,6 +3,9 @@
   --navy:#072e59;--navy2:#0e416f;--green:#4cb52f;--green2:#72c92e;
   --text:#0b294a;--muted:#667789;--line:#e2e7eb;--white:#fff;--bg:#f7f9fb;
 }
+.product-layout--playground-safety .product-image-stack{width:min(100%,900px);justify-self:center}
+.product-layout--padel .product-image-stack{width:min(100%,900px);justify-self:center}
+.product-layout.product-layout--padel{grid-template-columns:minmax(0,1fr)}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Arial,"Noto Sans Thai",Tahoma,sans-serif;color:var(--text);background:#fff}
 a{text-decoration:none;color:inherit}img{max-width:100%;display:block}.container{width:min(1400px,92vw);margin:auto}
 .topbar{background:var(--navy);color:#fff;font-size:14px}.topbar .container{min-height:36px;display:flex;align-items:center;justify-content:space-between;gap:20px}
