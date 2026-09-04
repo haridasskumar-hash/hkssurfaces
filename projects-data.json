@@ -1,0 +1,20 @@
+[
+  {
+    "title_th": "โครงการพื้น EPDM สนามเด็กเล่น",
+    "title_en": "EPDM Playground Flooring Project",
+    "loc_th": "ประเทศไทย",
+    "loc_en": "Thailand",
+    "desc_th": "ตัวอย่างโครงการสำหรับแสดงผลงาน HKS Surfaces สามารถแก้ไขข้อความและรูปภาพได้จาก projects-data.json",
+    "desc_en": "Sample project entry. Replace the content and image in projects-data.json.",
+    "image": "project-epdm.svg"
+  },
+  {
+    "title_th": "โครงการพื้นสนามพิคเคิลบอล",
+    "title_en": "Pickleball Court Flooring Project",
+    "loc_th": "ประเทศไทย",
+    "loc_en": "Thailand",
+    "desc_th": "ตัวอย่างโครงการพื้นสนามพิคเคิลบอลสำหรับสนามใหม่หรือการปรับปรุงสนามเดิม",
+    "desc_en": "Sample pickleball court flooring project for new builds or court renovation.",
+    "image": "project-pickleball.svg"
+  }
+]
