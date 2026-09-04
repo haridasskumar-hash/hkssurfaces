@@ -36,6 +36,7 @@ def nav(prefix, language, active, settings, products):
 	labels = {
 		"home": "Home" if english else "หน้าแรก",
 		"products": "Products" if english else "ผลิตภัณฑ์",
+		"services": "Services" if english else "บริการ",
 		"projects": "Projects" if english else "โครงการ",
 		"certificates": "Certificate" if english else "ใบรับรองมาตรฐาน",
 		"blog": "Blog" if english else "บทความ",
@@ -45,6 +46,7 @@ def nav(prefix, language, active, settings, products):
 	links = {
 		"home": f"{prefix}{base}index.html",
 		"products": f"{prefix}{base}products/index.html",
+		"services": f"{prefix}{base}services/index.html",
 		"projects": f"{prefix}{base}projects/index.html",
 		"certificates": f"{prefix}{base}certificates/index.html",
 		"blog": f"{prefix}{base}blog/index.html",
@@ -64,16 +66,23 @@ def nav(prefix, language, active, settings, products):
 		for category in category_labels
 	)
 	product_menu = f'''<div class="nav-dropdown"><button class="nav-dropdown-toggle" type="button" aria-expanded="false">{labels['products']}<span aria-hidden="true">⌄</span></button><div class="product-menu"><a class="product-menu-all" href="{links['products']}">{"All Products" if english else "ดูผลิตภัณฑ์ทั้งหมด"}</a><div class="product-menu-groups">{product_groups}</div></div></div>'''
+	service_items = [
+		("Free Consultation & Quotation Request" if english else "ปรึกษาและขอใบเสนอราคาฟรี", "free-consultation"),
+		("Transportation, Installation & Repair" if english else "ขนส่ง ติดตั้ง และซ่อมแซม", "transportation-installation-repair"),
+		("Warranty & After-Sales Service" if english else "รับประกันและบริการหลังการขาย", "warranty-after-sales"),
+	]
+	service_menu = f'''<div class="nav-dropdown"><button class="nav-dropdown-toggle" type="button" aria-expanded="false">{labels['services']}<span aria-hidden="true">⌄</span></button><div class="product-menu service-menu">{"".join(f'<a href="{links["services"]}#{anchor}">{text(label)}</a>' for label, anchor in service_items)}</div></div>'''
 	nav_links = "".join(
-		product_menu if key == "products" else f'<a class="{"active" if key == active else ""}" href="{url}">{labels[key]}</a>'
+		product_menu if key == "products" else service_menu if key == "services" else f'<a class="{"active" if key == active else ""}" href="{url}">{labels[key]}</a>'
 		for key, url in links.items()
 	)
 	phone = text(settings.get("phone_display", "087 707 0280"))
 	email = text(settings.get("contact_email", "info@hkssurfaces.com"))
 	language_link = f"{prefix}index.html" if english else f"{prefix}en/index.html"
 	language_label = "TH" if english else "EN"
+	mobile_language_link = f'<a class="mobile-language" href="{language_link}">{language_label}</a>'
 	return f'''<div class="topbar"><div class="container"><div class="left"><a href="tel:+66877070280">{phone}</a><a href="mailto:{email}">{email}</a></div><div class="right"><a href="{language_link}">{language_label}</a></div></div></div>
-<header class="mainnav"><div class="container"><a href="{links['home']}" class="logo-wrap"><img src="{asset(settings.get('logo'), prefix, 'images/hks-surfaces-logo.png')}" alt="HKS Surfaces"></a><button class="menu" aria-label="Menu">☰</button><nav>{nav_links}</nav><a class="quote-btn" href="{links['contact']}">{"Request a Quote" if english else "ขอใบเสนอราคา"}</a></div></header>'''
+<header class="mainnav"><div class="container"><a href="{links['home']}" class="logo-wrap"><img src="{asset(settings.get('logo'), prefix, 'images/hks-surfaces-logo.png')}" alt="HKS Surfaces"></a><button class="menu" aria-label="Menu">☰</button><nav>{nav_links}{mobile_language_link}</nav><a class="quote-btn" href="{links['contact']}">{"Request a Quote" if english else "ขอใบเสนอราคา"}</a></div></header>'''
 
 
 def footer(prefix, language, settings):
@@ -95,6 +104,38 @@ def product_image(product, prefix):
 	images = product.get("images") or []
 	primary = next((image for image in images if image.get("primary")), images[0] if images else {})
 	return asset(primary.get("file") or product.get("image"), prefix)
+
+
+def product_detail_images(product, prefix, alt, language):
+	images = product.get(f"images_{language}") or product.get("images") or [{"file": product.get("image")}]
+	primary = next((image for image in images if image.get("primary")), images[0])
+	ordered_images = [primary] + [image for image in images if image is not primary]
+	return "".join(
+		f'<img src="{asset(image.get("file"), prefix)}" alt="{text(alt)}">'
+		for image in ordered_images
+	)
+
+
+def product_detail_sections(product, language, start=0, end=None):
+	sections = []
+	product_sections = product.get(f"detail_sections_{language}", product.get("detail_sections", []))[start:end]
+	for section in product_sections:
+		paragraphs = "".join(f"<p>{text(paragraph)}</p>" for paragraph in section.get("paragraphs", []))
+		items = "".join(f"<li>{text(item)}</li>" for item in section.get("list", []))
+		list_title = section.get("list_title")
+		list_html = f'<h3>{text(list_title)}</h3>' if list_title else ""
+		list_html += f'<ul class="feature-list">{items}</ul>' if items else ""
+		subsections = "".join(f'<h3>{text(item.get("title"))}</h3><p>{text(item.get("text"))}</p>' for item in section.get("sections", []))
+		rows = "".join(f"<tr><th>{text(name)}</th><td>{text(value)}</td></tr>" for name, value in section.get("specifications", []))
+		table = f'<table><tbody>{rows}</tbody></table>' if rows else ""
+		sections.append(f'<section class="article"><h2>{text(section.get("heading"))}</h2>{paragraphs}{list_html}{subsections}{table}</section>')
+	return "".join(sections)
+
+
+def project_image(project, prefix):
+	images = project.get("images") or []
+	primary = next((image for image in images if image.get("primary")), images[0] if images else {})
+	return asset(primary.get("file") or project.get("image"), prefix, "images/sports-card.svg")
 
 
 def build_homepage(homepage, products, settings, language):
@@ -127,19 +168,66 @@ def build_products(products, settings, language):
 		product_description = product.get("den" if english else "dth")
 		features = product.get("fen" if english else "fth", [])
 		feature_list = "".join(f"<li>{text(feature)}</li>" for feature in features)
-		detail = hero(product_title, product_description, "HKS SURFACES") + f'<main class="section"><div class="container"><div class="product-layout"><img src="{product_image(product, detail_prefix)}" alt="{text(product_title)}"><div><span class="pill">{text(product.get("cat"))}</span><h2>{text(product_title)}</h2><p>{text(product_description)}</p><h3>{"Key features" if english else "จุดเด่น"}</h3><ul class="feature-list">{feature_list}</ul><a class="btn green" href="{detail_prefix}{"en/" if english else ""}index.html#contact">{"Request a Quote" if english else "ขอใบเสนอราคา"}</a></div></div></div></main>'
+		extra_content = product_detail_sections(product, language)
+		is_epdm_granules = product.get("slug") == "epdm-granules"
+		is_epdm_flooring = product.get("slug") == "epdm-flooring"
+		is_sbr_granules = product.get("slug") == "sbr-rubber-granules"
+		is_running_track = product.get("slug") == "running-track-flooring"
+		is_pu_binder = product.get("slug") == "polyurethane-binder"
+		is_basketball = product.get("slug") == "basketball-court-flooring"
+		uses_image_first_layout = is_epdm_granules or is_epdm_flooring or is_sbr_granules or is_running_track or is_pu_binder
+		right_column_content = product_detail_sections(product, language, 0, 2) if is_epdm_granules else ""
+		below_content = product_detail_sections(product, language, 2) if is_epdm_granules else extra_content
+		layout_class = "product-layout product-layout--image-first" if uses_image_first_layout else "product-layout"
+		layout_class += " product-layout--basketball" if is_basketball else ""
+		image_stack_class = "product-image-stack product-image-stack--epdm-granules" if is_epdm_granules else "product-image-stack"
+		image_stack_class += " product-image-stack--epdm-flooring" if is_epdm_flooring else ""
+		image_stack_class += " product-image-stack--running-track" if is_running_track else ""
+		contact_prefix = "en/" if english else ""
+		cta_label = "Request a Quote" if english else "ขอใบเสนอราคา"
+		feature_heading = "Key features" if english else "จุดเด่น"
+		category = text(product.get("cat"))
+		detail_images = product_detail_images(product, detail_prefix, product_title, language)
+		quote_cta = "" if is_basketball else f'<a class="btn green" href="{detail_prefix}{contact_prefix}index.html#contact">{cta_label}</a>'
+		intro_content = right_column_content if is_epdm_granules else f'<span class="pill">{category}</span><h2>{text(product_title)}</h2><p>{text(product_description)}</p><h3>{feature_heading}</h3><ul class="feature-list">{feature_list}</ul>{quote_cta}{right_column_content}'
+		hero_content = "" if uses_image_first_layout else hero(product_title, product_description, "HKS SURFACES")
+		intro_column = "" if is_epdm_flooring or is_sbr_granules or is_running_track or is_pu_binder or is_basketball else f'<div>{intro_content}</div>'
+		detail = hero_content + f'<main class="section"><div class="container"><div class="{layout_class}"><div class="{image_stack_class}">{detail_images}</div>{intro_column}</div>{below_content}</div></main>'
 		path = ("en/" if english else "") + f'products/{product["slug"]}/index.html'
 		write(path, document(product_title, product_description, detail_prefix, language, "products", detail, settings, products))
 
 
-def build_projects(projects, settings, language):
+def build_projects(projects, products, settings, language):
 	english = language == "en"
 	prefix = "../../" if english else "../"
 	title = "Our Projects" if english else "โครงการของเรา"
 	description = "Examples of HKS Surfaces installations." if english else "ผลงานระบบพื้นนิรภัย พื้น EPDM และพื้นสนามกีฬา"
-	cards = "".join(f'<article class="card"><div class="media" style="background-image:url(\'{asset(project.get("image"), prefix, "images/sports-card.svg")}\')"></div><div class="card-body"><span class="pill">{text(project.get("loc_en" if english else "loc_th"))}</span><h2>{text(project.get("title_en" if english else "title_th"))}</h2><p>{text(project.get("desc_en" if english else "desc_th"))}</p></div></article>' for project in projects)
+	cards = []
+	for project in projects:
+		location = project.get("loc_en" if english else "loc_th") or ""
+		meta = text(" | ".join(filter(None, [str(project.get("year") or ""), str(location)])))
+		project_title = text(project.get("title_en" if english else "title_th"))
+		project_description = text(project.get("desc_en" if english else "desc_th"))
+		image = project_image(project, prefix)
+		cards.append(f'<article class="card"><div class="media" style="background-image:url(\'{image}\')"></div><div class="card-body"><span class="pill">{meta}</span><h2>{project_title}</h2><p>{project_description}</p></div></article>')
+	cards = "".join(cards)
 	body = hero(title, description, "OUR PROJECTS") + f'<main class="section"><div class="container"><div class="grid-3">{cards}</div></div></main>'
 	write(("en/" if english else "") + "projects/index.html", document(title, description, prefix, language, "projects", body, settings, products))
+
+
+def build_services(products, settings, language):
+	english = language == "en"
+	prefix = "../../" if english else "../"
+	title = "Services" if english else "บริการของเรา"
+	description = "From planning through after-sales support, our team is ready to help." if english else "ให้บริการตั้งแต่การวางแผน ติดตั้ง จนถึงการดูแลหลังการขาย"
+	items = [
+		("free-consultation", "Free Consultation & Quotation Request", "Receive practical guidance and a quotation tailored to your project requirements.", "ปรึกษาและขอใบเสนอราคาฟรี", "รับคำแนะนำและใบเสนอราคาที่เหมาะสมกับความต้องการของโครงการของคุณ"),
+		("transportation-installation-repair", "Transportation, Installation & Repair", "Transportation, installation and repair are carried out by our skilled technician team.", "ขนส่ง ติดตั้ง และซ่อมแซม", "บริการขนส่ง ติดตั้ง และซ่อมแซม โดยทีมช่างผู้ชำนาญ"),
+		("warranty-after-sales", "Warranty & After-Sales Service", "We provide warranty coverage and responsive after-sales service to keep your surface performing well.", "รับประกันและบริการหลังการขาย", "รับประกันสินค้าและดูแลหลังการขาย เพื่อให้ระบบพื้นของคุณใช้งานได้อย่างมั่นใจ"),
+	]
+	cards = "".join(f'<article class="content-card" id="{anchor}"><span class="pill">{index + 1:02d}</span><h3>{text(en_title if english else th_title)}</h3><p>{text(en_text if english else th_text)}</p></article>' for index, (anchor, en_title, en_text, th_title, th_text) in enumerate(items))
+	body = hero(title, description, "HKS SURFACES") + f'<main class="section"><div class="container"><div class="content-grid">{cards}</div></div></main>'
+	write(("en/" if english else "") + "services/index.html", document(title, description, prefix, language, "services", body, settings, products))
 
 
 def build_certificates(certificates, products, settings, language):
@@ -153,7 +241,7 @@ def build_certificates(certificates, products, settings, language):
 	write(("en/" if english else "") + "certificates/index.html", document(title, description, prefix, language, "certificates", body, settings, products))
 
 
-def build_blogs(blogs, settings, language):
+def build_blogs(blogs, products, settings, language):
 	english = language == "en"
 	prefix = "../../" if english else "../"
 	title = "Blog & Knowledge" if english else "บทความและความรู้"
@@ -181,9 +269,10 @@ def main():
 	for language in ("th", "en"):
 		build_homepage(homepage, products, settings, language)
 		build_products(products, settings, language)
-		build_projects(projects, settings, language)
+		build_services(products, settings, language)
+		build_projects(projects, products, settings, language)
 		build_certificates(certificates, products, settings, language)
-		build_blogs(blogs, settings, language)
+		build_blogs(blogs, products, settings, language)
 	print("Built public pages from JSON content files.")
 
 

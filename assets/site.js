@@ -11,6 +11,11 @@ const siteNavigation=document.querySelector('nav');
 const scriptUrl=document.currentScript?.src||'';
 const isEnglish=/(?:^|\/)en(?:\/|$)/.test(location.pathname);
 const siteRoot=scriptUrl.replace(/assets\/site\.js(?:\?.*)?$/,'');
+const siteRootPath=new URL(siteRoot,location.href).pathname;
+const pagePath=location.pathname.startsWith(siteRootPath)?location.pathname.slice(siteRootPath.length).replace(/^\/+/, ''):'';
+const languagePagePath=pagePath.replace(/^en\//,'')||'index.html';
+const languageTarget=`${siteRoot}${isEnglish?'':'en/'}${languagePagePath}${location.hash}`;
+document.querySelectorAll('.topbar .right a,.mobile-language').forEach(link=>link.href=languageTarget);
 const products=[
 	['safety','playground-safety-flooring','พื้นสนามเด็กเล่นนิรภัย','Playground Safety Flooring'],
 	['safety','epdm-flooring','พื้น EPDM','EPDM Flooring'],
@@ -76,4 +81,17 @@ if(siteNavigation&&!siteNavigation.querySelector('a[href*="certificates/"]')){
 	certificateLink.textContent=isEnglish?'Certificate':'ใบรับรองมาตรฐาน';
 	const blogLink=[...siteNavigation.querySelectorAll('a')].find(link=>/blog\/index\.html/.test(link.getAttribute('href')||''));
 	siteNavigation.insertBefore(certificateLink,blogLink||null);
+}
+
+if(siteNavigation&&!siteNavigation.querySelector('.service-menu')){
+	const servicesUrl=scriptUrl.replace(/assets\/site\.js(?:\?.*)?$/,isEnglish?'en/services/index.html':'services/index.html');
+	const servicesDropdown=document.createElement('div');
+	servicesDropdown.className='nav-dropdown service-dropdown';
+	servicesDropdown.innerHTML=`<button class="nav-dropdown-toggle" type="button" aria-expanded="false">${isEnglish?'Services':'บริการ'}<span aria-hidden="true">⌄</span></button><div class="product-menu service-menu"><a href="${servicesUrl}#free-consultation">${isEnglish?'Free Consultation & Quotation Request':'ปรึกษาและขอใบเสนอราคาฟรี'}</a><a href="${servicesUrl}#transportation-installation-repair">${isEnglish?'Transportation, Installation & Repair':'ขนส่ง ติดตั้ง และซ่อมแซม'}</a><a href="${servicesUrl}#warranty-after-sales">${isEnglish?'Warranty & After-Sales Service':'รับประกันและบริการหลังการขาย'}</a></div>`;
+	const projectsLink=[...siteNavigation.querySelectorAll('a')].find(link=>/projects\/index\.html/.test(link.getAttribute('href')||''));
+	siteNavigation.insertBefore(servicesDropdown,projectsLink||null);
+	servicesDropdown.querySelector('.nav-dropdown-toggle')?.addEventListener('click',()=>{
+		const isOpen=servicesDropdown.classList.toggle('open');
+		servicesDropdown.querySelector('.nav-dropdown-toggle')?.setAttribute('aria-expanded',String(isOpen));
+	});
 }
