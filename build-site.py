@@ -82,7 +82,7 @@ def nav(prefix, language, active, settings, products):
 	language_label = "TH" if english else "EN"
 	mobile_language_link = f'<a class="mobile-language" href="{language_link}">{language_label}</a>'
 	return f'''<div class="topbar"><div class="container"><div class="left"><a href="tel:+66877070280">{phone}</a><a href="mailto:{email}">{email}</a></div><div class="right"><a href="{language_link}">{language_label}</a></div></div></div>
-<header class="mainnav"><div class="container"><a href="{links['home']}" class="logo-wrap"><img src="{asset(settings.get('logo'), prefix, 'images/hks-surfaces-logo.png')}" alt="HKS Surfaces"></a><button class="menu" aria-label="Menu">☰</button><nav>{nav_links}{mobile_language_link}</nav><a class="quote-btn" href="{links['contact']}">{"Request a Quote" if english else "ขอใบเสนอราคา"}</a></div></header>'''
+<header class="mainnav"><div class="container"><a href="{links['home']}" class="logo-wrap"><img src="{asset(settings.get('logo'), prefix, 'images/hks-surfaces-logo.png')}" alt="HKS Surfaces"></a><a class="header-language" href="{language_link}" aria-label="Switch language">{language_label}</a><button class="menu" aria-label="Menu">☰</button><nav>{nav_links}{mobile_language_link}</nav><a class="quote-btn" href="{links['contact']}">{"Request a Quote" if english else "ขอใบเสนอราคา"}</a></div></header>'''
 
 
 def footer(prefix, language, settings):
