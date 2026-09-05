@@ -219,67 +219,440 @@
     ]
   },
   {
+    "slug": "epdm-flooring-wet-area",
+    "cat": "safety",
+    "th": "พื้นยาง EPDM เพื่อความปลอดภัยสำหรับสวนน้ำและลานสายน้ำ",
+    "en": "EPDM Rubber Safety Flooring for Water Parks & Splash Pads",
+    "dth": "พื้นยาง EPDM เพื่อความปลอดภัยสำหรับสวนน้ำ ลานสายน้ำ สนามเด็กเล่นทางน้ำ พื้นที่รอบสระว่ายน้ำ และพื้นที่กิจกรรมทางน้ำประเภทต่าง ๆ",
+    "den": "Professional EPDM Rubber Safety Flooring designed for water parks, splash pads, aquatic playgrounds, swimming pool surrounds and other wet-play environments.",
+    "fth": [
+      "พื้นผิวกันลื่น เหมาะสำหรับพื้นที่เปียก",
+      "ช่วยดูดซับและลดแรงกระแทก เพิ่มความปลอดภัย",
+      "โครงสร้างแบบพรุน ช่วยระบายน้ำได้อย่างมีประสิทธิภาพ",
+      "ทนต่อรังสี UV และสภาพอากาศ"
+    ],
+    "fen": [
+      "Slip-resistant surface for wet areas",
+      "Impact absorbing for improved safety",
+      "Porous system for effective water drainage",
+      "UV & weather resistant"
+    ],
+    "detail_sections_en": [
+      {
+        "heading": "EPDM Rubber Safety Flooring",
+        "paragraphs": [
+          "HKS Surfaces provides professional EPDM Rubber Safety Flooring designed for water parks, splash pads, aquatic playgrounds, swimming pool surrounds and other wet-play environments.",
+          "Our seamless rubber flooring system combines a shock-absorbing SBR rubber base layer with a durable coloured EPDM rubber top layer, creating a comfortable, resilient and slip-resistant surface suitable for areas exposed to water and outdoor conditions."
+        ]
+      },
+      {
+        "heading": "Key Benefits",
+        "list": [
+          "Slip-resistant surface for wet areas",
+          "Impact absorbing for improved safety",
+          "Porous system for effective water drainage",
+          "UV & weather resistant",
+          "Comfortable underfoot",
+          "Seamless and easy to maintain",
+          "Wide range of EPDM colours",
+          "Custom patterns, graphics & themed designs"
+        ]
+      },
+      {
+        "heading": "Typical EPDM Safety Flooring System",
+        "sections": [
+          {"title": "EPDM Colour Wear Layer", "text": "Durable, UV-resistant coloured rubber finish."},
+          {"title": "SBR Shock-Absorbing Base Layer", "text": "Provides cushioning and impact protection."},
+          {"title": "Prepared Concrete Base", "text": "Stable foundation with suitable drainage and falls."}
+        ]
+      },
+      {
+        "heading": "Applications",
+        "paragraphs": [
+          "Water Parks • Splash Pads • Aquatic Playgrounds • Pool Surrounds • Resorts & Hotels • Schools • Recreational Facilities"
+        ]
+      },
+      {
+        "heading": "HKS Surfaces - Safe, Colourful & Durable EPDM Rubber Safety Flooring for Wet-Play Environments",
+        "paragraphs": [
+          "Safer, colourful and durable EPDM rubber safety flooring for wet-play environments."
+        ]
+      }
+    ],
+    "detail_sections_th": [
+      {
+        "heading": "พื้นยาง EPDM เพื่อความปลอดภัย",
+        "paragraphs": [
+          "HKS Surfaces ให้บริการพื้นยาง EPDM เพื่อความปลอดภัย (EPDM Rubber Safety Flooring) สำหรับสวนน้ำ ลานสายน้ำ (Splash Pad) สนามเด็กเล่นทางน้ำ พื้นที่รอบสระว่ายน้ำ และพื้นที่กิจกรรมทางน้ำประเภทต่าง ๆ",
+          "ระบบพื้นยางแบบไร้รอยต่อของเราประกอบด้วยชั้นยาง SBR รองรับแรงกระแทก และชั้นผิวยาง EPDM สีคุณภาพสูง ช่วยให้พื้นมีความนุ่ม ยืดหยุ่น กันลื่น และเหมาะสำหรับพื้นที่เปียกและการใช้งานกลางแจ้ง"
+        ]
+      },
+      {
+        "heading": "จุดเด่นของระบบ",
+        "list": [
+          "พื้นผิวกันลื่น เหมาะสำหรับพื้นที่เปียก",
+          "ช่วยดูดซับและลดแรงกระแทก เพิ่มความปลอดภัย",
+          "โครงสร้างแบบพรุน ช่วยระบายน้ำได้อย่างมีประสิทธิภาพ",
+          "ทนต่อรังสี UV และสภาพอากาศ",
+          "นุ่มสบายเท้า",
+          "พื้นผิวไร้รอยต่อ ดูแลรักษาง่าย",
+          "มีสี EPDM ให้เลือกหลากหลาย",
+          "สามารถออกแบบลวดลาย กราฟิก และธีมได้ตามต้องการ"
+        ]
+      },
+      {
+        "heading": "โครงสร้างพื้นยาง EPDM เพื่อความปลอดภัย",
+        "sections": [
+          {"title": "ชั้นผิวยาง EPDM สี", "text": "พื้นผิวยางสีที่มีความทนทาน ทนต่อรังสี UV และการใช้งานกลางแจ้ง"},
+          {"title": "ชั้นยาง SBR รองรับแรงกระแทก", "text": "ช่วยเพิ่มความนุ่มและดูดซับแรงกระแทกเพื่อความปลอดภัย"},
+          {"title": "พื้นคอนกรีตที่เตรียมไว้", "text": "ฐานพื้นที่แข็งแรง ได้ระดับ และมีความลาดเอียงที่เหมาะสมสำหรับการระบายน้ำ"}
+        ]
+      },
+      {
+        "heading": "พื้นที่ใช้งาน",
+        "paragraphs": [
+          "สวนน้ำ • ลานสายน้ำ (Splash Pad) • สนามเด็กเล่นทางน้ำ • พื้นที่รอบสระว่ายน้ำ • รีสอร์ทและโรงแรม • โรงเรียน • พื้นที่สันทนาการ"
+        ]
+      },
+      {
+        "heading": "HKS Surfaces - พื้นยาง EPDM เพื่อความปลอดภัย สีสันสวยงาม ทนทาน และเหมาะสำหรับทุกพื้นที่กิจกรรมทางน้ำ",
+        "paragraphs": [
+          "พื้นยาง EPDM เพื่อความปลอดภัย สีสันสวยงาม ทนทาน และเหมาะสำหรับทุกพื้นที่กิจกรรมทางน้ำ"
+        ]
+      }
+    ],
+    "images": [
+      {
+        "file": "images/EPDM Wet Splash EN.jpg",
+        "primary": true
+      }
+    ],
+    "images_en": [
+      {
+        "file": "images/EPDM Wet Splash EN.jpg",
+        "primary": true
+      }
+    ],
+    "images_th": [
+      {
+        "file": "images/EPDM Wet Splash TH.jpg",
+        "primary": true
+      }
+    ]
+  },
+  {
     "slug": "rubber-safety-tiles",
     "cat": "safety",
     "th": "แผ่นยางนิรภัย",
     "en": "Rubber Safety Tiles",
-    "dth": "แผ่นยางสำเร็จรูปสำหรับพื้นที่ที่ต้องการความปลอดภัย ความทนทาน และความสะดวกในการติดตั้ง",
-    "den": "Prefabricated rubber tiles for applications requiring cushioning, durability and convenient installation.",
+    "dth": "แผ่นยางนิรภัยและบล็อกยางปูพื้นคุณภาพสูงสำหรับสนามเด็กเล่น สนามกีฬา พื้นที่สันทนาการ ทางเดิน และพื้นที่ใช้งานเฉพาะทาง ผลิตจากยาง SBR รีไซเคิล พร้อมตัวเลือกผิวหน้าสี EPDM",
+    "den": "High-performance rubber safety tiles and pavers for playgrounds, sports facilities, recreational areas, walkways and specialist applications. Manufactured from durable recycled SBR rubber with optional EPDM colour finishes.",
     "fth": [
-      "ติดตั้งสะดวก",
-      "ทนทาน",
-      "ช่วยลดแรงกระแทก",
-      "เหมาะกับพื้นที่ใช้งานสูง"
+      "ดูดซับแรงกระแทกและช่วยลดการบาดเจ็บ",
+      "พื้นผิวกันลื่นและเดินสบาย",
+      "ติดตั้งแบบโมดูลาร์และเปลี่ยนเฉพาะแผ่นได้ง่าย",
+      "เหมาะสำหรับทั้งภายในและภายนอกอาคาร"
     ],
     "fen": [
-      "Convenient installation",
-      "Durable",
-      "Impact cushioning",
-      "Suitable for high-use areas"
+      "Impact absorbing and helps reduce injury risk",
+      "Anti-slip and comfortable underfoot",
+      "Modular installation and easy replacement",
+      "Suitable for indoor and outdoor applications"
     ],
-    "images": []
+    "detail_sections_en": [
+      {
+        "heading": "Our Rubber Tile Solutions",
+        "sections": [
+          {"title": "Playground Safety Tiles", "text": "Shock-absorbing rubber tiles designed to help reduce the risk of injury from falls while providing a comfortable, slip-resistant playground surface. Best for: Playgrounds, schools, childcare centres and recreational areas."},
+          {"title": "Interlocking Rubber Tiles", "text": "Modular rubber tiles with interlocking edges for fast installation and easy replacement. Available in different thicknesses according to application requirements. Best for: Gyms, fitness areas, sports facilities, walkways and multi-purpose spaces."},
+          {"title": "Rubber Pavers", "text": "Heavy-duty rubber paving combining the appearance of conventional paving with the resilience and comfort of rubber. Best for: Walkways, patios, landscape areas, golf facilities, recreational areas and high-traffic spaces."},
+          {"title": "Ballistic Rubber Tiles & Blocks", "text": "High-density specialist rubber products designed to absorb projectile energy and help reduce ricochet within appropriately engineered ballistic systems. Best for: Shooting ranges and specialist training facilities."}
+        ]
+      },
+      {
+        "heading": "Why Choose HKS Rubber Safety Tiles?",
+        "list": [
+          "Excellent impact & shock absorption",
+          "Anti-slip and comfortable underfoot",
+          "Durable and weather resistant",
+          "Helps reduce noise and vibration",
+          "Modular installation & easy replacement",
+          "Indoor and outdoor applications",
+          "Multiple thicknesses and configurations",
+          "SBR and EPDM colour-finish options",
+          "Recycled rubber options available"
+        ]
+      },
+      {
+        "heading": "Colours & Finishes",
+        "paragraphs": [
+          "Choose from black recycled rubber, pigmented colour rubber or EPDM colour finishes to complement the functional and aesthetic requirements of your project.",
+          "HKS SURFACES - Safer Surfaces. Smarter Solutions."
+        ]
+      }
+    ],
+    "detail_sections_th": [
+      {
+        "heading": "ผลิตภัณฑ์แผ่นยางของเรา",
+        "sections": [
+          {"title": "แผ่นยางนิรภัยสำหรับสนามเด็กเล่น", "text": "แผ่นยางดูดซับแรงกระแทก ออกแบบมาเพื่อช่วยลดความเสี่ยงจากการบาดเจ็บเมื่อเกิดการหกล้ม พร้อมพื้นผิวกันลื่นและให้ความสบายในการใช้งาน เหมาะสำหรับ: สนามเด็กเล่น โรงเรียน ศูนย์เด็กเล็ก และพื้นที่สันทนาการ"},
+          {"title": "แผ่นยางแบบเชื่อมต่อกัน (Interlocking Rubber Tiles)", "text": "แผ่นยางแบบโมดูลาร์ที่มีขอบเชื่อมต่อกัน ช่วยให้ติดตั้งได้รวดเร็วและสามารถเปลี่ยนเฉพาะแผ่นได้ง่าย มีความหนาหลากหลายเพื่อให้เหมาะกับการใช้งานแต่ละประเภท เหมาะสำหรับ: ฟิตเนส ยิม สนามกีฬา ทางเดิน และพื้นที่อเนกประสงค์"},
+          {"title": "บล็อกยางปูพื้น (Rubber Pavers)", "text": "บล็อกยางสำหรับงานหนักที่ผสมผสานรูปลักษณ์ของวัสดุปูพื้นทั่วไปเข้ากับคุณสมบัติความยืดหยุ่นและความสบายของยาง เหมาะสำหรับ: ทางเดิน ลานกลางแจ้ง พื้นที่ภูมิทัศน์ สนามกอล์ฟ พื้นที่สันทนาการ และพื้นที่ที่มีการใช้งานหนาแน่น"},
+          {"title": "แผ่นยางและบล็อกยางกันกระสุน", "text": "ผลิตภัณฑ์ยางความหนาแน่นสูงสำหรับงานเฉพาะทาง ออกแบบมาเพื่อช่วยดูดซับพลังงานจากกระสุนและลดการสะท้อนกลับของกระสุน เมื่อใช้งานเป็นส่วนหนึ่งของระบบป้องกันกระสุนที่ได้รับการออกแบบอย่างเหมาะสม เหมาะสำหรับ: สนามยิงปืนและศูนย์ฝึกเฉพาะทาง"}
+        ]
+      },
+      {
+        "heading": "ทำไมต้องเลือกแผ่นยางนิรภัย HKS?",
+        "list": [
+          "ดูดซับแรงกระแทกได้ดีเยี่ยม",
+          "พื้นผิวกันลื่นและเดินสบาย",
+          "ทนทานและทนต่อสภาพอากาศ",
+          "ช่วยลดเสียงและแรงสั่นสะเทือน",
+          "ติดตั้งแบบโมดูลาร์และเปลี่ยนเฉพาะแผ่นได้ง่าย",
+          "เหมาะสำหรับทั้งภายในและภายนอกอาคาร",
+          "มีความหนาและรูปแบบให้เลือกหลากหลาย",
+          "มีตัวเลือกสีและผิวหน้าจาก SBR และ EPDM",
+          "มีตัวเลือกผลิตจากยางรีไซเคิล"
+        ]
+      },
+      {
+        "heading": "สีและพื้นผิว",
+        "paragraphs": [
+          "เลือกได้ทั้งยางรีไซเคิลสีดำ ยางสีต่าง ๆ หรือผิวหน้าสี EPDM เพื่อให้เหมาะกับความต้องการด้านการใช้งานและดีไซน์ของแต่ละโครงการ",
+          "HKS SURFACES - พื้นผิวที่ปลอดภัยกว่า เพื่อพื้นที่ที่ดีกว่า"
+        ]
+      }
+    ],
+    "images": [
+      {
+        "file": "images/Rubber Safety Tiles EN.jpg",
+        "primary": true
+      }
+    ],
+    "images_en": [
+      {
+        "file": "images/Rubber Safety Tiles EN.jpg",
+        "primary": true
+      }
+    ],
+    "images_th": [
+      {
+        "file": "images/Rubber Safety Tiles TH.jpg",
+        "primary": true
+      }
+    ]
   },
   {
     "slug": "badminton-court-flooring",
     "cat": "sports",
     "th": "พื้นสนามแบดมินตัน",
-    "en": "Badminton Court Flooring",
-    "dth": "ระบบพื้นสนามแบดมินตันสำหรับโรงเรียน สปอร์ตคลับ ศูนย์กีฬา และสนามเชิงพาณิชย์",
-    "den": "Badminton court flooring systems for schools, sports clubs, sports centres and commercial venues.",
+    "en": "Badminton Court Flooring Solutions",
+    "dth": "ระบบพื้นสนามแบดมินตันแบบมืออาชีพสำหรับสนามทั้งในร่มและกลางแจ้ง โดยมีให้เลือกทั้งระบบโพลียูรีเทน (PU) และอะคริลิก เพื่อให้เหมาะกับสถานที่ รูปแบบการใช้งาน และงบประมาณของแต่ละโครงการ",
+    "den": "Professional badminton court flooring solutions for indoor and outdoor facilities. Choose from Polyurethane (PU) or Acrylic systems to suit your facility, playing requirements and budget.",
     "fth": [
-      "เหมาะกับการเคลื่อนไหวรวดเร็ว",
-      "แรงยึดเกาะเหมาะสม",
-      "รองรับ Indoor",
-      "ตีเส้นสนามได้"
+      "โพลียูรีเทน (PU) ช่วยดูดซับแรงกระแทกและเพิ่มความสบาย",
+      "อะคริลิกทนทานและทนต่อสภาพอากาศ",
+      "เหมาะสำหรับสนามในร่มและกลางแจ้ง",
+      "บริการเตรียมพื้น เคลือบสี และตีเส้นสนามครบวงจร"
     ],
     "fen": [
-      "Designed for quick movement",
-      "Appropriate traction",
-      "Indoor solutions",
-      "Court line marking available"
+      "Polyurethane (PU) for shock absorption and comfort",
+      "Acrylic for durability and weather resistance",
+      "Suitable for indoor and outdoor facilities",
+      "Complete preparation, coating and line-marking service"
     ],
-    "images": []
+    "detail_sections_en": [
+      {
+        "heading": "Polyurethane (PU)",
+        "paragraphs": [
+          "Comfort & Performance",
+          "A seamless, resilient sports flooring system providing excellent grip, shock absorption and player comfort. The cushioned surface supports the quick movements, lunges and directional changes required in badminton."
+        ],
+        "list": [
+          "Excellent shock absorption",
+          "Reliable grip & stability",
+          "Seamless & comfortable surface",
+          "Durable & easy to maintain"
+        ],
+        "list_title": "Best for: Indoor badminton courts, schools, clubs, academies and multi-sport halls."
+      },
+      {
+        "heading": "Acrylic",
+        "paragraphs": [
+          "Durable & Weather Resistant",
+          "A durable, textured court system applied over concrete or asphalt. Acrylic provides consistent grip, excellent weather resistance and low maintenance, making it an ideal solution for outdoor recreational badminton courts."
+        ],
+        "list": [
+          "UV & weather resistant",
+          "Durable textured grip",
+          "Low maintenance",
+          "Customizable colours"
+        ],
+        "list_title": "Best for: Outdoor badminton courts, schools, residential facilities, recreation centres and multi-sport courts."
+      },
+      {
+        "heading": "Complete Court Solution",
+        "paragraphs": [
+          "HKS Surfaces provides complete badminton court flooring solutions, including surface preparation, primer, PU or acrylic flooring systems, colour coating and precision court line marking."
+        ]
+      }
+    ],
+    "detail_sections_th": [
+      {
+        "heading": "โพลียูรีเทน (PU)",
+        "paragraphs": [
+          "ความสบายและประสิทธิภาพในการเล่น",
+          "ระบบพื้นกีฬาชนิดไร้รอยต่อ มีความยืดหยุ่น ให้การยึดเกาะและการดูดซับแรงกระแทกที่ดี ช่วยเพิ่มความสบายในการเล่น พื้นผิวแบบยืดหยุ่นรองรับการเคลื่อนไหวที่รวดเร็ว การก้าวพุ่ง และการเปลี่ยนทิศทางที่เกิดขึ้นบ่อยในการเล่นแบดมินตัน"
+        ],
+        "list": [
+          "ดูดซับแรงกระแทกได้ดี",
+          "ยึดเกาะดีและมั่นคง",
+          "พื้นผิวไร้รอยต่อและเล่นสบาย",
+          "ทนทานและดูแลรักษาง่าย"
+        ],
+        "list_title": "เหมาะสำหรับ: สนามแบดมินตันในร่ม โรงเรียน สโมสร สถาบันฝึกกีฬา และสนามกีฬาอเนกประสงค์"
+      },
+      {
+        "heading": "อะคริลิก (Acrylic)",
+        "paragraphs": [
+          "ทนทานและทนต่อสภาพอากาศ",
+          "ระบบพื้นสนามแบบมีผิวสัมผัส สามารถติดตั้งบนพื้นคอนกรีตหรือแอสฟัลต์ ให้การยึดเกาะที่สม่ำเสมอ ทนต่อสภาพอากาศ และดูแลรักษาง่าย จึงเหมาะอย่างยิ่งสำหรับสนามแบดมินตันกลางแจ้งเพื่อการสันทนาการ"
+        ],
+        "list": [
+          "ทนต่อรังสียูวีและสภาพอากาศ",
+          "พื้นผิวทนทานและยึดเกาะดี",
+          "ดูแลรักษาง่าย",
+          "สามารถเลือกสีได้หลากหลาย"
+        ],
+        "list_title": "เหมาะสำหรับ: สนามแบดมินตันกลางแจ้ง โรงเรียน โครงการที่อยู่อาศัย ศูนย์นันทนาการ และสนามกีฬาอเนกประสงค์"
+      },
+      {
+        "heading": "โซลูชันสนามแบบครบวงจร",
+        "paragraphs": [
+          "HKS Surfaces ให้บริการระบบพื้นสนามแบดมินตันแบบครบวงจร ตั้งแต่การเตรียมพื้นผิว การลงไพรเมอร์ การติดตั้งระบบพื้น PU หรืออะคริลิก การเคลือบสี ไปจนถึงการตีเส้นสนามอย่างแม่นยำ"
+        ]
+      }
+    ],
+    "images": [
+      {
+        "file": "images/Badminton Court EN.jpg",
+        "primary": true
+      }
+    ],
+    "images_en": [
+      {
+        "file": "images/Badminton Court EN.jpg",
+        "primary": true
+      }
+    ],
+    "images_th": [
+      {
+        "file": "images/Badminton Court TH.jpg",
+        "primary": true
+      }
+    ]
   },
   {
     "slug": "tennis-court-flooring",
     "cat": "sports",
     "th": "พื้นสนามเทนนิส",
-    "en": "Tennis Court Flooring",
-    "dth": "ระบบพื้นสนามเทนนิสสำหรับ Indoor และ Outdoor พร้อมการเตรียมพื้นและตีเส้นสนาม",
-    "den": "Indoor and outdoor tennis court systems with substrate preparation and line marking options.",
+    "en": "Tennis Court Flooring Solutions",
+    "dth": "ระบบพื้นสนามเทนนิสระดับมืออาชีพสำหรับทั้งสนามในร่มและกลางแจ้ง ให้การยึดเกาะที่ดี การเด้งของลูกสม่ำเสมอ และประสิทธิภาพที่ยาวนาน",
+    "den": "Professional tennis court flooring for indoor and outdoor facilities, delivering reliable grip, consistent ball bounce and long-lasting performance.",
     "fth": [
-      "Indoor และ Outdoor",
-      "ทนต่อการใช้งาน",
-      "พื้นผิวสำหรับกีฬา",
-      "ระบบตีเส้นสนาม"
+      "อะคริลิกทนทานและทนต่อสภาพอากาศ",
+      "ระบบอะคริลิกแบบมีชั้นรองรับแรงกระแทก",
+      "การเด้งของลูกสม่ำเสมอและยึดเกาะดี",
+      "เหมาะสำหรับสนามใหม่และการปรับปรุงพื้นสนาม"
     ],
     "fen": [
-      "Indoor and outdoor",
-      "Durable surface",
-      "Sport-specific finish",
-      "Court line marking"
+      "Durable and weather-resistant acrylic",
+      "Cushioned acrylic system for added comfort",
+      "Consistent ball bounce and reliable grip",
+      "Suitable for new courts and resurfacing"
     ],
-    "images": []
+    "detail_sections_en": [
+      {
+        "heading": "Our Solutions",
+        "sections": [
+          {"title": "Acrylic Sports Flooring", "text": "A durable, textured system offering consistent ball response, excellent grip and strong weather resistance. Benefits: consistent ball bounce, UV and weather resistance, durable and low maintenance, multiple court colours, and suitable for new courts and resurfacing. Best for: Clubs, schools, hotels, resorts, residential courts and commercial facilities."},
+          {"title": "Cushioned Acrylic System", "text": "A multi-layer system with resilient cushion layers for improved comfort and impact reduction. Benefits: enhanced shock absorption, greater player comfort, consistent ball response, slip-resistant finish, UV and weather resistance, and custom colours. Best for: Premium clubs, academies, hotels, resorts and comfort-focused facilities."}
+        ]
+      },
+      {
+        "heading": "Typical Court System",
+        "list": [
+          "Prepared concrete or asphalt base",
+          "Primer or base coat",
+          "Acrylic resurfacer",
+          "Optional cushion layers",
+          "Textured acrylic colour coats",
+          "Precision court line marking"
+        ]
+      },
+      {
+        "heading": "Applications",
+        "paragraphs": [
+          "Tennis Clubs • Academies • Schools • Hotels • Resorts • Residential Courts • Community Facilities • Sports Complexes"
+        ]
+      },
+      {
+        "heading": "HKS Surfaces - Professional Tennis Court Flooring Solutions",
+        "paragraphs": [
+          "HKS Surfaces delivers complete tennis court systems, from surface preparation through colour coating and line marking, tailored to your facility's needs."
+        ]
+      }
+    ],
+    "detail_sections_th": [
+      {
+        "heading": "โซลูชั่นของเรา",
+        "sections": [
+          {"title": "พื้นอะคริลิกสำหรับสนามกีฬา", "text": "ระบบพื้นผิวอะคริลิกแบบมีเท็กซ์เจอร์ ให้การตอบสนองของลูกสม่ำเสมอ ยึดเกาะดีเยี่ยม และทนต่อสภาพอากาศ จุดเด่น: การเด้งของลูกสม่ำเสมอ ทนต่อรังสียูวีและสภาพอากาศ ทนทานและดูแลรักษาง่าย มีสีสนามให้เลือกหลากหลาย และเหมาะสำหรับสนามใหม่กับการปรับปรุงพื้นสนาม เหมาะสำหรับ: สโมสร โรงเรียน โรงแรม รีสอร์ท สนามเทนนิสในที่พักอาศัย และสถานที่เชิงพาณิชย์"},
+          {"title": "ระบบอะคริลิกแบบมีชั้นรองรับแรงกระแทก", "text": "ระบบพื้นหลายชั้นพร้อมชั้นรองรับแรงกระแทก ช่วยเพิ่มความสบายในการเล่นและลดแรงกระแทกต่อผู้เล่น จุดเด่น: รองรับแรงกระแทกได้ดีขึ้น เพิ่มความสบายในการเล่น การตอบสนองของลูกสม่ำเสมอ พื้นผิวช่วยป้องกันการลื่น ทนต่อรังสียูวีและสภาพอากาศ และเลือกสีได้ตามต้องการ เหมาะสำหรับ: สโมสรระดับพรีเมียม อะคาเดมี โรงแรม รีสอร์ท และสถานที่ที่ให้ความสำคัญกับความสบายของผู้เล่น"}
+        ]
+      },
+      {
+        "heading": "โครงสร้างพื้นสนามทั่วไป",
+        "list": [
+          "พื้นคอนกรีตหรือแอสฟัลต์ที่เตรียมไว้",
+          "ชั้นไพรเมอร์หรือเบสโค้ท",
+          "ชั้นปรับผิวอะคริลิก (Acrylic Resurfacer)",
+          "ชั้นรองรับแรงกระแทก (เลือกได้)",
+          "ชั้นสีอะคริลิกแบบมีเท็กซ์เจอร์",
+          "การตีเส้นสนามอย่างแม่นยำ"
+        ]
+      },
+      {
+        "heading": "การใช้งาน",
+        "paragraphs": [
+          "สโมสรเทนนิส • อะคาเดมี • โรงเรียน • โรงแรม • รีสอร์ท • สนามเทนนิสในที่พักอาศัย • ศูนย์ชุมชน • ศูนย์กีฬา"
+        ]
+      },
+      {
+        "heading": "HKS Surfaces - โซลูชั่นพื้นสนามเทนนิสระดับมืออาชีพ",
+        "paragraphs": [
+          "HKS Surfaces ให้บริการระบบพื้นสนามเทนนิสแบบครบวงจร ตั้งแต่การเตรียมพื้นผิว การเคลือบสี ไปจนถึงการตีเส้นสนาม โดยออกแบบระบบให้เหมาะสมกับความต้องการของแต่ละโครงการ"
+        ]
+      }
+    ],
+    "images": [
+      {
+        "file": "images/Tennis Court Flooring EN.jpg",
+        "primary": true
+      }
+    ],
+    "images_en": [
+      {
+        "file": "images/Tennis Court Flooring EN.jpg",
+        "primary": true
+      }
+    ],
+    "images_th": [
+      {
+        "file": "images/Tennis Court Flooring TH.jpg",
+        "primary": true
+      }
+    ]
   },
   {
     "slug": "basketball-court-flooring",
@@ -471,22 +844,103 @@
     "slug": "pickleball-court-flooring",
     "cat": "sports",
     "th": "พื้นสนามพิคเคิลบอล",
-    "en": "Pickleball Court Flooring",
-    "dth": "ระบบพื้นสนามพิคเคิลบอลสำหรับสนามใหม่และการปรับปรุงสนามเดิม ทั้ง Indoor และ Outdoor",
-    "den": "Pickleball court systems for new builds and renovations, for both indoor and outdoor projects.",
+    "en": "Pickleball Court Flooring Solution",
+    "dth": "ระบบพื้นสนามพิคเคิลบอลแบบครบวงจรสำหรับสนามในร่มและกลางแจ้ง ออกแบบเพื่อให้ลูกบอลกระดอนได้สม่ำเสมอ พื้นผิวยึดเกาะดี เพิ่มความสบายในการเล่น และมีความทนทานสูง",
+    "den": "Complete pickleball court flooring systems for indoor and outdoor applications, designed to provide consistent ball bounce, reliable grip, player comfort and long-lasting performance.",
     "fth": [
       "สนามใหม่และรีโนเวต",
       "Indoor และ Outdoor",
       "ตีเส้นสนาม",
-      "เลือกสีได้"
+      "เลือกสีสนามได้ตามต้องการ",
+      "รองรับการติดตั้งแบบครบวงจร"
     ],
     "fen": [
       "New build and renovation",
       "Indoor and outdoor",
       "Court line marking",
-      "Colour options"
+      "Customizable court colours",
+      "Complete turnkey installation"
     ],
-    "images": []
+    "detail_sections_en": [
+      {
+        "heading": "Typical Court System",
+        "list": [
+          "Prepared Concrete or Asphalt Base - stable and level foundation",
+          "Primer / Base Coat - improves adhesion and surface preparation",
+          "Acrylic Resurfacer - helps create a smooth, uniform playing surface",
+          "Cushion Layer - Optional - provides additional comfort and impact reduction",
+          "Textured Acrylic Colour Coats - durable, slip-resistant playing finish",
+          "Precision Court Line Marking - clearly defined pickleball playing lines"
+        ]
+      },
+      {
+        "heading": "Key Benefits",
+        "paragraphs": [
+          "Excellent ball response, non-slip textured finish, UV and weather resistance, low maintenance, customizable court colours, and suitable for both new courts and resurfacing projects."
+        ]
+      },
+      {
+        "heading": "Applications",
+        "paragraphs": [
+          "Residential courts, schools and universities, sports clubs, hotels and resorts, community facilities, commercial pickleball centres and multi-sport courts."
+        ]
+      },
+      {
+        "heading": "HKS Surfaces - Complete Pickleball Court Solutions",
+        "paragraphs": [
+          "From sub-base preparation and flooring installation to line marking, nets and court accessories, we can provide a complete turnkey pickleball court solution."
+        ]
+      }
+    ],
+    "detail_sections_th": [
+      {
+        "heading": "ระบบพื้นสนามมาตรฐาน",
+        "list": [
+          "พื้นคอนกรีตหรือแอสฟัลต์ที่เตรียมผิวแล้ว - เป็นพื้นฐานที่แข็งแรง เรียบ และได้ระดับ",
+          "ไพรเมอร์ / ชั้นรองพื้น - ช่วยเพิ่มการยึดเกาะและเตรียมพื้นผิว",
+          "Acrylic Resurfacer - ช่วยปรับพื้นผิวให้เรียบและสม่ำเสมอ",
+          "ชั้น Cushion - ทางเลือกเพิ่มเติม - เพิ่มความสบายและช่วยลดแรงกระแทกขณะเล่น",
+          "ชั้นสีอะคริลิกผิวสัมผัส - มีความทนทาน ยึดเกาะดี และช่วยลดการลื่น",
+          "การตีเส้นสนามอย่างแม่นยำ - เส้นสนามพิคเคิลบอลคมชัดและได้มาตรฐาน"
+        ]
+      },
+      {
+        "heading": "จุดเด่นของระบบ",
+        "paragraphs": [
+          "การตอบสนองและการกระดอนของลูกบอลที่ดี พื้นผิวช่วยลดการลื่น ทนต่อรังสี UV และสภาพอากาศ ดูแลรักษาง่าย สามารถเลือกสีสนามได้ตามต้องการ และเหมาะสำหรับทั้งสนามใหม่และงานปรับปรุงพื้นสนามเดิม"
+        ]
+      },
+      {
+        "heading": "เหมาะสำหรับ",
+        "paragraphs": [
+          "สนามในที่พักอาศัย โรงเรียนและมหาวิทยาลัย สปอร์ตคลับ โรงแรมและรีสอร์ต พื้นที่กีฬาชุมชน ศูนย์พิคเคิลบอลเชิงพาณิชย์ และสนามกีฬาอเนกประสงค์"
+        ]
+      },
+      {
+        "heading": "HKS Surfaces - โซลูชันสนามพิคเคิลบอลแบบครบวงจร",
+        "paragraphs": [
+          "ตั้งแต่การเตรียมพื้นฐาน การติดตั้งระบบพื้น การตีเส้นสนาม ไปจนถึงการติดตั้งเน็ตและอุปกรณ์สนาม เราสามารถให้บริการโซลูชันสนามพิคเคิลบอลแบบครบวงจร พร้อมรองรับทุกขั้นตอนของโครงการ"
+        ]
+      }
+    ],
+    "images": [
+      {
+        "file": "images/Pickle Ball Flooring EN.jpg",
+        "primary": true
+      }
+    ],
+    "images_en": [
+      {
+        "file": "images/Pickle Ball Flooring EN.jpg",
+        "primary": true
+      }
+    ],
+    "images_th": [
+      {
+        "file": "images/Pickle Ball Flooring TH.jpg",
+        "primary": true
+      }
+    ]
   },
   {
     "slug": "padel-court-flooring",
@@ -628,22 +1082,93 @@
     "slug": "multi-sport-court-flooring",
     "cat": "sports",
     "th": "พื้นสนามกีฬาอเนกประสงค์",
-    "en": "Multi-Sport Court Flooring",
-    "dth": "ระบบพื้นสนามที่รองรับกีฬาหลายประเภท เช่น บาสเกตบอล แบดมินตัน เทนนิส และพิคเคิลบอลในพื้นที่เดียว",
-    "den": "Multi-sport court systems for basketball, badminton, tennis, pickleball and other activities in one space.",
+    "en": "Multi-Sport Court Flooring Solutions",
+    "dth": "ระบบพื้นสนามกีฬาอเนกประสงค์ระดับมืออาชีพสำหรับพื้นที่ที่ต้องการใช้สนามเดียวรองรับกีฬาหลายประเภท พื้นของเราให้การยึดเกาะที่ดี การตอบสนองและการกระดอนของลูกบอลที่สม่ำเสมอ พร้อมความทนทานสำหรับการใช้งานทั้งภายในและภายนอกอาคาร",
+    "den": "Professional multi-sport court flooring systems designed for facilities where one court is used for several sports. Our systems provide reliable grip, consistent ball response and long-lasting performance for both indoor and outdoor applications.",
     "fth": [
-      "รองรับหลายกีฬา",
-      "แบ่งโซนและตีเส้นได้",
-      "เหมาะกับโรงเรียนและชุมชน",
-      "ใช้งานพื้นที่คุ้มค่า"
+      "อะคริลิกสำหรับสนามที่ทนทานและใช้งานหนัก",
+      "โพลียูรีเทน (PU) ช่วยดูดซับแรงกระแทกและเพิ่มความสบาย",
+      "แบ่งโซนสีและตีเส้นสนามได้อย่างแม่นยำ",
+      "รองรับกีฬาหลากหลายและใช้พื้นที่ได้อย่างคุ้มค่า"
     ],
     "fen": [
-      "Supports multiple sports",
-      "Flexible zoning and markings",
-      "Ideal for schools and communities",
-      "Efficient use of space"
+      "Acrylic for durable high-use courts",
+      "Polyurethane (PU) for shock absorption and comfort",
+      "Colour-coded zones and precision line markings",
+      "Supports multiple sports and maximises available space"
     ],
-    "images": []
+    "detail_sections_en": [
+      {
+        "heading": "Flooring Options",
+        "sections": [
+          {"title": "Acrylic Sports Flooring - Durable & Weather Resistant", "text": "A textured sports surface ideal for outdoor and high-use multi-purpose courts. Excellent grip and ball response, UV and weather resistance, low maintenance, and custom court colours and line markings. Best for: Basketball, tennis, pickleball, volleyball and recreational courts."},
+          {"title": "Polyurethane (PU) Sports Flooring - Comfort & Performance", "text": "A seamless resilient system providing greater shock absorption and player comfort. Excellent shock absorption, comfortable underfoot, seamless finish, and easy to clean and maintain. Best for: Indoor basketball, badminton, volleyball and multi-purpose sports halls."}
+        ]
+      },
+      {
+        "heading": "One Court - Multiple Sports",
+        "paragraphs": [
+          "Different sports can be incorporated into a single surface using colour-coded playing zones and precision line markings, allowing facilities to maximise available space."
+        ]
+      },
+      {
+        "heading": "Applications",
+        "paragraphs": [
+          "Schools • Universities • Sports Clubs • Community Centres • Hotels & Resorts • Residential Developments • Multi-Sport Facilities"
+        ]
+      },
+      {
+        "heading": "HKS Surfaces - Professional Sports Flooring Solutions",
+        "paragraphs": [
+          "HKS Surfaces provides practical multi-sport flooring systems tailored to the facility, sports mix, usage level and project requirements."
+        ]
+      }
+    ],
+    "detail_sections_th": [
+      {
+        "heading": "ตัวเลือกพื้นสนามกีฬา",
+        "sections": [
+          {"title": "พื้นกีฬาอะคริลิก (Acrylic Sports Flooring) - ทนทาน • ทนต่อสภาพอากาศ", "text": "พื้นผิวกีฬาที่มีเท็กซ์เจอร์ เหมาะสำหรับสนามกลางแจ้งและสนามอเนกประสงค์ที่มีการใช้งานสูง ยึดเกาะดี ให้การตอบสนองของลูกบอลที่สม่ำเสมอ ทนต่อรังสี UV และสภาพอากาศ ดูแลรักษาง่าย และเลือกสีพื้นกับเส้นสนามได้ตามต้องการ เหมาะสำหรับ: บาสเกตบอล เทนนิส พิคเคิลบอล วอลเลย์บอล และสนามกีฬาเพื่อสันทนาการ"},
+          {"title": "พื้นกีฬาโพลียูรีเทน (PU Sports Flooring) - สบาย • ประสิทธิภาพสูง", "text": "ระบบพื้นไร้รอยต่อที่มีความยืดหยุ่น ช่วยรองรับแรงกระแทกและเพิ่มความสบายในการเล่นกีฬา รองรับแรงกระแทกได้ดีเยี่ยม สบายเท้า พื้นผิวไร้รอยต่อ และทำความสะอาดกับดูแลรักษาง่าย เหมาะสำหรับ: สนามบาสเกตบอลในร่ม แบดมินตัน วอลเลย์บอล และอาคารกีฬาอเนกประสงค์"}
+        ]
+      },
+      {
+        "heading": "หนึ่งสนาม - เล่นได้หลายกีฬา",
+        "paragraphs": [
+          "สามารถออกแบบสนามเดียวให้รองรับกีฬาหลายประเภทได้ด้วยการแบ่งโซนสีและตีเส้นสนามที่แม่นยำ ช่วยให้สามารถใช้พื้นที่ได้อย่างคุ้มค่าและรองรับกิจกรรมกีฬาที่หลากหลาย"
+        ]
+      },
+      {
+        "heading": "เหมาะสำหรับ",
+        "paragraphs": [
+          "โรงเรียน • มหาวิทยาลัย • สโมสรกีฬา • ศูนย์ชุมชน • โรงแรมและรีสอร์ต • โครงการที่อยู่อาศัย • ศูนย์กีฬาอเนกประสงค์"
+        ]
+      },
+      {
+        "heading": "HKS Surfaces - โซลูชันพื้นสนามกีฬาระดับมืออาชีพ",
+        "paragraphs": [
+          "HKS Surfaces ให้บริการระบบพื้นสนามกีฬาอเนกประสงค์ที่เหมาะสมกับสถานที่ ประเภทกีฬา ปริมาณการใช้งาน และความต้องการของแต่ละโครงการ"
+        ]
+      }
+    ],
+    "images": [
+      {
+        "file": "images/Multi Sport Flooring EN.jpg",
+        "primary": true
+      }
+    ],
+    "images_en": [
+      {
+        "file": "images/Multi Sport Flooring EN.jpg",
+        "primary": true
+      }
+    ],
+    "images_th": [
+      {
+        "file": "images/Multi Sport Flooring TH.jpg",
+        "primary": true
+      }
+    ]
   },
   {
     "slug": "running-track-flooring",
@@ -688,22 +1213,323 @@
     "slug": "gym-flooring",
     "cat": "sports",
     "th": "พื้นฟิตเนสและยิม",
-    "en": "Gym Flooring",
-    "dth": "พื้นยางสำหรับฟิตเนสและยิม ช่วยรองรับแรงกระแทกจากอุปกรณ์และเพิ่มความสบายในการใช้งาน",
-    "den": "Rubber flooring for gyms and fitness centres, helping absorb equipment impact and improve comfort.",
+    "en": "Gym Flooring Solutions",
+    "dth": "ระบบพื้นยิมและฟิตเนสระดับมืออาชีพ ออกแบบมาเพื่อช่วยปกป้องพื้นเดิม รองรับแรงกระแทก ลดเสียง เพิ่มการยึดเกาะ และมอบความสบายสำหรับพื้นที่ออกกำลังกาย",
+    "den": "Professional gym and fitness flooring solutions designed to protect subfloors, reduce impact and noise, improve grip and provide a comfortable surface for training areas.",
     "fth": [
-      "รองรับแรงกระแทก",
-      "ลดเสียงรบกวน",
-      "ทนต่ออุปกรณ์หนัก",
-      "ดูแลรักษาง่าย"
+      "รองรับแรงกระแทกและช่วยลดเสียง",
+      "พื้นผิวกันลื่นและสบายต่อการใช้งาน",
+      "ทนทานและเหมาะกับอุปกรณ์น้ำหนักมาก",
+      "เลือกสีและดีไซน์ได้ตามต้องการ"
     ],
     "fen": [
-      "Impact absorption",
-      "Noise reduction",
-      "Suitable for heavy equipment",
-      "Easy maintenance"
+      "Shock and sound absorption",
+      "Slip-resistant and comfortable surface",
+      "Durable and suitable for heavy equipment",
+      "Custom colours and designs"
     ],
-    "images": []
+    "detail_sections_en": [
+      {
+        "heading": "Our Gym Flooring Solutions",
+        "sections": [
+          {"title": "Rubber Flooring Rolls - Seamless & Versatile", "text": "Durable rubber rolls create a smooth, professional surface with fewer joints and excellent resistance to daily wear. Benefits: shock and sound absorption, slip-resistant surface, durable and easy to maintain, clean professional appearance. Best for: Commercial gyms, fitness centres, cardio zones and functional training areas."},
+          {"title": "Rubber Gym Tiles - Heavy-Duty Protection", "text": "High-density rubber tiles provide excellent impact protection and can be easily installed or replaced individually. Benefits: excellent impact absorption, protects concrete subfloors, modular and easy to replace, suitable for heavy equipment. Best for: Free-weight zones, strength training areas, home gyms and fitness facilities."},
+          {"title": "EPDM Rubber Flooring - Colourful & Customizable", "text": "Seamless EPDM rubber flooring combines performance with greater design flexibility, allowing colours, patterns and zones to be incorporated into the floor. Benefits: comfortable and resilient, custom colour options, slip-resistant, seamless finish. Best for: Fitness studios, functional training areas, premium gyms and multi-purpose exercise spaces."
+          }
+        ]
+      },
+      {
+        "heading": "Why Choose HKS Surfaces?",
+        "paragraphs": [
+          "Impact Protection - Noise Reduction - Excellent Grip - High Durability - Easy Maintenance - Custom Colours & Designs",
+          "From commercial fitness centres and hotel gyms to schools and home gyms, HKS Surfaces can provide a flooring system suited to your training environment, performance requirements and budget."
+        ]
+      }
+    ],
+    "detail_sections_th": [
+      {
+        "heading": "โซลูชันพื้นยิมของเรา",
+        "sections": [
+          {"title": "พื้นยางแบบม้วน (Rubber Flooring Rolls) - รอยต่อน้อย • ใช้งานได้หลากหลาย", "text": "พื้นยางแบบม้วนมีความทนทาน ให้พื้นผิวเรียบสวย ดูเป็นมืออาชีพ มีรอยต่อน้อย และทนต่อการใช้งานประจำวันได้ดีเยี่ยม จุดเด่น: รองรับแรงกระแทกและช่วยลดเสียง พื้นผิวกันลื่น ทนทานและดูแลรักษาง่าย พื้นผิวเรียบสวยดูเป็นมืออาชีพ เหมาะสำหรับ: ยิมเชิงพาณิชย์ ฟิตเนสเซ็นเตอร์ โซนคาร์ดิโอ และพื้นที่ Functional Training"},
+          {"title": "แผ่นยางปูพื้นยิม (Rubber Gym Tiles) - ปกป้องพื้นสำหรับการใช้งานหนัก", "text": "แผ่นยางความหนาแน่นสูงช่วยรองรับแรงกระแทกได้ดีเยี่ยม ปกป้องพื้นด้านล่าง และสามารถติดตั้งหรือเปลี่ยนเฉพาะแผ่นได้อย่างสะดวก จุดเด่น: รองรับแรงกระแทกได้ดีเยี่ยม ช่วยปกป้องพื้นคอนกรีต ติดตั้งแบบโมดูลาร์และเปลี่ยนเฉพาะแผ่นได้ง่าย เหมาะสำหรับพื้นที่ที่มีอุปกรณ์ออกกำลังกายน้ำหนักมาก เหมาะสำหรับ: โซน Free Weight พื้นที่ฝึกความแข็งแรง ยิมภายในบ้าน และศูนย์ฟิตเนส"},
+          {"title": "พื้นยาง EPDM - สีสันสวยงาม • ปรับแต่งดีไซน์ได้", "text": "พื้นยาง EPDM แบบไร้รอยต่อผสานประสิทธิภาพการใช้งานเข้ากับความยืดหยุ่นด้านการออกแบบ สามารถเลือกใช้สี ลวดลาย และแบ่งโซนต่าง ๆ บนพื้นได้ตามความต้องการ จุดเด่น: นุ่มสบายและยืดหยุ่น เลือกสีได้หลากหลาย พื้นผิวกันลื่น พื้นผิวแบบไร้รอยต่อ เหมาะสำหรับ: ฟิตเนสสตูดิโอ พื้นที่ Functional Training ยิมระดับพรีเมียม และพื้นที่ออกกำลังกายอเนกประสงค์"}
+        ]
+      },
+      {
+        "heading": "ทำไมต้องเลือก HKS Surfaces?",
+        "paragraphs": [
+          "รองรับแรงกระแทก • ลดเสียงรบกวน • ยึดเกาะดีเยี่ยม • ทนทานสูง • ดูแลรักษาง่าย • เลือกสีและดีไซน์ได้",
+          "ตั้งแต่ฟิตเนสเชิงพาณิชย์ ยิมในโรงแรม โรงเรียน ไปจนถึงยิมภายในบ้าน HKS Surfaces สามารถนำเสนอระบบพื้นที่เหมาะสมกับสภาพแวดล้อมการใช้งาน ความต้องการด้านประสิทธิภาพ และงบประมาณของแต่ละโครงการ"
+        ]
+      }
+    ],
+    "images": [
+      {
+        "file": "images/Gym flooring EN.jpg",
+        "primary": true
+      }
+    ],
+    "images_en": [
+      {
+        "file": "images/Gym flooring EN.jpg",
+        "primary": true
+      }
+    ],
+    "images_th": [
+      {
+        "file": "images/GYM flooring TH.jpg",
+        "primary": true
+      }
+    ]
+  },
+  {
+    "slug": "epoxy-flooring",
+    "cat": "materials",
+    "th": "พื้นอีพ็อกซี่",
+    "en": "Epoxy Flooring",
+    "dth": "ระบบพื้นอีพ็อกซี่แบบไร้รอยต่อ แข็งแรง สวยงาม ทนทาน และมีอายุการใช้งานยาวนาน สำหรับอาคารอุตสาหกรรม พาณิชยกรรม และที่อยู่อาศัย",
+    "den": "Seamless epoxy flooring systems made by applying epoxy resin and hardener over properly prepared concrete. Epoxy provides excellent strength, chemical resistance and an attractive finish for industrial, commercial and residential buildings.",
+    "fth": [
+      "แข็งแรงและทนทานสูง",
+      "ทนต่อสารเคมีและน้ำมัน",
+      "พื้นผิวไร้รอยต่อและทำความสะอาดง่าย",
+      "มีสีและพื้นผิวให้เลือกหลากหลาย"
+    ],
+    "fen": [
+      "High mechanical strength",
+      "Excellent chemical and oil resistance",
+      "Seamless, hygienic and easy to clean",
+      "Multiple colour and finish options"
+    ],
+    "detail_sections_en": [
+      {
+        "heading": "What Is Epoxy Flooring?",
+        "paragraphs": [
+          "An epoxy flooring system is a seamless, durable floor coating made by applying epoxy resin and hardener over a properly prepared concrete surface. It is widely used in industrial, commercial and residential buildings because it provides excellent strength, chemical resistance and an attractive finish."
+        ]
+      },
+      {
+        "heading": "Typical Epoxy Flooring System",
+        "sections": [
+          {"title": "1. Surface Preparation", "text": "Grinding or shot blasting of concrete, crack and joint repairs, cleaning and dust removal."},
+          {"title": "2. Primer Coat", "text": "Improves adhesion to the concrete substrate."},
+          {"title": "3. Epoxy Body Coat", "text": "Self-leveling or roller-applied epoxy. Thickness typically ranges from 0.5 mm to 5 mm, depending on the application."},
+          {"title": "4. Topcoat", "text": "Epoxy or polyurethane (PU) topcoat for enhanced abrasion, UV and chemical resistance."}
+        ]
+      },
+      {
+        "heading": "Types of Epoxy Flooring",
+        "list": [
+          "Thin epoxy coating (0.3-0.5 mm): Light-duty areas",
+          "Self-leveling epoxy (1-3 mm): Warehouses, factories and hospitals",
+          "Epoxy screed (4-6 mm): Heavy industrial use",
+          "Anti-static (ESD) epoxy: Electronics and laboratories",
+          "Decorative epoxy: Metallic, flake or quartz finishes for offices and showrooms"
+        ]
+      },
+      {
+        "heading": "Advantages",
+        "list": [
+          "High mechanical strength",
+          "Excellent chemical and oil resistance",
+          "Seamless and hygienic",
+          "Dust-free surface",
+          "Easy to clean and maintain",
+          "Attractive appearance with multiple colour options",
+          "Long service life, typically 10-20 years with proper maintenance"
+        ]
+      },
+      {
+        "heading": "Common Applications",
+        "paragraphs": [
+          "Manufacturing plants • Warehouses • Pharmaceutical facilities • Food processing plants • Hospitals • Laboratories • Parking garages • Retail showrooms • Residential garages"
+        ]
+      },
+      {
+        "heading": "Typical System Specification",
+        "specifications": [
+          ["Layer", "Material", "Thickness"],
+          ["Primer", "Epoxy primer", "100-150 microns"],
+          ["Body coat", "Self-leveling epoxy", "1-3 mm"],
+          ["Topcoat", "Epoxy/PU topcoat", "100-200 microns"]
+        ],
+        "paragraphs": [
+          "For a specific warehouse, pharmaceutical plant, food factory, parking area or residential garage, HKS Surfaces can recommend the appropriate system thickness and specification."
+        ]
+      }
+    ],
+    "detail_sections_th": [
+      {
+        "heading": "พื้นอีพ็อกซี่คืออะไร?",
+        "paragraphs": [
+          "ระบบพื้นอีพ็อกซี่เป็นพื้นเคลือบแบบไร้รอยต่อและมีความทนทานสูง โดยใช้เรซินอีพ็อกซี่ผสมสารทำให้แข็ง (Hardener) เคลือบบนพื้นคอนกรีตที่ผ่านการเตรียมพื้นอย่างเหมาะสม พื้นอีพ็อกซี่มีความแข็งแรง ทนต่อสารเคมีและน้ำมัน ทำความสะอาดง่าย และมีพื้นผิวสวยงาม เหมาะสำหรับพื้นที่อุตสาหกรรม พาณิชยกรรม และที่อยู่อาศัย"
+        ]
+      },
+      {
+        "heading": "โครงสร้างระบบพื้น",
+        "sections": [
+          {"title": "1. ชั้นท็อปโค้ต (Topcoat)", "text": "อีพ็อกซี่ / โพลียูรีเทน (PU) ความหนา 100-200 ไมครอน"},
+          {"title": "2. ชั้นอีพ็อกซี่หลัก (Body Coat)", "text": "อีพ็อกซี่แบบปรับระดับได้เอง (Self-Leveling Epoxy) ความหนา 1-3 มม."},
+          {"title": "3. ชั้นไพรเมอร์ (Primer Coat)", "text": "อีพ็อกซี่ไพรเมอร์ ความหนา 100-150 ไมครอน"},
+          {"title": "4. พื้นคอนกรีตที่เตรียมแล้ว", "text": "ขัดพื้น ซ่อมแซม และทำความสะอาดอย่างเหมาะสม"}
+        ]
+      },
+      {
+        "heading": "จุดเด่น",
+        "list": [
+          "แข็งแรงและทนทานสูง",
+          "ทนต่อสารเคมีและน้ำมัน",
+          "พื้นผิวไร้รอยต่อและถูกสุขอนามัย",
+          "ไม่ก่อให้เกิดฝุ่น",
+          "ทำความสะอาดและบำรุงรักษาง่าย",
+          "มีสีให้เลือกหลากหลาย",
+          "อายุการใช้งานยาวนาน",
+          "พื้นผิวสวยงามและดูเป็นมืออาชีพ"
+        ]
+      },
+      {
+        "heading": "ขั้นตอนการติดตั้ง",
+        "sections": [
+          {"title": "1. เตรียมพื้นผิว", "text": "ขัดพื้นหรือ Shot Blasting ซ่อมรอยแตกร้าว ทำความสะอาดและกำจัดฝุ่น"},
+          {"title": "2. ทาไพรเมอร์", "text": "ช่วยเพิ่มการยึดเกาะระหว่างระบบอีพ็อกซี่กับพื้นคอนกรีต"},
+          {"title": "3. ทาชั้นอีพ็อกซี่หลัก", "text": "ติดตั้งอีพ็อกซี่แบบ Self-Leveling หรือแบบลูกกลิ้ง ตามระบบที่กำหนด"},
+          {"title": "4. ทาท็อปโค้ต", "text": "เคลือบด้วยอีพ็อกซี่หรือ PU เพื่อเพิ่มความทนทานต่อการสึกหรอและการใช้งาน"}
+        ]
+      },
+      {
+        "heading": "ประเภทของพื้นอีพ็อกซี่",
+        "sections": [
+          {"title": "อีพ็อกซี่เคลือบบาง - 0.3-0.5 มม.", "text": "เหมาะสำหรับพื้นที่ใช้งานเบา"},
+          {"title": "อีพ็อกซี่แบบ Self-Leveling - 1-3 มม.", "text": "เหมาะสำหรับโรงงาน คลังสินค้า โรงพยาบาล และพื้นที่เชิงพาณิชย์"},
+          {"title": "Epoxy Screed - 4-6 มม.", "text": "เหมาะสำหรับพื้นที่อุตสาหกรรมที่ต้องรองรับการใช้งานหนัก"},
+          {"title": "อีพ็อกซี่ป้องกันไฟฟ้าสถิต (ESD)", "text": "เหมาะสำหรับอุตสาหกรรมอิเล็กทรอนิกส์ ห้องปฏิบัติการ และพื้นที่ควบคุมไฟฟ้าสถิต"},
+          {"title": "อีพ็อกซี่ตกแต่ง", "text": "มีให้เลือกทั้งแบบ Metallic, Flake และ Quartz เหมาะสำหรับโชว์รูม สำนักงาน และพื้นที่ตกแต่ง"}
+        ]
+      },
+      {
+        "heading": "ข้อมูลจำเพาะระบบทั่วไป",
+        "specifications": [
+          ["ชั้น", "วัสดุ", "ความหนา"],
+          ["ไพรเมอร์", "Epoxy Primer", "100-150 ไมครอน"],
+          ["ชั้นหลัก", "Self-Leveling Epoxy", "1-3 มม."],
+          ["ท็อปโค้ต", "Epoxy / PU Topcoat", "100-200 ไมครอน"]
+        ]
+      },
+      {
+        "heading": "การใช้งาน",
+        "paragraphs": [
+          "โรงงานอุตสาหกรรม • คลังสินค้า • โรงงานยา • โรงงานผลิตอาหาร • โรงพยาบาล • ห้องปฏิบัติการ • อาคารจอดรถ • โชว์รูม • พื้นที่เชิงพาณิชย์ • โรงจอดรถภายในบ้าน"
+        ]
+      }
+    ],
+    "images": [
+      {
+        "file": "images/Epoxy Flooring EN.jpg",
+        "primary": true
+      }
+    ],
+    "images_en": [
+      {
+        "file": "images/Epoxy Flooring EN.jpg",
+        "primary": true
+      }
+    ],
+    "images_th": [
+      {
+        "file": "images/Epoxy Flooring TH.jpg",
+        "primary": true
+      }
+    ]
+  },
+  {
+    "slug": "artificial-turf",
+    "cat": "materials",
+    "th": "หญ้าเทียม",
+    "en": "Artificial Turf",
+    "dth": "ระบบหญ้าเทียมคุณภาพสูงสำหรับสนามกีฬา งานภูมิทัศน์ และพื้นที่สันทนาการ ให้รูปลักษณ์เป็นธรรมชาติ ทนทาน ระบายน้ำได้ดี และดูแลรักษาง่าย",
+    "den": "High-quality artificial turf solutions for sports, landscaping and recreational applications. Our systems offer a natural appearance, excellent durability, good drainage and easy maintenance.",
+    "fth": [
+      "ทนทานและใช้งานได้ยาวนาน",
+      "ดูแลรักษาง่าย",
+      "ทนต่อรังสี UV และสภาพอากาศ",
+      "สวยงามและสัมผัสเป็นธรรมชาติ",
+      "ระบายน้ำได้ดี",
+      "เหมาะสำหรับทั้งภายในและภายนอกอาคาร"
+    ],
+    "fen": [
+      "Durable and long-lasting",
+      "Low maintenance",
+      "UV and weather resistant",
+      "Natural look and feel",
+      "Good drainage",
+      "Indoor and outdoor use"
+    ],
+    "detail_sections_en": [
+      {
+        "heading": "Our Solutions",
+        "sections": [
+          {"title": "Football Turf", "text": "Performance turf designed for consistent ball response, grip and durability. Best for: Football fields, clubs, schools and training facilities."},
+          {"title": "Multi-Sport Turf", "text": "Versatile artificial turf suitable for multiple sports and high-use areas. Best for: Multi-sport facilities, schools and recreational areas."},
+          {"title": "Padel Grass", "text": "Short-pile synthetic grass providing reliable grip and consistent ball response. Best for: Padel clubs, hotels, resorts and residential courts."},
+          {"title": "Non-Infill Turf", "text": "Clean, comfortable turf designed for applications where loose infill is not required. Best for: Indoor areas, recreation and landscaping."},
+          {"title": "Garden & Landscape Turf", "text": "Natural-looking, weather-resistant grass requiring minimal maintenance. Best for: Gardens, hotels, rooftops and commercial landscapes."},
+          {"title": "Pet & Play Turf", "text": "Soft, durable and easy-to-clean turf with good drainage. Best for: Pet areas, playgrounds and recreational spaces."}
+        ]
+      },
+      {
+        "heading": "Key Benefits",
+        "list": [
+          "Durable & long-lasting",
+          "Low maintenance",
+          "UV & weather resistant",
+          "Natural look & feel",
+          "Good drainage",
+          "Indoor & outdoor use"
+        ]
+      }
+    ],
+    "detail_sections_th": [
+      {
+        "heading": "ผลิตภัณฑ์ของเรา",
+        "sections": [
+          {"title": "หญ้าเทียมสนามฟุตบอล", "text": "ออกแบบเพื่อการเล่นที่มีประสิทธิภาพ ให้การตอบสนองของลูกบอลและการยึดเกาะที่ดี พร้อมความทนทานสูง เหมาะสำหรับ: สนามฟุตบอล สโมสร โรงเรียน และสนามฝึกซ้อม"},
+          {"title": "หญ้าเทียมอเนกประสงค์", "text": "ใช้งานได้หลากหลาย เหมาะสำหรับพื้นที่กีฬาและพื้นที่ที่มีการใช้งานสูง เหมาะสำหรับ: สนามกีฬาอเนกประสงค์ โรงเรียน และพื้นที่สันทนาการ"},
+          {"title": "หญ้าเทียมสำหรับสนามปาเดล", "text": "หญ้าเทียมขนสั้น ให้การยึดเกาะที่ดีและการตอบสนองของลูกบอลสม่ำเสมอ เหมาะสำหรับ: สนามปาเดล สโมสร โรงแรม รีสอร์ท และบ้านพักอาศัย"},
+          {"title": "หญ้าเทียมแบบไม่ใช้วัสดุเติม", "text": "พื้นผิวสะอาด นุ่มสบาย และไม่ต้องใช้วัสดุเติมแบบเม็ด เหมาะสำหรับ: พื้นที่ในร่ม พื้นที่สันทนาการ และงานภูมิทัศน์"},
+          {"title": "หญ้าเทียมสำหรับสวนและภูมิทัศน์", "text": "ให้ความสวยงามเสมือนหญ้าธรรมชาติ ทนต่อสภาพอากาศ และดูแลรักษาง่าย เหมาะสำหรับ: สวน โรงแรม ดาดฟ้า และพื้นที่ภูมิทัศน์เชิงพาณิชย์"},
+          {"title": "หญ้าเทียมสำหรับสัตว์เลี้ยงและพื้นที่เล่น", "text": "นุ่ม ทนทาน ทำความสะอาดง่าย และระบายน้ำได้ดี เหมาะสำหรับ: พื้นที่สัตว์เลี้ยง สนามเด็กเล่น และพื้นที่สันทนาการ"}
+        ]
+      },
+      {
+        "heading": "จุดเด่น",
+        "list": [
+          "ทนทานและใช้งานได้ยาวนาน",
+          "ดูแลรักษาง่าย",
+          "ทนต่อรังสี UV และสภาพอากาศ",
+          "สวยงามและสัมผัสเป็นธรรมชาติ",
+          "ระบายน้ำได้ดี",
+          "เหมาะสำหรับทั้งภายในและภายนอกอาคาร"
+        ]
+      }
+    ],
+    "images": [
+      {
+        "file": "images/Artificial Turf Systems EN.jpg",
+        "primary": true
+      }
+    ],
+    "images_en": [
+      {
+        "file": "images/Artificial Turf Systems EN.jpg",
+        "primary": true
+      }
+    ],
+    "images_th": [
+      {
+        "file": "images/Artificial Turf System TH.jpg",
+        "primary": true
+      }
+    ]
   },
   {
     "slug": "epdm-granules",

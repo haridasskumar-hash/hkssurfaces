@@ -127,7 +127,10 @@ def product_detail_sections(product, language, start=0, end=None):
 		list_html = f'<h3>{text(list_title)}</h3>' if list_title else ""
 		list_html += f'<ul class="feature-list">{items}</ul>' if items else ""
 		subsections = "".join(f'<h3>{text(item.get("title"))}</h3><p>{text(item.get("text"))}</p>' for item in section.get("sections", []))
-		rows = "".join(f"<tr><th>{text(name)}</th><td>{text(value)}</td></tr>" for name, value in section.get("specifications", []))
+		rows = "".join(
+			f"<tr><th>{text(row[0])}</th>{''.join(f'<td>{text(value)}</td>' for value in row[1:])}</tr>"
+			for row in section.get("specifications", []) if row
+		)
 		table = f'<table><tbody>{rows}</tbody></table>' if rows else ""
 		sections.append(f'<section class="article"><h2>{text(section.get("heading"))}</h2>{paragraphs}{list_html}{subsections}{table}</section>')
 	return "".join(sections)
@@ -177,6 +180,15 @@ def build_products(products, settings, language):
 		is_pu_binder = product.get("slug") == "polyurethane-binder"
 		is_basketball = product.get("slug") == "basketball-court-flooring"
 		is_padel = product.get("slug") == "padel-court-flooring"
+		is_pickleball = product.get("slug") == "pickleball-court-flooring"
+		is_badminton = product.get("slug") == "badminton-court-flooring"
+		is_rubber_tiles = product.get("slug") == "rubber-safety-tiles"
+		is_gym = product.get("slug") == "gym-flooring"
+		is_wet_area_epdm = product.get("slug") == "epdm-flooring-wet-area"
+		is_multi_sport = product.get("slug") == "multi-sport-court-flooring"
+		is_tennis = product.get("slug") == "tennis-court-flooring"
+		is_epoxy = product.get("slug") == "epoxy-flooring"
+		is_artificial_turf = product.get("slug") == "artificial-turf"
 		is_playground_safety = product.get("slug") == "playground-safety-flooring"
 		uses_image_first_layout = is_epdm_granules or is_epdm_flooring or is_sbr_granules or is_running_track or is_pu_binder or is_playground_safety
 		right_column_content = product_detail_sections(product, language, 0, 2) if is_epdm_granules else ""
@@ -184,6 +196,15 @@ def build_products(products, settings, language):
 		layout_class = "product-layout product-layout--image-first" if uses_image_first_layout else "product-layout"
 		layout_class += " product-layout--basketball" if is_basketball else ""
 		layout_class += " product-layout--padel" if is_padel else ""
+		layout_class += " product-layout--pickleball" if is_pickleball else ""
+		layout_class += " product-layout--badminton" if is_badminton else ""
+		layout_class += " product-layout--rubber-tiles" if is_rubber_tiles else ""
+		layout_class += " product-layout--gym" if is_gym else ""
+		layout_class += " product-layout--wet-area-epdm" if is_wet_area_epdm else ""
+		layout_class += " product-layout--multi-sport" if is_multi_sport else ""
+		layout_class += " product-layout--tennis" if is_tennis else ""
+		layout_class += " product-layout--epoxy" if is_epoxy else ""
+		layout_class += " product-layout--artificial-turf" if is_artificial_turf else ""
 		layout_class += " product-layout--playground-safety" if is_playground_safety else ""
 		image_stack_class = "product-image-stack product-image-stack--epdm-granules" if is_epdm_granules else "product-image-stack"
 		image_stack_class += " product-image-stack--epdm-flooring" if is_epdm_flooring else ""
@@ -193,13 +214,14 @@ def build_products(products, settings, language):
 		feature_heading = "Key features" if english else "จุดเด่น"
 		category = text(product.get("cat"))
 		detail_images = product_detail_images(product, detail_prefix, product_title, language)
-		quote_cta = "" if is_basketball or is_padel else f'<a class="btn green" href="{detail_prefix}{contact_prefix}index.html#contact">{cta_label}</a>'
+		quote_cta = "" if is_basketball or is_padel or is_pickleball else f'<a class="btn green" href="{detail_prefix}{contact_prefix}index.html#contact">{cta_label}</a>'
 		intro_content = right_column_content if is_epdm_granules else f'<span class="pill">{category}</span><h2>{text(product_title)}</h2><p>{text(product_description)}</p><h3>{feature_heading}</h3><ul class="feature-list">{feature_list}</ul>{quote_cta}{right_column_content}'
 		hero_content = "" if uses_image_first_layout else hero(product_title, product_description, "HKS SURFACES")
-		intro_column = "" if is_epdm_flooring or is_sbr_granules or is_running_track or is_pu_binder or is_basketball or is_playground_safety else f'<div>{intro_content}</div>'
-		detail = hero_content + f'<main class="section"><div class="container"><div class="{layout_class}"><div class="{image_stack_class}">{detail_images}</div>{intro_column}</div>{below_content}</div></main>'
+		intro_column = "" if is_epdm_flooring or is_sbr_granules or is_running_track or is_pu_binder or is_basketball or is_padel or is_pickleball or is_badminton or is_rubber_tiles or is_gym or is_wet_area_epdm or is_multi_sport or is_tennis or is_epoxy or is_artificial_turf or is_playground_safety else f'<div>{intro_content}</div>'
+		details_class = ""
+		detail = hero_content + f'<main class="section"><div class="container"><div class="{layout_class}"><div class="{image_stack_class}">{detail_images}</div>{intro_column}</div><div class="{details_class}">{below_content}</div></div></main>'
 		path = ("en/" if english else "") + f'products/{product["slug"]}/index.html'
-		write(path, document(product_title, product_description, detail_prefix, language, "products", detail, settings, products, show_quote=not is_padel))
+		write(path, document(product_title, product_description, detail_prefix, language, "products", detail, settings, products, show_quote=not (is_padel or is_pickleball)))
 
 
 def build_projects(projects, products, settings, language):
