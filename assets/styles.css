@@ -6,6 +6,24 @@
 .product-layout--playground-safety .product-image-stack{width:min(100%,900px);justify-self:center}
 .product-layout--padel .product-image-stack{width:min(100%,900px);justify-self:center}
 .product-layout.product-layout--padel{grid-template-columns:minmax(0,1fr)}
+.product-layout--pickleball .product-image-stack{width:min(100%,900px);justify-self:center}
+.product-layout.product-layout--pickleball{grid-template-columns:minmax(0,1fr)}
+.product-layout--badminton .product-image-stack{width:min(100%,900px);justify-self:center}
+.product-layout.product-layout--badminton{grid-template-columns:minmax(0,1fr)}
+.product-layout--rubber-tiles .product-image-stack{width:min(100%,900px);justify-self:center}
+.product-layout.product-layout--rubber-tiles{grid-template-columns:minmax(0,1fr)}
+.product-layout--gym .product-image-stack{width:min(100%,900px);justify-self:center}
+.product-layout.product-layout--gym{grid-template-columns:minmax(0,1fr)}
+.product-layout--wet-area-epdm .product-image-stack{width:min(100%,900px);justify-self:center}
+.product-layout.product-layout--wet-area-epdm{grid-template-columns:minmax(0,1fr)}
+.product-layout--multi-sport .product-image-stack{width:min(100%,900px);justify-self:center}
+.product-layout.product-layout--multi-sport{grid-template-columns:minmax(0,1fr)}
+.product-layout--tennis .product-image-stack{width:min(100%,900px);justify-self:center}
+.product-layout.product-layout--tennis{grid-template-columns:minmax(0,1fr)}
+.product-layout--epoxy .product-image-stack{width:min(100%,900px);justify-self:center}
+.product-layout.product-layout--epoxy{grid-template-columns:minmax(0,1fr)}
+.product-layout--artificial-turf .product-image-stack{width:min(100%,900px);justify-self:center}
+.product-layout.product-layout--artificial-turf{grid-template-columns:minmax(0,1fr)}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Arial,"Noto Sans Thai",Tahoma,sans-serif;color:var(--text);background:#fff}
 a{text-decoration:none;color:inherit}img{max-width:100%;display:block}.container{width:min(1400px,92vw);margin:auto}
 .topbar{background:var(--navy);color:#fff;font-size:14px}.topbar .container{min-height:36px;display:flex;align-items:center;justify-content:space-between;gap:20px}

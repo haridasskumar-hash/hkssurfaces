@@ -19,6 +19,7 @@ document.querySelectorAll('.topbar .right a,.mobile-language,.header-language').
 const products=[
 	['safety','playground-safety-flooring','พื้นสนามเด็กเล่นนิรภัย','Playground Safety Flooring'],
 	['safety','epdm-flooring','พื้น EPDM','EPDM Flooring'],
+	['safety','epdm-flooring-wet-area','พื้น EPDM สำหรับสวนน้ำ','EPDM Flooring for Wet Areas'],
 	['safety','rubber-safety-tiles','แผ่นยางนิรภัย','Rubber Safety Tiles'],
 	['sports','badminton-court-flooring','พื้นสนามแบดมินตัน','Badminton Court Flooring'],
 	['sports','tennis-court-flooring','พื้นสนามเทนนิส','Tennis Court Flooring'],
@@ -30,7 +31,9 @@ const products=[
 	['sports','gym-flooring','พื้นฟิตเนสและยิม','Gym Flooring'],
 	['materials','epdm-granules','เม็ดยาง EPDM','EPDM Granules'],
 	['materials','sbr-rubber-granules','เม็ดยาง SBR','SBR Rubber Granules'],
-	['materials','polyurethane-binder','กาวโพลียูรีเทน PU Binder','Polyurethane Binder']
+	['materials','polyurethane-binder','กาวโพลียูรีเทน PU Binder','Polyurethane Binder'],
+	['materials','epoxy-flooring','พื้นอีพ็อกซี่','Epoxy Flooring']
+	,['materials','artificial-turf','หญ้าเทียม','Artificial Turf']
 ];
 
 if(siteNavigation&&!siteNavigation.querySelector('.nav-dropdown')){
