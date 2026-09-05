@@ -101,8 +101,9 @@ def hero(title, description, eyebrow):
 	return f'<section class="page-hero"><div class="container"><div class="eyebrow">{text(eyebrow)}</div><h1>{text(title)}</h1><p>{text(description)}</p></div></section>'
 
 
-def product_image(product, prefix):
-	images = product.get("images") or []
+def product_image(product, prefix, language=None):
+	images = product.get(f"images_{language}") if language else None
+	images = images or product.get("images") or []
 	primary = next((image for image in images if image.get("primary")), images[0] if images else {})
 	return asset(primary.get("file") or product.get("image"), prefix)
 
@@ -148,9 +149,17 @@ def build_homepage(homepage, products, settings, language):
 	title = homepage.get(f"hero_title_{language}")
 	subtitle = homepage.get(f"hero_subtitle_{language}")
 	description = homepage.get(f"hero_text_{language}")
-	product_cards = "".join(
-		f'<a class="cat-card" href="{prefix}{"en/" if english else ""}products/{text(product["slug"])}/index.html"><div class="cat-img" style="background-image:url(\'{product_image(product, prefix)}\')"></div><div class="cat-body"><h3>{text(product.get("en" if english else "th"))}</h3><small>{text(product.get("cat", "SURFACES")).upper()}</small><b>→</b></div></a>'
+	product_by_slug = {product.get("slug"): product for product in products}
+	pickleball = product_by_slug.get("pickleball-court-flooring")
+	epoxy = product_by_slug.get("epoxy-flooring")
+	homepage_products = [
+		(epoxy if product.get("slug") == "tennis-court-flooring" and epoxy else
+		 pickleball if product.get("slug") == "epdm-flooring" and pickleball else product)
 		for product in products[:6]
+	]
+	product_cards = "".join(
+		f'<a class="cat-card" href="{prefix}{"en/" if english else ""}products/{text(product["slug"])}/index.html"><div class="cat-img" style="background-image:url(\'{product_image(product, prefix, language)}\')"></div><div class="cat-body"><h3>{text(product.get("en" if english else "th"))}</h3><small>{text(product.get("cat", "SURFACES")).upper()}</small><b>→</b></div></a>'
+		for product in homepage_products
 	)
 	gallery = "".join(f'<img src="{asset(image.get("file"), prefix)}" alt="{text(image.get("alt_en" if english else "alt_th"))}" loading="lazy">' for image in homepage.get("gallery_images", []))
 	body = f'''<main><section class="hero" style="background-image:url('{asset(homepage.get('hero_image'), prefix, 'images/home/hks-surfaces-playground-pickleball-hero.png')}')"><div class="container"><div class="hero-copy"><h1>{text(title)}</h1><h2>{text(subtitle)}</h2><div class="tagline">SAFETY &amp; SPORTS SURFACE SPECIALIST</div><p>{text(description)}</p><div class="hero-actions"><a class="btn green" href="{prefix}{'en/' if english else ''}products/index.html">{"Explore Products" if english else "ดูผลิตภัณฑ์ของเรา"} →</a><a class="btn outline" href="#contact">{"Request a Quote" if english else "ขอใบเสนอราคา"} →</a></div></div><form class="quote-card" id="contact"><h3>{"Request a Quote" if english else "ขอใบเสนอราคา"}</h3><input placeholder="{"Name" if english else "ชื่อ-นามสกุล"}"><input placeholder="{"Phone" if english else "เบอร์โทรศัพท์"}"><input placeholder="Email"><textarea rows="4" placeholder="{"Project details" if english else "รายละเอียดโครงการ"}"></textarea><button class="btn green" type="button">{"Send Enquiry" if english else "ส่งข้อมูล"}</button></form></div></section><section class="category-strip"><div class="container category-grid">{product_cards}</div></section><section class="section"><div class="container"><div class="section-head"><h2>{text(homepage.get(f'gallery_title_{language}'))}</h2></div><div class="home-gallery-grid">{gallery}</div></div></section><section class="section" id="about"><div class="container"><div class="section-head"><h2>{text(homepage.get(f'about_title_{language}'))}</h2><p>{text(homepage.get(f'about_text_{language}'))}</p></div></div></section></main>'''
@@ -162,7 +171,7 @@ def build_products(products, settings, language):
 	prefix = "../../" if english else "../"
 	title = "Products & Surface Systems" if english else "ผลิตภัณฑ์และระบบพื้น"
 	description = "Safety, sports, and specialty surface systems." if english else "ระบบพื้นนิรภัย พื้นสนามกีฬา และวัสดุสำหรับงานพื้น"
-	cards = "".join(f'<a class="card" href="{text(product["slug"])}/index.html"><div class="media" style="background-image:url(\'{product_image(product, prefix)}\')"></div><div class="card-body"><span class="pill">{text(product.get("cat"))}</span><h2>{text(product.get("en" if english else "th"))}</h2><p>{text(product.get("den" if english else "dth"))}</p></div></a>' for product in products)
+	cards = "".join(f'<a class="card" href="{text(product["slug"])}/index.html"><div class="media" style="background-image:url(\'{product_image(product, prefix, language)}\')"></div><div class="card-body"><span class="pill">{text(product.get("cat"))}</span><h2>{text(product.get("en" if english else "th"))}</h2><p>{text(product.get("den" if english else "dth"))}</p></div></a>' for product in products)
 	body = hero(title, description, "PRODUCTS & SYSTEMS") + f'<main class="section"><div class="container"><div class="grid-3">{cards}</div></div></main>'
 	root = ("en/" if english else "") + "products/index.html"
 	write(root, document(title, description, prefix, language, "products", body, settings, products))
