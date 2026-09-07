@@ -90,7 +90,12 @@ def footer(prefix, language, settings):
 	contact = "Contact Us" if language == "en" else "ติดต่อเรา"
 	privacy = "Privacy Policy" if language == "en" else "นโยบายความเป็นส่วนตัว"
 	social_label = "Follow us" if language == "en" else "ติดตามเรา"
-	return f'''<footer class="site-footer"><div class="container footer-grid"><div><img src="{asset(settings.get('logo'), prefix, 'images/hks-surfaces-logo.png')}" alt="HKS Surfaces" style="width:120px;border-radius:50%"></div><div><h3>{text(settings.get('site_name', 'HKS Surfaces'))}</h3><address>{text(settings.get('business_address'))}</address></div><div><h3>{contact}</h3><p><a href="tel:+66877070280">{text(settings.get('phone_display', '087 707 0280'))}</a><br><a href="mailto:{text(settings.get('contact_email'))}">{text(settings.get('contact_email'))}</a></p><div class="social-links" aria-label="{social_label}"><a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a><a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a><a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a><a href="#" aria-label="LINE"><i class="bi bi-line"></i></a><a href="#" aria-label="X"><i class="bi bi-twitter-x"></i></a><a href="#" aria-label="Threads"><i class="bi bi-threads"></i></a></div></div></div><p class="privacy-footer-link"><a href="{prefix}{'en/' if language == 'en' else ''}privacy-policy/index.html">{privacy}</a></p></footer>'''
+	quick_links = "Quick Links" if language == "en" else "ลิงก์ด่วน"
+	products = "Products" if language == "en" else "ผลิตภัณฑ์"
+	blog = "Blog" if language == "en" else "บทความ"
+	services = "Services" if language == "en" else "บริการ"
+	base = "en/" if language == "en" else ""
+	return f'''<footer class="site-footer"><div class="container footer-grid"><div><img src="{asset(settings.get('logo'), prefix, 'images/hks-surfaces-logo.png')}" alt="HKS Surfaces" style="width:120px;border-radius:50%"></div><div><h3>{text(settings.get('site_name', 'HKS Surfaces'))}</h3><address>{text(settings.get('business_address'))}</address></div><div><h3>{quick_links}</h3><nav class="footer-quick-links"><a href="{prefix}{base}products/index.html">{products}</a><a href="{prefix}{base}blog/index.html">{blog}</a><a href="{prefix}{base}services/index.html">{services}</a></nav></div><div><h3>{contact}</h3><p><a href="tel:+66877070280">{text(settings.get('phone_display', '087 707 0280'))}</a><br><a href="mailto:{text(settings.get('contact_email'))}">{text(settings.get('contact_email'))}</a></p><div class="social-links" aria-label="{social_label}"><a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a><a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a><a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a><a href="https://line.me/ti/p/nsS_L_7bNW" target="_blank" rel="noopener noreferrer" aria-label="LINE"><i class="bi bi-line"></i></a><a href="#" aria-label="X"><i class="bi bi-twitter-x"></i></a><a href="#" aria-label="Threads"><i class="bi bi-threads"></i></a></div></div></div><p class="privacy-footer-link"><a href="{prefix}{'en/' if language == 'en' else ''}privacy-policy/index.html">{privacy}</a></p></footer>'''
 
 
 def document(title, description, prefix, language, active, body, settings, products, show_quote=True):
@@ -161,8 +166,15 @@ def build_homepage(homepage, products, settings, language):
 		f'<a class="cat-card" href="{prefix}{"en/" if english else ""}products/{text(product["slug"])}/index.html"><div class="cat-img" style="background-image:url(\'{product_image(product, prefix, language)}\')"></div><div class="cat-body"><h3>{text(product.get("en" if english else "th"))}</h3><small>{text(product.get("cat", "SURFACES")).upper()}</small><b>→</b></div></a>'
 		for product in homepage_products
 	)
-	gallery = "".join(f'<img src="{asset(image.get("file"), prefix)}" alt="{text(image.get("alt_en" if english else "alt_th"))}" loading="lazy">' for image in homepage.get("gallery_images", []))
-	body = f'''<main><section class="hero" style="background-image:url('{asset(homepage.get('hero_image'), prefix, 'images/home/hks-surfaces-playground-pickleball-hero.png')}')"><div class="container"><div class="hero-copy"><h1>{text(title)}</h1><h2>{text(subtitle)}</h2><div class="tagline">SAFETY &amp; SPORTS SURFACE SPECIALIST</div><p>{text(description)}</p><div class="hero-actions"><a class="btn green" href="{prefix}{'en/' if english else ''}products/index.html">{"Explore Products" if english else "ดูผลิตภัณฑ์ของเรา"} →</a><a class="btn outline" href="#contact">{"Request a Quote" if english else "ขอใบเสนอราคา"} →</a></div></div><form class="quote-card" id="contact"><h3>{"Request a Quote" if english else "ขอใบเสนอราคา"}</h3><input placeholder="{"Name" if english else "ชื่อ-นามสกุล"}"><input placeholder="{"Phone" if english else "เบอร์โทรศัพท์"}"><input placeholder="Email"><textarea rows="4" placeholder="{"Project details" if english else "รายละเอียดโครงการ"}"></textarea><button class="btn green" type="button">{"Send Enquiry" if english else "ส่งข้อมูล"}</button></form></div></section><section class="category-strip"><div class="container category-grid">{product_cards}</div></section><section class="section"><div class="container"><div class="section-head"><h2>{text(homepage.get(f'gallery_title_{language}'))}</h2></div><div class="home-gallery-grid">{gallery}</div></div></section><section class="section" id="about"><div class="container"><div class="section-head"><h2>{text(homepage.get(f'about_title_{language}'))}</h2><p>{text(homepage.get(f'about_text_{language}'))}</p></div></div></section></main>'''
+	gallery = "".join(
+		f'<a class="home-gallery-link" href="{prefix}{"en/" if english else ""}{text(image["link"])}" aria-label="{text(image.get("alt_en" if english else "alt_th"))}"><img src="{asset(image.get("file"), prefix)}" alt="{text(image.get("alt_en" if english else "alt_th"))}" loading="lazy"><span class="home-gallery-label">{text(image.get("label_en" if english else "label_th") or image.get("alt_en" if english else "alt_th"))}</span></a>'
+		if image.get("link") else
+		f'<img src="{asset(image.get("file"), prefix)}" alt="{text(image.get("alt_en" if english else "alt_th"))}" loading="lazy">'
+		for image in homepage.get("gallery_images", [])
+	)
+	featured_title = "Our Featured Products" if english else "ผลิตภัณฑ์เด่นของเรา"
+	featured_link = f'{prefix}{"en/" if english else ""}products/index.html'
+	body = f'''<main><section class="hero" style="background-image:url('{asset(homepage.get('hero_image'), prefix, 'images/home/hks-surfaces-playground-pickleball-hero.png')}')"><div class="container"><div class="hero-copy"><h1>{text(title)}</h1><h2>{text(subtitle)}</h2><div class="tagline">SAFETY &amp; SPORTS SURFACE SPECIALIST</div><p>{text(description)}</p><div class="hero-actions"><a class="btn green" href="{prefix}{'en/' if english else ''}products/index.html">{"Explore Products" if english else "ดูผลิตภัณฑ์ของเรา"} →</a><a class="btn outline" href="#contact">{"Request a Quote" if english else "ขอใบเสนอราคา"} →</a></div></div><form class="quote-card" id="contact"><h3>{"Request a Quote" if english else "ขอใบเสนอราคา"}</h3><input placeholder="{"Name" if english else "ชื่อ-นามสกุล"}"><input placeholder="{"Phone" if english else "เบอร์โทรศัพท์"}"><input placeholder="Email"><textarea rows="4" placeholder="{"Project details" if english else "รายละเอียดโครงการ"}"></textarea><button class="btn green" type="button">{"Send Enquiry" if english else "ส่งข้อมูล"}</button></form></div></section><section class="category-strip"><div class="container"><div class="featured-heading"><h2>{featured_title}</h2><a class="featured-link" href="{featured_link}">{"Learn More" if english else "ดูรายละเอียดเพิ่มเติม"} <span aria-hidden="true">→</span></a></div><div class="category-grid">{product_cards}</div></div></section><section class="section"><div class="container"><div class="section-head"><h2>{text(homepage.get(f'gallery_title_{language}'))}</h2></div><div class="home-gallery-grid">{gallery}</div></div></section><section class="section" id="about"><div class="container"><div class="section-head"><h2>{text(homepage.get(f'about_title_{language}'))}</h2><p>{text(homepage.get(f'about_text_{language}'))}</p></div></div></section></main>'''
 	write(("en/" if english else "") + "index.html", document(title, description, prefix, language, "home", body, settings, products))
 
 
@@ -171,8 +183,20 @@ def build_products(products, settings, language):
 	prefix = "../../" if english else "../"
 	title = "Products & Surface Systems" if english else "ผลิตภัณฑ์และระบบพื้น"
 	description = "Safety, sports, and specialty surface systems." if english else "ระบบพื้นนิรภัย พื้นสนามกีฬา และวัสดุสำหรับงานพื้น"
-	cards = "".join(f'<a class="card" href="{text(product["slug"])}/index.html"><div class="media" style="background-image:url(\'{product_image(product, prefix, language)}\')"></div><div class="card-body"><span class="pill">{text(product.get("cat"))}</span><h2>{text(product.get("en" if english else "th"))}</h2><p>{text(product.get("den" if english else "dth"))}</p></div></a>' for product in products)
-	body = hero(title, description, "PRODUCTS & SYSTEMS") + f'<main class="section"><div class="container"><div class="grid-3">{cards}</div></div></main>'
+	ordered_products = sorted(products, key=lambda product: product.get("slug", ""))
+	category_labels = {
+		"safety": "Safety Flooring" if english else "พื้นนิรภัย",
+		"sports": "Sports Flooring" if english else "พื้นสนามกีฬา",
+		"materials": "Materials" if english else "วัสดุสำหรับระบบพื้น",
+	}
+	category_sections = "".join(
+		f'<section class="product-category"><h2>{category_labels[category]}</h2><div class="grid-3">' + "".join(
+			f'<a class="card" href="{text(product["slug"])}/index.html"><div class="media" style="background-image:url(\'{product_image(product, prefix, language)}\')"></div><div class="card-body"><h2>{text(product.get("en" if english else "th"))}</h2><p>{text(product.get("den" if english else "dth"))}</p></div></a>'
+			for product in ordered_products if product.get("cat") == category
+		) + "</div></section>"
+		for category in ("safety", "sports", "materials")
+	)
+	body = hero(title, description, "PRODUCTS & SYSTEMS") + f'<main class="section"><div class="container">{category_sections}</div></main>'
 	root = ("en/" if english else "") + "products/index.html"
 	write(root, document(title, description, prefix, language, "products", body, settings, products))
 	for product in products:
@@ -245,7 +269,14 @@ def build_projects(projects, products, settings, language):
 		project_title = text(project.get("title_en" if english else "title_th"))
 		project_description = text(project.get("desc_en" if english else "desc_th"))
 		image = project_image(project, prefix)
-		cards.append(f'<article class="card"><div class="media" style="background-image:url(\'{image}\')"></div><div class="card-body"><span class="pill">{meta}</span><h2>{project_title}</h2><p>{project_description}</p></div></article>')
+		project_images = project.get("images") or []
+		gallery = "".join(
+			f'<img class="project-image-trigger" src="{asset(item.get("file"), prefix)}" data-lightbox-group="{text(project_title)}" data-lightbox-src="{asset(item.get("file"), prefix)}" alt="{text(item.get("alt_en" if english else "alt_th") or project_title)}" loading="lazy">'
+			for item in project_images[1:]
+		)
+		gallery_markup = f'<div class="image-gallery project-gallery">{gallery}</div>' if gallery else ""
+		project_id = text(project.get("slug"))
+		cards.append(f'<article class="card" id="{project_id}"><div class="media project-image-trigger" role="button" tabindex="0" data-lightbox-group="{project_title}" data-lightbox-src="{image}" aria-label="{project_title}" style="background-image:url(\'{image}\')"></div><div class="card-body"><span class="pill">{meta}</span><h2>{project_title}</h2><p>{project_description}</p>{gallery_markup}</div></article>')
 	cards = "".join(cards)
 	body = hero(title, description, "OUR PROJECTS") + f'<main class="section"><div class="container"><div class="grid-3">{cards}</div></div></main>'
 	write(("en/" if english else "") + "projects/index.html", document(title, description, prefix, language, "projects", body, settings, products))

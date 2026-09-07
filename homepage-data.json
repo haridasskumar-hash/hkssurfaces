@@ -32,6 +32,15 @@
       "alt_th": "ตัวอย่างพื้นลู่วิ่ง",
       "alt_en": "Running track flooring example",
       "featured": false
+    },
+    {
+      "file": "images/projects/artificial-grass/Artificial Project.jpg",
+      "alt_th": "ผลงานโครงการหญ้าเทียม",
+      "alt_en": "Artificial grass project",
+      "label_th": "โครงการหญ้าเทียม",
+      "label_en": "Artificial Grass Project",
+      "featured": false,
+      "link": "projects/index.html#artificial-grass"
     }
   ]
 }
