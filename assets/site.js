@@ -67,6 +67,57 @@ document.addEventListener('click',event=>{
 	}
 });
 
+const projectImageTriggers=document.querySelectorAll('.project-image-trigger');
+if(projectImageTriggers.length){
+	const lightbox=document.createElement('div');
+	lightbox.className='lightbox';
+	lightbox.setAttribute('role','dialog');
+	lightbox.setAttribute('aria-modal','true');
+	lightbox.setAttribute('aria-label',isEnglish?'Enlarged project image':'ภาพโครงการขนาดใหญ่');
+	lightbox.innerHTML='<button class="lightbox-close" type="button" aria-label="Close">&times;</button><button class="lightbox-prev" type="button" aria-label="Previous image">&#8249;</button><img class="lightbox-image" alt=""><button class="lightbox-next" type="button" aria-label="Next image">&#8250;</button>';
+	document.body.append(lightbox);
+	const lightboxImage=lightbox.querySelector('.lightbox-image');
+	const previousButton=lightbox.querySelector('.lightbox-prev');
+	const nextButton=lightbox.querySelector('.lightbox-next');
+	let activeTriggers=[];
+	let activeIndex=0;
+	const closeLightbox=()=>{lightbox.classList.remove('open');document.body.classList.remove('lightbox-open');lightboxImage.removeAttribute('src')};
+	const showImage=index=>{
+		activeIndex=(index+activeTriggers.length)%activeTriggers.length;
+		const trigger=activeTriggers[activeIndex];
+		lightboxImage.src=trigger.dataset.lightboxSrc;
+		lightboxImage.alt=trigger.getAttribute('alt')||trigger.getAttribute('aria-label')||'';
+		previousButton.hidden=activeTriggers.length<2;
+		nextButton.hidden=activeTriggers.length<2;
+	};
+	const openLightbox=trigger=>{
+		const group=trigger.dataset.lightboxGroup;
+		activeTriggers=[...projectImageTriggers].filter(item=>item.dataset.lightboxGroup===group);
+		activeIndex=Math.max(0,activeTriggers.indexOf(trigger));
+		showImage(activeIndex);
+		lightbox.classList.add('open');
+		document.body.classList.add('lightbox-open');
+		lightbox.querySelector('.lightbox-close').focus();
+	};
+	projectImageTriggers.forEach(trigger=>{
+		trigger.addEventListener('click',()=>openLightbox(trigger));
+		trigger.addEventListener('keydown',event=>{
+			if(event.key==='Enter'||event.key===' '){event.preventDefault();openLightbox(trigger)}
+		});
+	});
+	lightbox.querySelector('.lightbox-close').addEventListener('click',closeLightbox);
+	previousButton.addEventListener('click',()=>showImage(activeIndex-1));
+	nextButton.addEventListener('click',()=>showImage(activeIndex+1));
+	lightbox.addEventListener('click',event=>{if(event.target===lightbox)closeLightbox()});
+	document.addEventListener('keydown',event=>{
+		if(!lightbox.classList.contains('open'))return;
+		if(event.key==='Escape')closeLightbox();
+		if(event.key==='ArrowLeft')showImage(activeIndex-1);
+		if(event.key==='ArrowRight')showImage(activeIndex+1);
+	});
+	lightbox.addEventListener('wheel',event=>{if(Math.abs(event.deltaY)>Math.abs(event.deltaX))showImage(activeIndex+(event.deltaY>0?1:-1))},{passive:true});
+}
+
 document.querySelectorAll('.site-footer,.footer').forEach(footer=>{
 	if(footer.querySelector('.social-links')) return;
 	const contactSection=footer.querySelector('.footer-grid > div:last-child,.footer .container > div:last-child');
@@ -74,7 +125,7 @@ document.querySelectorAll('.site-footer,.footer').forEach(footer=>{
 	const socialLinks=document.createElement('div');
 	socialLinks.className='social-links';
 	socialLinks.setAttribute('aria-label',isEnglish?'Follow us':'ติดตามเรา');
-	socialLinks.innerHTML='<a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a><a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a><a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a><a href="#" aria-label="LINE"><i class="bi bi-line"></i></a><a href="#" aria-label="X"><i class="bi bi-twitter-x"></i></a><a href="#" aria-label="Threads"><i class="bi bi-threads"></i></a>';
+	socialLinks.innerHTML='<a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a><a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a><a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a><a href="https://line.me/ti/p/nsS_L_7bNW" target="_blank" rel="noopener noreferrer" aria-label="LINE"><i class="bi bi-line"></i></a><a href="#" aria-label="X"><i class="bi bi-twitter-x"></i></a><a href="#" aria-label="Threads"><i class="bi bi-threads"></i></a>';
 	contactSection.append(socialLinks);
 });
 
