@@ -1,9 +1,0 @@
-RewriteEngine On
-
-# Force HTTPS and canonical www.hkssurfaces.com
-RewriteCond %{HTTPS} !=on [OR]
-RewriteCond %{HTTP_HOST} !^www\.hkssurfaces\.com$ [NC]
-RewriteRule ^ https://www.hkssurfaces.com%{REQUEST_URI} [L,R=301]
-
-DirectoryIndex index.html
-ErrorDocument 404 /404.html
