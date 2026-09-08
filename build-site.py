@@ -1,6 +1,7 @@
 """Build the public static pages from the content files exported by admin/."""
 from html import escape
 import json
+import random
 from pathlib import Path
 
 
@@ -50,7 +51,7 @@ def nav(prefix, language, active, settings, products, show_quote=True):
 		"projects": f"{prefix}{base}projects/index.html",
 		"certificates": f"{prefix}{base}certificates/index.html",
 		"blog": f"{prefix}{base}blog/index.html",
-		"contact": f"{prefix}{base}index.html#contact",
+		"contact": f"{prefix}{base}contact/index.html",
 	}
 	category_labels = {
 		"safety": "Safety Flooring" if english else "พื้นนิรภัย",
@@ -95,7 +96,7 @@ def footer(prefix, language, settings):
 	blog = "Blog" if language == "en" else "บทความ"
 	services = "Services" if language == "en" else "บริการ"
 	base = "en/" if language == "en" else ""
-	return f'''<footer class="site-footer"><div class="container footer-grid"><div><img src="{asset(settings.get('logo'), prefix, 'images/hks-surfaces-logo.png')}" alt="HKS Surfaces" style="width:120px;border-radius:50%"></div><div><h3>{text(settings.get('site_name', 'HKS Surfaces'))}</h3><address>{text(settings.get('business_address'))}</address></div><div><h3>{quick_links}</h3><nav class="footer-quick-links"><a href="{prefix}{base}products/index.html">{products}</a><a href="{prefix}{base}blog/index.html">{blog}</a><a href="{prefix}{base}services/index.html">{services}</a></nav></div><div><h3>{contact}</h3><p><a href="tel:+66877070280">{text(settings.get('phone_display', '087 707 0280'))}</a><br><a href="mailto:{text(settings.get('contact_email'))}">{text(settings.get('contact_email'))}</a></p><div class="social-links" aria-label="{social_label}"><a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a><a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a><a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a><a href="https://line.me/ti/p/Rn_AsnrLLf" target="_blank" rel="noopener noreferrer" aria-label="LINE"><i class="bi bi-line"></i></a><a href="#" aria-label="X"><i class="bi bi-twitter-x"></i></a><a href="#" aria-label="Threads"><i class="bi bi-threads"></i></a></div></div></div><p class="privacy-footer-link"><a href="{prefix}{'en/' if language == 'en' else ''}privacy-policy/index.html">{privacy}</a></p></footer>'''
+	return f'''<footer class="site-footer"><div class="container footer-grid"><div><img src="{asset(settings.get('logo'), prefix, 'images/hks-surfaces-logo.png')}" alt="HKS Surfaces" style="width:120px;border-radius:50%"></div><div><h3>{text(settings.get('site_name', 'HKS Surfaces'))}</h3><p><strong>{"Head Office" if language == "en" else "สำนักงานใหญ่"}</strong><br><address>{text(settings.get('business_address'))}</address></p></div><div><h3>{quick_links}</h3><nav class="footer-quick-links"><a href="{prefix}{base}products/index.html">{products}</a><a href="{prefix}{base}blog/index.html">{blog}</a><a href="{prefix}{base}services/index.html">{services}</a></nav></div><div><h3>{contact}</h3><p><a href="tel:+66877070280">{text(settings.get('phone_display', '087 707 0280'))}</a><br><a href="mailto:{text(settings.get('contact_email'))}">{text(settings.get('contact_email'))}</a></p><div class="social-links" aria-label="{social_label}"><a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a><a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a><a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a><a href="https://line.me/ti/p/Rn_AsnrLLf" target="_blank" rel="noopener noreferrer" aria-label="LINE"><i class="bi bi-line"></i></a><a href="#" aria-label="X"><i class="bi bi-twitter-x"></i></a><a href="#" aria-label="Threads"><i class="bi bi-threads"></i></a></div></div></div><p class="privacy-footer-link"><a href="{prefix}{'en/' if language == 'en' else ''}privacy-policy/index.html">{privacy}</a></p></footer>'''
 
 
 def document(title, description, prefix, language, active, body, settings, products, show_quote=True):
@@ -148,6 +149,14 @@ def project_image(project, prefix):
 	return asset(primary.get("file") or project.get("image"), prefix, "images/sports-card.svg")
 
 
+def contact_form(settings, english):
+	first_number = random.randint(2, 9)
+	second_number = random.randint(2, 9)
+	math_answer = first_number + second_number
+	math_label = f"What is {first_number} + {second_number}?" if english else f"กรุณาแก้โจทย์ {first_number} + {second_number}"
+	return f'<form class="quote-card" id="contact" data-math-answer="{math_answer}"><h3>{"Request a Quote" if english else "ขอใบเสนอราคา"}</h3><input placeholder="{"Name" if english else "ชื่อ-นามสกุล"}"><input placeholder="{"Phone" if english else "เบอร์โทรศัพท์"}"><input placeholder="Email"><textarea rows="4" placeholder="{"Project details" if english else "รายละเอียดโครงการ"}"></textarea><label class="math-challenge" for="math-answer">{math_label}</label><input id="math-answer" class="math-answer" type="number" inputmode="numeric" autocomplete="off" required aria-describedby="math-help"><small id="math-help">{"Solve the question to enable Send Enquiry." if english else "แก้โจทย์ให้ถูกต้องเพื่อเปิดใช้งานปุ่มส่งข้อมูล"}</small><button class="btn green" type="button" disabled>{"Send Enquiry" if english else "ส่งข้อมูล"}</button></form>'
+
+
 def build_homepage(homepage, products, settings, language):
 	english = language == "en"
 	prefix = "../" if english else ""
@@ -174,8 +183,18 @@ def build_homepage(homepage, products, settings, language):
 	)
 	featured_title = "Our Featured Products" if english else "ผลิตภัณฑ์เด่นของเรา"
 	featured_link = f'{prefix}{"en/" if english else ""}products/index.html'
-	body = f'''<main><section class="hero" style="background-image:url('{asset(homepage.get('hero_image'), prefix, 'images/home/hks-surfaces-playground-pickleball-hero.png')}')"><div class="container"><div class="hero-copy"><h1>{text(title)}</h1><h2>{text(subtitle)}</h2><div class="tagline">SAFETY &amp; SPORTS SURFACE SPECIALIST</div><p>{text(description)}</p><div class="hero-actions"><a class="btn green" href="{prefix}{'en/' if english else ''}products/index.html">{"Explore Products" if english else "ดูผลิตภัณฑ์ของเรา"} →</a><a class="btn outline" href="#contact">{"Request a Quote" if english else "ขอใบเสนอราคา"} →</a></div></div><form class="quote-card" id="contact"><h3>{"Request a Quote" if english else "ขอใบเสนอราคา"}</h3><input placeholder="{"Name" if english else "ชื่อ-นามสกุล"}"><input placeholder="{"Phone" if english else "เบอร์โทรศัพท์"}"><input placeholder="Email"><textarea rows="4" placeholder="{"Project details" if english else "รายละเอียดโครงการ"}"></textarea><button class="btn green" type="button">{"Send Enquiry" if english else "ส่งข้อมูล"}</button></form></div></section><section class="category-strip"><div class="container"><div class="featured-heading"><h2>{featured_title}</h2><a class="featured-link" href="{featured_link}">{"Learn More" if english else "ดูรายละเอียดเพิ่มเติม"} <span aria-hidden="true">→</span></a></div><div class="category-grid">{product_cards}</div></div></section><section class="section"><div class="container"><div class="section-head"><h2>{text(homepage.get(f'gallery_title_{language}'))}</h2></div><div class="home-gallery-grid">{gallery}</div></div></section><section class="section" id="about"><div class="container"><div class="section-head"><h2>{text(homepage.get(f'about_title_{language}'))}</h2><p>{text(homepage.get(f'about_text_{language}'))}</p></div></div></section></main>'''
+	body = f'''<main><section class="hero homepage-hero" style="background-image:url('{asset(homepage.get('hero_image'), prefix, 'images/home/hks-surfaces-playground-pickleball-hero.png')}')"><div class="container"><div class="hero-copy"><h1>{text(title)}</h1><h2>{text(subtitle)}</h2><div class="tagline">SAFETY &amp; SPORTS SURFACE SPECIALIST</div><p>{text(description)}</p><div class="hero-actions"><a class="btn green" href="{prefix}{'en/' if english else ''}products/index.html">{"Explore Products" if english else "ดูผลิตภัณฑ์ของเรา"} →</a><a class="btn outline" href="{prefix}{'en/' if english else ''}contact/index.html">{"Request a Quote" if english else "ขอใบเสนอราคา"} →</a></div></div></div></section><section class="category-strip"><div class="container"><div class="featured-heading"><h2>{featured_title}</h2><a class="featured-link" href="{featured_link}">{"Learn More" if english else "ดูรายละเอียดเพิ่มเติม"} <span aria-hidden="true">→</span></a></div><div class="category-grid">{product_cards}</div></div></section><section class="section"><div class="container"><div class="section-head"><h2>{text(homepage.get(f'gallery_title_{language}'))}</h2></div><div class="home-gallery-grid">{gallery}</div></div></section><section class="section" id="about"><div class="container"><div class="section-head"><h2>{text(homepage.get(f'about_title_{language}'))}</h2><p>{text(homepage.get(f'about_text_{language}'))}</p></div></div></section></main>'''
 	write(("en/" if english else "") + "index.html", document(title, description, prefix, language, "home", body, settings, products))
+
+
+def build_contact(settings, products, language):
+	english = language == "en"
+	prefix = "../../" if english else "../"
+	title = "Contact Us" if english else "ติดต่อเรา"
+	description = "Tell us about your project and our team will help you choose the right surface system." if english else "บอกความต้องการของโครงการ แล้วทีมงานของเราจะช่วยแนะนำระบบพื้นที่เหมาะสม"
+	contact_details = f'<div class="contact-details"><p><strong>{"Head Office" if english else "สำนักงานใหญ่"}</strong><br>{text(settings.get("business_address"))}</p><p class="hotline"><strong>{"Hotline" if english else "สายด่วน"}</strong><br><a href="tel:{text(settings.get("phone_href", "+66877070280"))}">{text(settings.get("phone_display", "087 707 0280"))}</a></p><p>Tel: {text(settings.get("office_phone", "+66 2 3636660-1"))}<br>Fax: {text(settings.get("office_fax", "+66 2 3636662"))}<br><a href="mailto:{text(settings.get("contact_email"))}">{text(settings.get("contact_email"))}</a><br><a href="https://line.me/ti/p/Rn_AsnrLLf" target="_blank" rel="noopener noreferrer"><i class="bi bi-line"></i> LINE</a></p></div>'
+	body = hero(title, description, "HKS SURFACES") + f'<main class="section"><div class="container"><div class="contact-page-grid"><div class="contact-page-copy"><h2>{"Let’s discuss your project" if english else "พูดคุยเกี่ยวกับโครงการของคุณ"}</h2><p>{"Contact HKS Surfaces for product guidance, technical information, and a quotation tailored to your project." if english else "ติดต่อ HKS Surfaces เพื่อขอคำแนะนำผลิตภัณฑ์ ข้อมูลทางเทคนิค และใบเสนอราคาที่เหมาะกับโครงการของคุณ"}</p>{contact_details}</div>{contact_form(settings, english)}</div></div></main>'
+	write(("en/" if english else "") + "contact/index.html", document(title, description, prefix, language, "contact", body, settings, products))
 
 
 def build_products(products, settings, language):
@@ -247,7 +266,7 @@ def build_products(products, settings, language):
 		feature_heading = "Key features" if english else "จุดเด่น"
 		category = text(product.get("cat"))
 		detail_images = product_detail_images(product, detail_prefix, product_title, language)
-		quote_cta = "" if is_basketball or is_padel or is_pickleball else f'<a class="btn green" href="{detail_prefix}{contact_prefix}index.html#contact">{cta_label}</a>'
+		quote_cta = "" if is_basketball or is_padel or is_pickleball else f'<a class="btn green" href="{detail_prefix}{contact_prefix}contact/index.html">{cta_label}</a>'
 		intro_content = right_column_content if is_epdm_granules else f'<span class="pill">{category}</span><h2>{text(product_title)}</h2><p>{text(product_description)}</p><h3>{feature_heading}</h3><ul class="feature-list">{feature_list}</ul>{quote_cta}{right_column_content}'
 		hero_content = "" if uses_image_first_layout else hero(product_title, product_description, "HKS SURFACES")
 		intro_column = "" if is_epdm_flooring or is_sbr_granules or is_running_track or is_pu_binder or is_basketball or is_padel or is_pickleball or is_badminton or is_rubber_tiles or is_gym or is_wet_area_epdm or is_multi_sport or is_tennis or is_epoxy or is_artificial_turf or is_playground_safety else f'<div>{intro_content}</div>'
@@ -335,6 +354,7 @@ def main():
 	settings = read_json("site-config.json")
 	for language in ("th", "en"):
 		build_homepage(homepage, products, settings, language)
+		build_contact(settings, products, language)
 		build_products(products, settings, language)
 		build_services(products, settings, language)
 		build_projects(projects, products, settings, language)

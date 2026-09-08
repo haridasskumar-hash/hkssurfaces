@@ -7,6 +7,20 @@ if(!document.querySelector('link[href*="bootstrap-icons"]')){
 
 document.querySelector('.menu')?.addEventListener('click',()=>document.querySelector('nav')?.classList.toggle('open'));
 
+const contactForm=document.querySelector('#contact[data-math-answer]');
+if(contactForm){
+	const mathAnswer=contactForm.querySelector('.math-answer');
+	const submitButton=contactForm.querySelector('button[type="button"]');
+	const expectedAnswer=contactForm.dataset.mathAnswer;
+	const updateSubmitState=()=>{
+		const isCorrect=mathAnswer.value.trim()===expectedAnswer;
+		submitButton.disabled=!isCorrect;
+		submitButton.setAttribute('aria-disabled',String(!isCorrect));
+	};
+	mathAnswer.addEventListener('input',updateSubmitState);
+	updateSubmitState();
+}
+
 const siteNavigation=document.querySelector('nav');
 const scriptUrl=document.currentScript?.src||'';
 const isEnglish=/(?:^|\/)en(?:\/|$)/.test(location.pathname);
