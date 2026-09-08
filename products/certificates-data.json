@@ -1,0 +1,22 @@
+{
+  "title_th": "ใบรับรองมาตรฐาน",
+  "title_en": "Certificates",
+  "description_th": "ข้อมูลใบรับรองและเอกสารมาตรฐานสำหรับระบบพื้น HKS Surfaces",
+  "description_en": "Quality and safety documentation for HKS Surfaces systems.",
+  "intro_th": "ติดต่อทีมงานของเราเพื่อขอเอกสารข้อมูลวัสดุ รายงานผลการทดสอบ และใบรับรองที่เกี่ยวข้องกับโครงการของคุณ",
+  "intro_en": "Please contact our team to request the applicable material data sheets, test reports and certificates for your project.",
+  "items": [
+    {
+      "title_th": "เอกสารข้อมูลวัสดุ",
+      "title_en": "Material Documentation",
+      "text_th": "มีรายละเอียดผลิตภัณฑ์และข้อมูลวัสดุสำหรับประกอบการพิจารณาโครงการ",
+      "text_en": "Product specifications and material information available for project review."
+    },
+    {
+      "title_th": "ความปลอดภัยและประสิทธิภาพ",
+      "title_en": "Safety & Performance",
+      "text_th": "สามารถขอเอกสารประกอบตามความต้องการของระบบพื้นและโครงการได้",
+      "text_en": "Supporting documentation can be provided according to your system requirements."
+    }
+  ]
+}
