@@ -139,7 +139,7 @@ document.querySelectorAll('.site-footer,.footer').forEach(footer=>{
 	const socialLinks=document.createElement('div');
 	socialLinks.className='social-links';
 	socialLinks.setAttribute('aria-label',isEnglish?'Follow us':'ติดตามเรา');
-	socialLinks.innerHTML='<a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a><a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a><a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a><a href="https://line.me/ti/p/nsS_L_7bNW" target="_blank" rel="noopener noreferrer" aria-label="LINE"><i class="bi bi-line"></i></a><a href="#" aria-label="X"><i class="bi bi-twitter-x"></i></a><a href="#" aria-label="Threads"><i class="bi bi-threads"></i></a>';
+	socialLinks.innerHTML='<a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a><a href="https://www.youtube.com/@hkssurfaces" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="bi bi-youtube"></i></a><a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a><a href="https://line.me/ti/p/nsS_L_7bNW" target="_blank" rel="noopener noreferrer" aria-label="LINE"><i class="bi bi-line"></i></a><a href="https://x.com/hkssurfaces" target="_blank" rel="noopener noreferrer" aria-label="X"><i class="bi bi-twitter-x"></i></a><a href="#" aria-label="Threads"><i class="bi bi-threads"></i></a>';
 	contactSection.append(socialLinks);
 });
 
