@@ -21,7 +21,7 @@ def asset(path, prefix, fallback="images/sports-card.svg"):
 	value = (path or fallback).lstrip("/")
 	if value.startswith(("http://", "https://", "data:")):
 		return value
-	if not value.startswith("images/"):
+	if not value.startswith(("images/", "Project Images/")):
 		value = f"images/{value}"
 	return f"{prefix}{value}"
 
@@ -284,7 +284,8 @@ def build_projects(projects, products, settings, language):
 	cards = []
 	for project in projects:
 		location = project.get("loc_en" if english else "loc_th") or ""
-		meta = text(" | ".join(filter(None, [str(project.get("year") or ""), str(location)])))
+		category = project.get("category") or project.get("cat") or ""
+		meta = text(" | ".join(filter(None, [str(category), str(project.get("year") or ""), str(location)])))
 		project_title = text(project.get("title_en" if english else "title_th"))
 		project_description = text(project.get("desc_en" if english else "desc_th"))
 		image = project_image(project, prefix)

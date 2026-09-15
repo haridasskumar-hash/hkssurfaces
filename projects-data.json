@@ -1,5 +1,48 @@
 [
   {
+    "slug": "underwater-epdm",
+    "category": "EPDM Flooring",
+    "title_th": "EPDM สำหรับพื้นใต้น้ำ",
+    "title_en": "EPDM for Underwater Flooring",
+    "loc_th": "",
+    "loc_en": "",
+    "desc_th": "ผลงานติดตั้งพื้น EPDM สำหรับพื้นที่ใต้น้ำและบริเวณเล่นน้ำ",
+    "desc_en": "EPDM flooring installation for underwater and water-play areas.",
+    "image": "Project Images/Underwater EPDM (1).jpeg",
+    "images": [
+      {
+        "file": "Project Images/Underwater EPDM (1).jpeg",
+        "alt_th": "ผลงานพื้น EPDM ใต้น้ำ",
+        "alt_en": "Underwater EPDM flooring project",
+        "primary": true
+      },
+      {
+        "file": "Project Images/Underwater EPDM (2).jpeg",
+        "alt_th": "รายละเอียดพื้น EPDM ใต้น้ำ",
+        "alt_en": "Underwater EPDM flooring detail",
+        "primary": false
+      },
+      {
+        "file": "Project Images/Underwater EPDM (3).jpeg",
+        "alt_th": "พื้นที่ติดตั้งพื้น EPDM ใต้น้ำ",
+        "alt_en": "Underwater EPDM installation area",
+        "primary": false
+      },
+      {
+        "file": "Project Images/Underwater EPDM (4).jpeg",
+        "alt_th": "พื้น EPDM สำหรับพื้นที่เล่นน้ำ",
+        "alt_en": "EPDM flooring for a water-play area",
+        "primary": false
+      },
+      {
+        "file": "Project Images/Underwater EPDM (5).jpeg",
+        "alt_th": "มุมมองโครงการพื้น EPDM ใต้น้ำ",
+        "alt_en": "Underwater EPDM project view",
+        "primary": false
+      }
+    ]
+  },
+  {
     "title_th": "โครงการพื้น EPDM สนามเด็กเล่น",
     "title_en": "EPDM Playground Flooring Project",
     "loc_th": "ประเทศไทย",
