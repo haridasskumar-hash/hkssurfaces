@@ -49,7 +49,93 @@
     "loc_en": "Thailand",
     "desc_th": "ตัวอย่างโครงการสำหรับแสดงผลงาน HKS Surfaces สามารถแก้ไขข้อความและรูปภาพได้จาก projects-data.json",
     "desc_en": "Sample project entry. Replace the content and image in projects-data.json.",
-    "image": "project-epdm.svg"
+    "image": "Project Images/EPDM Flooring Project (1).jpg",
+    "images": [
+      {
+        "file": "Project Images/EPDM Flooring Project (1).jpg",
+        "alt_th": "ผลงานโครงการพื้น EPDM สนามเด็กเล่น",
+        "alt_en": "EPDM playground flooring project",
+        "primary": true
+      },
+      {
+        "file": "Project Images/EPDM Flooring Project (2).jpg",
+        "alt_th": "รายละเอียดโครงการพื้น EPDM สนามเด็กเล่น",
+        "alt_en": "EPDM playground flooring project detail",
+        "primary": false
+      },
+      {
+        "file": "Project Images/EPDM Flooring Project (3).jpg",
+        "alt_th": "พื้นที่ติดตั้งพื้น EPDM สนามเด็กเล่น",
+        "alt_en": "EPDM playground flooring installation area",
+        "primary": false
+      },
+      {
+        "file": "Project Images/EPDM Flooring Project (5).jpg",
+        "alt_th": "ผลงานติดตั้งพื้น EPDM",
+        "alt_en": "EPDM flooring installation",
+        "primary": false
+      },
+      {
+        "file": "Project Images/EPDM Flooring Project (6).jpg",
+        "alt_th": "พื้น EPDM ในโครงการสนามเด็กเล่น",
+        "alt_en": "EPDM surface in the playground project",
+        "primary": false
+      },
+      {
+        "file": "Project Images/EPDM Flooring Project (7).jpg",
+        "alt_th": "มุมมองโครงการพื้น EPDM",
+        "alt_en": "EPDM flooring project view",
+        "primary": false
+      },
+      {
+        "file": "Project Images/EPDM Flooring Project (8).jpg",
+        "alt_th": "รายละเอียดพื้น EPDM ในโครงการ",
+        "alt_en": "EPDM flooring project detail",
+        "primary": false
+      },
+      {
+        "file": "Project Images/EPDM Flooring Project (9).jpg",
+        "alt_th": "พื้นที่ใช้งานพื้น EPDM",
+        "alt_en": "EPDM flooring application area",
+        "primary": false
+      },
+      {
+        "file": "Project Images/EPDM Flooring Project (10).jpg",
+        "alt_th": "ผลงานพื้น EPDM สนามเด็กเล่น",
+        "alt_en": "EPDM playground surface project",
+        "primary": false
+      },
+      {
+        "file": "Project Images/EPDM Flooring Project (11).jpg",
+        "alt_th": "มุมมองพื้นที่พื้น EPDM",
+        "alt_en": "EPDM flooring area view",
+        "primary": false
+      },
+      {
+        "file": "Project Images/EPDM Flooring Project (12).jpg",
+        "alt_th": "รายละเอียดงานติดตั้งพื้น EPDM",
+        "alt_en": "EPDM flooring installation detail",
+        "primary": false
+      },
+      {
+        "file": "Project Images/EPDM Flooring Project (13).jpg",
+        "alt_th": "โครงการพื้น EPDM สนามเด็กเล่น",
+        "alt_en": "EPDM playground flooring project",
+        "primary": false
+      },
+      {
+        "file": "Project Images/EPDM Flooring Project (14).jpg",
+        "alt_th": "พื้นผิว EPDM ในโครงการ",
+        "alt_en": "EPDM surface in the project",
+        "primary": false
+      },
+      {
+        "file": "Project Images/EPDM Flooring Project (15).jpg",
+        "alt_th": "มุมมองผลงานโครงการพื้น EPDM",
+        "alt_en": "EPDM flooring project overview",
+        "primary": false
+      }
+    ]
   },
   {
     "title_th": "โครงการพื้นสนามพิคเคิลบอล",
