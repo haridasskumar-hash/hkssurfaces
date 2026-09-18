@@ -16,10 +16,22 @@
   "gallery_title_en": "Featured Surfaces & Projects",
   "gallery_images": [
     {
-      "file": "images/playground-card.svg",
-      "alt_th": "ตัวอย่างพื้นสนามเด็กเล่น",
-      "alt_en": "Playground safety flooring example",
-      "featured": true
+      "file": "Project Images/EPDM Flooring Project (1).jpg",
+      "alt_th": "ผลงานโครงการพื้น EPDM สนามเด็กเล่น",
+      "alt_en": "EPDM playground flooring project",
+      "label_th": "โครงการพื้น EPDM สนามเด็กเล่น",
+      "label_en": "EPDM Playground Flooring Project",
+      "featured": true,
+      "link": "projects/index.html#epdm-flooring-project"
+    },
+    {
+      "file": "Project Images/Underwater EPDM (1).jpeg",
+      "alt_th": "ผลงานพื้น EPDM ใต้น้ำ",
+      "alt_en": "Underwater EPDM flooring project",
+      "label_th": "พื้น EPDM สำหรับพื้นที่ใต้น้ำ",
+      "label_en": "EPDM for Underwater Flooring",
+      "featured": true,
+      "link": "projects/index.html#underwater-epdm"
     },
     {
       "file": "images/sports-card.svg",
