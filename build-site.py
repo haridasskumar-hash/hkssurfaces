@@ -32,6 +32,19 @@ def write(path, content):
 	target.write_text(content, encoding="utf-8")
 
 
+def build_sitemap(settings):
+	base_url = settings.get("site_url", "https://www.hkssurfaces.com").rstrip("/")
+	paths = []
+	for page in ROOT.rglob("index.html"):
+		relative = page.relative_to(ROOT)
+		if relative.parts[0] in {"admin", "__pycache__"}:
+			continue
+		url_path = "/" if relative == Path("index.html") else "/".join(relative.parent.parts) + "/"
+		paths.append(f"{base_url}/{url_path.lstrip('/')}")
+	urls = "\n".join(f"<url><loc>{escape(url)}</loc></url>" for url in sorted(paths))
+	write("sitemap.xml", f'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n{urls}\n</urlset>\n')
+
+
 def nav(prefix, language, active, settings, products, show_quote=True):
 	english = language == "en"
 	labels = {
@@ -333,15 +346,23 @@ def build_blogs(blogs, products, settings, language):
 	prefix = "../../" if english else "../"
 	title = "Blog & Knowledge" if english else "บทความและความรู้"
 	description = "Guidance on safety and sports surface systems." if english else "ข้อมูลเกี่ยวกับพื้น EPDM พื้นสนามเด็กเล่น และพื้นสนามกีฬา"
-	cards = "".join(f'<a class="card" href="{text(blog["slug"])}/index.html"><div class="media" style="background-image:url(\'{asset(blog.get("image"), prefix)}\')"></div><div class="card-body"><span class="meta">{text(blog.get("date"))}</span><h2>{text(blog.get("title_en" if english else "title_th"))}</h2><p>{text(blog.get("excerpt_en" if english else "excerpt_th"))}</p></div></a>' for blog in blogs)
+	cards = "".join(f'<a class="card" href="{text(blog.get("path_en" if english else "path_th") or f"{blog["slug"]}/index.html")}"><div class="media" style="background-image:url(\'{asset(blog.get("image"), prefix)}\')"></div><div class="card-body"><span class="meta">{text(blog.get("date"))}</span><h2>{text(blog.get("title_en" if english else "title_th"))}</h2><p>{text(blog.get("excerpt_en" if english else "excerpt_th"))}</p></div></a>' for blog in blogs)
 	body = hero(title, description, "BLOG & KNOWLEDGE") + f'<main class="section"><div class="container"><div class="grid-3">{cards}</div></div></main>'
 	write(("en/" if english else "") + "blog/index.html", document(title, description, prefix, language, "blog", body, settings, products))
 	for blog in blogs:
 		detail_prefix = "../../../" if english else "../../"
 		blog_title = blog.get("title_en" if english else "title_th")
-		sections = blog.get("body_en" if english else "body_th", [])
-		article = "".join(f"<h2>{text(section[0])}</h2><p>{text(section[1])}</p>" for section in sections if len(section) > 1)
-		body = hero(blog_title, blog.get("excerpt_en" if english else "excerpt_th"), "HKS SURFACES") + f'<main class="section"><article class="article"><div class="meta">{text(blog.get("date"))}</div><img src="{asset(blog.get("image"), detail_prefix)}" alt="{text(blog_title)}">{article}</article></main>'
+		source = blog.get("source_en" if english else "source_th")
+		if source:
+			raw_article = (ROOT / source).read_text(encoding="utf-8")
+			article_start = raw_article.find("<article>")
+			article_end = raw_article.rfind("</article>")
+			article = raw_article[article_start + len("<article>"):article_end] if article_start >= 0 and article_end > article_start else ""
+			article = article[:article.rfind("<footer>")] if "<footer>" in article else article
+		else:
+			sections = blog.get("body_en" if english else "body_th", [])
+			article = "".join(f"<h2>{text(section[0])}</h2><p>{text(section[1])}</p>" for section in sections if len(section) > 1)
+		body = f'<main class="section"><article class="article"><div class="meta">{text(blog.get("date"))}</div>{article}</article></main>'
 		path = ("en/" if english else "") + f'blog/{blog["slug"]}/index.html'
 		write(path, document(blog_title, blog.get("excerpt_en" if english else "excerpt_th"), detail_prefix, language, "blog", body, settings, products))
 
@@ -361,6 +382,7 @@ def main():
 		build_projects(projects, products, settings, language)
 		build_certificates(certificates, products, settings, language)
 		build_blogs(blogs, products, settings, language)
+	build_sitemap(settings)
 	print("Built public pages from JSON content files.")
 
 
