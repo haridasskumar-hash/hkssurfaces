@@ -34,10 +34,13 @@
       "link": "projects/index.html#underwater-epdm"
     },
     {
-      "file": "images/sports-card.svg",
-      "alt_th": "ตัวอย่างพื้นสนามกีฬา",
-      "alt_en": "Sports flooring example",
-      "featured": false
+      "file": "Project Images/Running Track Project 1.jpg",
+      "alt_th": "ผลงานโครงการลู่วิ่ง",
+      "alt_en": "Running track project",
+      "label_th": "โครงการลู่วิ่ง",
+      "label_en": "Running Track Project",
+      "featured": false,
+      "link": "projects/index.html#running-track-project"
     },
     {
       "file": "images/track-card.svg",
@@ -50,9 +53,18 @@
       "alt_th": "ผลงานโครงการหญ้าเทียม",
       "alt_en": "Artificial grass project",
       "label_th": "โครงการหญ้าเทียม",
-      "label_en": "Artificial Grass Project",
+      "label_en": "Artificial Grass Projects",
       "featured": false,
       "link": "projects/index.html#artificial-grass"
+    },
+    {
+      "file": "Project Images/pickleball court.jpg",
+      "alt_th": "ผลงานโครงการพื้นสนามพิคเคิลบอล",
+      "alt_en": "Pickleball court flooring project",
+      "label_th": "โครงการพื้นสนามพิคเคิลบอล",
+      "label_en": "Pickleball Court Flooring Project",
+      "featured": false,
+      "link": "projects/index.html#pickleball-court-project"
     }
   ]
 }

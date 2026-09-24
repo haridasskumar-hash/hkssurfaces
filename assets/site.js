@@ -81,6 +81,23 @@ document.addEventListener('click',event=>{
 	}
 });
 
+const pickleballPlaceholder=document.querySelector('[data-lightbox-src*="project-pickleball.svg"]');
+if(pickleballPlaceholder){
+	const pickleballFiles=['pickleball court.jpg','pickleball court 2.jpg','pickleball court 3.jpg','pickleball court 4.jpg'];
+	const pickleballBase=`${siteRoot}Project Images/`;
+	const pickleballGroup=pickleballPlaceholder.dataset.lightboxGroup;
+	const pickleballCard=pickleballPlaceholder.closest('.card');
+	const firstPickleballImage=pickleballBase+pickleballFiles[0];
+	pickleballPlaceholder.dataset.lightboxSrc=firstPickleballImage;
+	pickleballPlaceholder.style.backgroundImage=`url("${firstPickleballImage}")`;
+	if(pickleballCard){
+		const gallery=document.createElement('div');
+		gallery.className='image-gallery project-gallery';
+		gallery.innerHTML=pickleballFiles.map((file,index)=>`<img class="project-image-trigger" src="${pickleballBase}${file}" data-lightbox-group="${pickleballGroup}" data-lightbox-src="${pickleballBase}${file}" alt="${isEnglish?'Pickleball court project image '+(index+1):'ภาพโครงการสนามพิคเคิลบอล '+(index+1)}" loading="lazy">`).join('');
+		pickleballCard.querySelector('.card-body')?.append(gallery);
+	}
+}
+
 const projectImageTriggers=document.querySelectorAll('.project-image-trigger');
 if(projectImageTriggers.length){
 	const lightbox=document.createElement('div');

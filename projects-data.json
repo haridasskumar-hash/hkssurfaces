@@ -1,7 +1,7 @@
 [
   {
     "slug": "underwater-epdm",
-    "category": "EPDM Flooring",
+    "category": "Underwater EPDM Flooring Project",
     "title_th": "EPDM สำหรับพื้นใต้น้ำ",
     "title_en": "EPDM for Underwater Flooring",
     "loc_th": "",
@@ -47,7 +47,7 @@
     "title_th": "โครงการพื้น EPDM สนามเด็กเล่น",
     "title_en": "EPDM Playground Flooring Project",
     "loc_th": "ประเทศไทย",
-    "loc_en": "Thailand",
+    "loc_en": "EPDM Flooring Project",
     "desc_th": "ตัวอย่างโครงการสำหรับแสดงผลงาน HKS Surfaces สามารถแก้ไขข้อความและรูปภาพได้จาก projects-data.json",
     "desc_en": "Sample project entry. Replace the content and image in projects-data.json.",
     "image": "Project Images/EPDM Flooring Project (1).jpg",
@@ -139,10 +139,11 @@
     ]
   },
   {
+    "slug": "pickleball-court-project",
     "title_th": "โครงการพื้นสนามพิคเคิลบอล",
     "title_en": "Pickleball Court Flooring Project",
     "loc_th": "ประเทศไทย",
-    "loc_en": "Thailand",
+    "loc_en": "Pickleball Court Flooring Project",
     "desc_th": "ตัวอย่างโครงการพื้นสนามพิคเคิลบอลสำหรับสนามใหม่หรือการปรับปรุงสนามเดิม",
     "desc_en": "Sample pickleball court flooring project for new builds or court renovation.",
     "image": "project-pickleball.svg"
@@ -150,7 +151,7 @@
   {
     "slug": "artificial-grass",
     "title_th": "โครงการหญ้าเทียม",
-    "title_en": "Artificial Grass Project",
+    "title_en": "Artificial Grass Projects",
     "loc_th": "",
     "loc_en": "",
     "desc_th": "ผลงานติดตั้งระบบหญ้าเทียมสำหรับพื้นที่ใช้งานหลากหลายรูปแบบ",
@@ -197,6 +198,48 @@
         "file": "images/projects/artificial-grass/Artificial Project 3.jpg",
         "alt_th": "รายละเอียดผลงานหญ้าเทียม",
         "alt_en": "Artificial grass project detail",
+        "primary": false
+      }
+    ]
+  },
+  {
+    "slug": "running-track-project",
+    "title_th": "โครงการลู่วิ่ง",
+    "title_en": "Running Track Project",
+    "loc_th": "",
+    "loc_en": "",
+    "desc_th": "ผลงานติดตั้งพื้นลู่วิ่งสังเคราะห์สำหรับสนามกีฬา",
+    "desc_en": "Synthetic running track installation project for sports facilities.",
+    "image": "Project Images/Running Track Project 1.jpg",
+    "images": [
+      {
+        "file": "Project Images/Running Track Project 1.jpg",
+        "alt_th": "ผลงานโครงการลู่วิ่ง",
+        "alt_en": "Running track project",
+        "primary": true
+      },
+      {
+        "file": "Project Images/Running Track Project 2.jpg",
+        "alt_th": "รายละเอียดลู่วิ่ง",
+        "alt_en": "Running track detail",
+        "primary": false
+      },
+      {
+        "file": "Project Images/Running Track Project 3.jpg",
+        "alt_th": "พื้นลู่วิ่งในโครงการ",
+        "alt_en": "Running track surface",
+        "primary": false
+      },
+      {
+        "file": "Project Images/Running Track Project 4.jpg",
+        "alt_th": "การติดตั้งลู่วิ่ง",
+        "alt_en": "Running track installation",
+        "primary": false
+      },
+      {
+        "file": "Project Images/Running Track Project 5.jpg",
+        "alt_th": "มุมมองโครงการลู่วิ่ง",
+        "alt_en": "Running track project view",
         "primary": false
       }
     ]
