@@ -49,6 +49,7 @@ def nav(prefix, language, active, settings, products, show_quote=True):
 	english = language == "en"
 	labels = {
 		"home": "Home" if english else "หน้าแรก",
+		"about": "About Us" if english else "เกี่ยวกับเรา",
 		"products": "Products" if english else "ผลิตภัณฑ์",
 		"services": "Services" if english else "บริการ",
 		"projects": "Projects" if english else "โครงการ",
@@ -59,6 +60,7 @@ def nav(prefix, language, active, settings, products, show_quote=True):
 	base = "en/" if english else ""
 	links = {
 		"home": f"{prefix}{base}index.html",
+		"about": f"{prefix}{base}about/index.html",
 		"products": f"{prefix}{base}products/index.html",
 		"services": f"{prefix}{base}services/index.html",
 		"projects": f"{prefix}{base}projects/index.html",
@@ -208,6 +210,50 @@ def build_contact(settings, products, language):
 	contact_details = f'<div class="contact-details"><p><strong>{"Head Office" if english else "สำนักงานใหญ่"}</strong><br>{text(settings.get("business_address"))}</p><p class="hotline"><strong>{"Hotline" if english else "สายด่วน"}</strong><br><a href="tel:{text(settings.get("phone_href", "+66877070280"))}">{text(settings.get("phone_display", "087 707 0280"))}</a></p><p>Tel: {text(settings.get("office_phone", "+66 2 3636660-1"))}<br>Fax: {text(settings.get("office_fax", "+66 2 3636662"))}<br><a href="mailto:{text(settings.get("contact_email"))}">{text(settings.get("contact_email"))}</a><br><a href="https://line.me/ti/p/Rn_AsnrLLf" target="_blank" rel="noopener noreferrer"><i class="bi bi-line"></i> LINE</a></p></div>'
 	body = hero(title, description, "HKS SURFACES") + f'<main class="section"><div class="container"><div class="contact-page-grid"><div class="contact-page-copy"><h2>{"Let’s discuss your project" if english else "พูดคุยเกี่ยวกับโครงการของคุณ"}</h2><p>{"Contact HKS Surfaces for product guidance, technical information, and a quotation tailored to your project." if english else "ติดต่อ HKS Surfaces เพื่อขอคำแนะนำผลิตภัณฑ์ ข้อมูลทางเทคนิค และใบเสนอราคาที่เหมาะกับโครงการของคุณ"}</p>{contact_details}</div>{contact_form(settings, english)}</div></div></main>'
 	write(("en/" if english else "") + "contact/index.html", document(title, description, prefix, language, "contact", body, settings, products))
+
+
+def build_about(products, settings, language):
+	english = language == "en"
+	prefix = "../../" if english else "../"
+	title = "About HKS Surfaces" if english else "เกี่ยวกับ HKS Surfaces"
+	description = "Professional safety, sports and recreational surface solutions for projects throughout Thailand." if english else "ผู้เชี่ยวชาญด้านพื้นเพื่อความปลอดภัย พื้นสนามกีฬา และระบบพื้นสำหรับพื้นที่นันทนาการในประเทศไทย"
+	intro_title = "Professional Flooring Solutions for Thailand" if english else "ผู้เชี่ยวชาญด้านพื้นสนามกีฬาและพื้นเพื่อความปลอดภัยในประเทศไทย"
+	intro = "HKS Surfaces is a Thailand-based specialist in safety flooring, sports flooring and recreational surface solutions. We provide durable, practical and performance-focused flooring systems for playgrounds, sports facilities, schools, parks, commercial developments, hotels, resorts and public spaces." if english else "HKS Surfaces คือผู้เชี่ยวชาญด้านพื้นเพื่อความปลอดภัย พื้นสนามกีฬา และระบบพื้นสำหรับพื้นที่นันทนาการในประเทศไทย เรามุ่งเน้นการนำเสนอระบบพื้นที่มีคุณภาพ ทนทาน ใช้งานได้จริง และเหมาะสมกับลักษณะการใช้งานของแต่ละโครงการ"
+	location = "Based in Bangkok, Thailand, we support projects from product selection and system recommendations through to supply and installation." if english else "เราตั้งอยู่ในกรุงเทพมหานคร ประเทศไทย พร้อมให้บริการตั้งแต่การให้คำปรึกษา การเลือกระบบพื้นและวัสดุที่เหมาะสม ไปจนถึงการจัดหาและติดตั้งสำหรับโครงการหลากหลายประเภท"
+	solutions_title = "Our Solutions" if english else "ผลิตภัณฑ์และโซลูชันของเรา"
+	solutions = [
+		"Playground Safety Flooring" if english else "พื้นสนามเด็กเล่นเพื่อความปลอดภัย",
+		"EPDM & SBR Rubber Granules" if english else "เม็ดยาง EPDM และ SBR",
+		"Rubber Safety Tiles" if english else "แผ่นยางกันกระแทก",
+		"Running Track Systems" if english else "พื้นลู่วิ่ง",
+		"Basketball Courts" if english else "พื้นสนามบาสเกตบอล",
+		"Pickleball Courts" if english else "พื้นสนามพิคเคิลบอล",
+		"Padel Courts" if english else "พื้นสนามพาเดล",
+		"Tennis Courts" if english else "พื้นสนามเทนนิส",
+		"Badminton Courts" if english else "พื้นสนามแบดมินตัน",
+		"Multi-Sport Courts" if english else "พื้นสนามกีฬาอเนกประสงค์",
+		"Gym & Fitness Flooring" if english else "พื้นยางสำหรับยิมและฟิตเนส",
+		"Artificial Grass" if english else "หญ้าเทียม",
+		"Water Park & Splash Pad Flooring" if english else "พื้นสำหรับสวนน้ำและ Splash Pad",
+		"Epoxy Flooring Systems" if english else "ระบบพื้นอีพ็อกซี่",
+		"Aqua Fitness Solutions" if english else "โซลูชันอุปกรณ์ออกกำลังกายในน้ำ",
+	]
+	what_title = "What We Do" if english else "เราทำอะไร"
+	what_text = "Every project has different requirements. HKS Surfaces works closely with developers, architects, contractors, schools, sports facilities, hotels, resorts and project owners to recommend suitable surface systems based on application, performance, durability, maintenance and budget." if english else "เราเข้าใจว่าแต่ละโครงการมีความต้องการที่แตกต่างกัน HKS Surfaces จึงทำงานร่วมกับเจ้าของโครงการ ผู้พัฒนาโครงการ สถาปนิก ผู้รับเหมา โรงเรียน ศูนย์กีฬา โรงแรม และรีสอร์ท เพื่อเลือกระบบพื้นที่เหมาะสม โดยพิจารณาจากประเภทการใช้งาน ประสิทธิภาพ ความทนทาน การบำรุงรักษา และงบประมาณ"
+	what_text_2 = "Our focus is not simply on supplying flooring materials. We aim to provide a complete surface solution suited to the environment and intended use." if english else "เราไม่ได้มุ่งเน้นเพียงการจำหน่ายวัสดุปูพื้น แต่ให้ความสำคัญกับการนำเสนอโซลูชันระบบพื้นที่ครบถ้วน และเหมาะสมกับสภาพแวดล้อมและวัตถุประสงค์การใช้งานของแต่ละพื้นที่"
+	why_title = "Why HKS Surfaces?" if english else "ทำไมต้องเลือก HKS Surfaces?"
+	why_items = [
+		("Specialized Solutions", "A focused range of flooring systems for sports, recreation, safety and commercial applications.", "ความเชี่ยวชาญด้านระบบพื้น", "เรามีโซลูชันสำหรับงานพื้นสนามกีฬา พื้นเพื่อความปลอดภัย พื้นนันทนาการ และพื้นสำหรับงานเชิงพาณิชย์"),
+		("Project Support", "Technical guidance from surface selection and specification through to project implementation.", "การสนับสนุนโครงการ", "ให้คำแนะนำตั้งแต่การเลือกระบบพื้น การกำหนดรายละเอียดวัสดุ ไปจนถึงการดำเนินงานและติดตั้ง"),
+		("Quality & Performance", "Products and systems selected with emphasis on durability, safety, functionality and long-term performance.", "คุณภาพและประสิทธิภาพ", "เราให้ความสำคัญกับคุณภาพ ความปลอดภัย ความทนทาน ประสิทธิภาพในการใช้งาน และอายุการใช้งานของระบบพื้น"),
+		("Custom Solutions", "Colours, surface systems and configurations can be adapted to suit different project requirements and design concepts.", "ออกแบบให้เหมาะกับแต่ละโครงการ", "สามารถเลือกสี รูปแบบ และระบบพื้นให้เหมาะสมกับการใช้งาน แนวคิดการออกแบบ และความต้องการเฉพาะของแต่ละโครงการ"),
+	]
+	why_cards = "".join(f'<article class="content-card"><h3>{text(item[0] if english else item[2])}</h3><p>{text(item[1] if english else item[3])}</p></article>' for item in why_items)
+	commitment_title = "Our Commitment" if english else "ความมุ่งมั่นของเรา"
+	commitment = "At HKS Surfaces, our goal is to create surfaces that are safe, durable, functional and built for everyday use." if english else "ที่ HKS Surfaces เรามุ่งมั่นที่จะสร้างพื้นผิวที่ปลอดภัย ทนทาน ใช้งานได้จริง และพร้อมรองรับการใช้งานในระยะยาว"
+	commitment_2 = "Whether it is a colourful EPDM playground, a professional sports court, a running track, a gym or a commercial flooring project, we work to provide the right surface solution for every space." if english else "ไม่ว่าจะเป็นสนามเด็กเล่น EPDM ที่มีสีสัน สนามกีฬา ลู่วิ่ง พื้นยิม หรือระบบพื้นสำหรับโครงการเชิงพาณิชย์ เราพร้อมนำเสนอโซลูชันพื้นที่เหมาะสมสำหรับทุกพื้นที่"
+	body = hero(title, intro, "ABOUT HKS SURFACES") + f'''<main class="section about-page"><div class="container"><section class="about-intro"><h2>{text(intro_title)}</h2><p>{text(intro)}</p><p>{text(location)}</p></section><section class="about-block"><h2>{text(solutions_title)}</h2><ul class="feature-list about-solutions">{"".join(f"<li>{text(item)}</li>" for item in solutions)}</ul></section><section class="about-block"><h2>{text(what_title)}</h2><p>{text(what_text)}</p><p>{text(what_text_2)}</p></section><section class="about-block"><h2>{text(why_title)}</h2><div class="content-grid">{why_cards}</div></section><section class="about-commitment"><h2>{text(commitment_title)}</h2><p>{text(commitment)}</p><p>{text(commitment_2)}</p><strong>HKS Surfaces</strong><em>Safety • Sports • Performance Surfaces</em></section></div></main>'''
+	write(("en/" if english else "") + "about/index.html", document(title, description, prefix, language, "about", body, settings, products))
 
 
 def build_products(products, settings, language):
@@ -377,6 +423,7 @@ def main():
 	for language in ("th", "en"):
 		build_homepage(homepage, products, settings, language)
 		build_contact(settings, products, language)
+		build_about(products, settings, language)
 		build_products(products, settings, language)
 		build_services(products, settings, language)
 		build_projects(projects, products, settings, language)
