@@ -14,8 +14,10 @@ if(heroSlideshow){
 		if(heroImages.length>1){
 			heroImages.slice(1).forEach(image=>{const preload=new Image();preload.src=image});
 			let heroIndex=0;
+			heroSlideshow.dataset.heroIndex='0';
 			setInterval(()=>{
 				heroIndex=(heroIndex+1)%heroImages.length;
+				heroSlideshow.dataset.heroIndex=String(heroIndex);
 				heroSlideshow.style.backgroundImage=`url("${heroImages[heroIndex]}")`;
 			},5000);
 		}

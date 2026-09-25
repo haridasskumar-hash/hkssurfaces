@@ -47,6 +47,7 @@ nav a{padding:42px 0 34px;position:relative}nav a.active{color:var(--green)}nav 
 .homepage-hero .hero-copy>h2{display:block;width:max-content;max-width:100%;margin-left:auto;margin-right:auto;text-align:center}
 .homepage-hero .hero-copy>p{display:block;width:min(100%,800px);max-width:800px;margin-left:auto;margin-right:auto;text-align:center}
 .homepage-hero .benefits,.homepage-hero .hero-actions{justify-content:center}
+@media(min-width:651px){.homepage-hero[data-hero-index="1"],.homepage-hero[data-hero-index="2"]{background-position:center 70%}}
 .hero-copy{padding-left:200px}.hero h1{font-size:clamp(48px,5vw,72px);line-height:1.08;margin:0 0 12px;color:#fff}.hero h2{font-size:31px;color:var(--green2);margin:0 0 4px}.tagline{font-size:25px;font-weight:800;margin-bottom:14px}
 .hero p{font-size:18px;line-height:1.7;max-width:800px}.benefits{display:flex;gap:28px;border-top:1px solid rgba(255,255,255,.5);padding-top:16px;margin-top:14px;flex-wrap:wrap}
 .benefit{display:flex;gap:10px;align-items:center}.benefit i{width:38px;height:38px;border-radius:50%;background:var(--green);display:grid;place-items:center;font-style:normal;font-weight:800}
