@@ -7,6 +7,23 @@ if(!document.querySelector('link[href*="bootstrap-icons"]')){
 
 document.querySelector('.menu')?.addEventListener('click',()=>document.querySelector('nav')?.classList.toggle('open'));
 
+const heroSlideshow=document.querySelector('.homepage-hero[data-hero-images]');
+if(heroSlideshow){
+	try{
+		const heroImages=JSON.parse(heroSlideshow.dataset.heroImages);
+		if(heroImages.length>1){
+			heroImages.slice(1).forEach(image=>{const preload=new Image();preload.src=image});
+			let heroIndex=0;
+			setInterval(()=>{
+				heroIndex=(heroIndex+1)%heroImages.length;
+				heroSlideshow.style.backgroundImage=`url("${heroImages[heroIndex]}")`;
+			},5000);
+		}
+	}catch(error){
+		console.warn('Hero slideshow could not be initialized.',error);
+	}
+}
+
 const contactForm=document.querySelector('#contact[data-math-answer]');
 if(contactForm){
 	const mathAnswer=contactForm.querySelector('.math-answer');
