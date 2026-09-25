@@ -415,9 +415,10 @@ def build_blogs(blogs, products, settings, language):
 		source = blog.get("source_en" if english else "source_th")
 		if source:
 			raw_article = (ROOT / source).read_text(encoding="utf-8")
-			article_start = raw_article.find("<article>")
+			article_start = raw_article.find("<article")
+			article_tag_end = raw_article.find(">", article_start)
 			article_end = raw_article.rfind("</article>")
-			article = raw_article[article_start + len("<article>"):article_end] if article_start >= 0 and article_end > article_start else ""
+			article = raw_article[article_tag_end + 1:article_end] if article_start >= 0 and article_tag_end > article_start and article_end > article_tag_end else ""
 			article = article[:article.rfind("<footer>")] if "<footer>" in article else article
 		else:
 			sections = blog.get("body_en" if english else "body_th", [])
