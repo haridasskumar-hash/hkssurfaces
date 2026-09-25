@@ -303,6 +303,7 @@ def build_products(products, settings, language):
 		is_pickleball = product.get("slug") == "pickleball-court-flooring"
 		is_badminton = product.get("slug") == "badminton-court-flooring"
 		is_rubber_tiles = product.get("slug") == "rubber-safety-tiles"
+		is_indoor_sports = product.get("slug") == "indoor-sports-flooring"
 		is_gym = product.get("slug") == "gym-flooring"
 		is_wet_area_epdm = product.get("slug") == "epdm-flooring-wet-area"
 		is_multi_sport = product.get("slug") == "multi-sport-court-flooring"
@@ -319,6 +320,7 @@ def build_products(products, settings, language):
 		layout_class += " product-layout--pickleball" if is_pickleball else ""
 		layout_class += " product-layout--badminton" if is_badminton else ""
 		layout_class += " product-layout--rubber-tiles" if is_rubber_tiles else ""
+		layout_class += " product-layout--rubber-tiles" if is_indoor_sports else ""
 		layout_class += " product-layout--gym" if is_gym else ""
 		layout_class += " product-layout--wet-area-epdm" if is_wet_area_epdm else ""
 		layout_class += " product-layout--multi-sport" if is_multi_sport else ""
@@ -338,7 +340,7 @@ def build_products(products, settings, language):
 		quote_cta = "" if is_basketball or is_padel or is_pickleball else f'<a class="btn green" href="{detail_prefix}{contact_prefix}contact/index.html">{cta_label}</a>'
 		intro_content = right_column_content if is_epdm_granules else f'<span class="pill">{category}</span><h2>{text(product_title)}</h2><p>{text(product_description)}</p><h3>{feature_heading}</h3><ul class="feature-list">{feature_list}</ul>{quote_cta}{right_column_content}'
 		hero_content = "" if uses_image_first_layout else hero(product_title, product_description, "HKS SURFACES")
-		intro_column = "" if is_epdm_flooring or is_sbr_granules or is_running_track or is_pu_binder or is_basketball or is_padel or is_pickleball or is_badminton or is_rubber_tiles or is_gym or is_wet_area_epdm or is_multi_sport or is_tennis or is_epoxy or is_artificial_turf or is_playground_safety else f'<div>{intro_content}</div>'
+		intro_column = "" if is_epdm_flooring or is_sbr_granules or is_running_track or is_pu_binder or is_basketball or is_padel or is_pickleball or is_badminton or is_rubber_tiles or is_indoor_sports or is_gym or is_wet_area_epdm or is_multi_sport or is_tennis or is_epoxy or is_artificial_turf or is_playground_safety else f'<div>{intro_content}</div>'
 		details_class = ""
 		detail = hero_content + f'<main class="section"><div class="container"><div class="{layout_class}"><div class="{image_stack_class}">{detail_images}</div>{intro_column}</div><div class="{details_class}">{below_content}</div></div></main>'
 		path = ("en/" if english else "") + f'products/{product["slug"]}/index.html'

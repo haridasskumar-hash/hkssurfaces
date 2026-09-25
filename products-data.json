@@ -443,6 +443,101 @@
     ]
   },
   {
+    "slug": "indoor-sports-flooring",
+    "cat": "sports",
+    "th": "ระบบพื้นสนามกีฬาภายในอาคาร",
+    "en": "Indoor Sports Flooring Systems",
+    "dth": "ระบบพื้นสนามกีฬาภายในอาคารคุณภาพสูง สำหรับโรงยิม ศูนย์ฟิตเนส โรงเรียน สนามกีฬา และพื้นที่อเนกประสงค์",
+    "den": "Durable and high-performance indoor sports flooring solutions for sports halls, fitness centres, schools and multi-purpose facilities.",
+    "fth": [
+      "แข็งแรงและปลอดภัย",
+      "ดูดซับแรงกระแทก",
+      "ป้องกันการลื่น",
+      "ดูแลรักษาง่าย",
+      "สบายเท้า",
+      "รองรับการใช้งานหนัก"
+    ],
+    "fen": [
+      "Durable & safe",
+      "Shock absorbing",
+      "Slip resistant",
+      "Easy maintenance",
+      "Comfortable underfoot",
+      "Suitable for heavy use"
+    ],
+    "detail_sections_en": [
+      {
+        "heading": "Indoor Sports Flooring Systems",
+        "paragraphs": [
+          "HKS Surfaces provides durable and high-performance indoor sports flooring solutions designed for sports halls, fitness centres, schools and multi-purpose facilities."
+        ]
+      },
+      {
+        "heading": "PVC Vinyl & Wooden Flooring",
+        "paragraphs": [
+          "Comfortable, attractive and easy to maintain, providing reliable grip and consistent performance for indoor sports and recreational areas."
+        ]
+      },
+      {
+        "heading": "Gym Rubber Flooring",
+        "paragraphs": [
+          "Heavy-duty rubber flooring designed for gyms and training areas, offering excellent shock absorption, noise reduction, slip resistance and durability."
+        ]
+      },
+      {
+        "heading": "Key Benefits",
+        "list": [
+          "Durable & safe",
+          "Shock absorbing",
+          "Slip resistant",
+          "Easy maintenance",
+          "Comfortable underfoot",
+          "Suitable for heavy use"
+        ]
+      }
+    ],
+    "detail_sections_th": [
+      {
+        "heading": "ระบบพื้นสนามกีฬาภายในอาคาร",
+        "paragraphs": [
+          "HKS Surfaces ให้บริการระบบพื้นสนามกีฬาภายในอาคารคุณภาพสูง แข็งแรง ทนทาน เหมาะสำหรับโรงยิม ศูนย์ฟิตเนส โรงเรียน สนามกีฬา และพื้นที่อเนกประสงค์"
+        ]
+      },
+      {
+        "heading": "พื้น PVC ไวนิล และพื้นลายไม้",
+        "paragraphs": [
+          "ให้ความสวยงาม สบายเท้า ดูแลรักษาง่าย พร้อมการยึดเกาะที่ดี เหมาะสำหรับกีฬาและกิจกรรมภายในอาคารหลากหลายประเภท"
+        ]
+      },
+      {
+        "heading": "พื้นยางสำหรับฟิตเนส",
+        "paragraphs": [
+          "พื้นยางสำหรับงานหนัก ช่วยดูดซับแรงกระแทก ลดเสียง ป้องกันการลื่น และรองรับการใช้งานหนัก เหมาะสำหรับฟิตเนสและพื้นที่ฝึกซ้อม"
+        ]
+      },
+      {
+        "heading": "จุดเด่น",
+        "list": [
+          "แข็งแรงและปลอดภัย",
+          "ดูดซับแรงกระแทก",
+          "ป้องกันการลื่น",
+          "ดูแลรักษาง่าย",
+          "สบายเท้า",
+          "รองรับการใช้งานหนัก"
+        ]
+      }
+    ],
+    "images": [
+      {"file": "images/Indoor Flooring EN.jpg", "primary": true}
+    ],
+    "images_en": [
+      {"file": "images/Indoor Flooring EN.jpg", "primary": true}
+    ],
+    "images_th": [
+      {"file": "images/Indoor Flooring TH.jpg", "primary": true}
+    ]
+  },
+  {
     "slug": "badminton-court-flooring",
     "cat": "sports",
     "th": "พื้นสนามแบดมินตัน",
