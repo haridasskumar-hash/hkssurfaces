@@ -310,7 +310,7 @@ def build_products(products, settings, language):
 		is_epoxy = product.get("slug") == "epoxy-flooring"
 		is_artificial_turf = product.get("slug") == "artificial-turf"
 		is_playground_safety = product.get("slug") == "playground-safety-flooring"
-		uses_image_first_layout = is_epdm_granules or is_epdm_flooring or is_sbr_granules or is_running_track or is_pu_binder or is_playground_safety
+		uses_image_first_layout = is_epdm_granules or is_sbr_granules or is_running_track or is_pu_binder
 		right_column_content = product_detail_sections(product, language, 0, 2) if is_epdm_granules else ""
 		below_content = product_detail_sections(product, language, 2) if is_epdm_granules else extra_content
 		layout_class = "product-layout product-layout--image-first" if uses_image_first_layout else "product-layout"
@@ -326,6 +326,7 @@ def build_products(products, settings, language):
 		layout_class += " product-layout--epoxy" if is_epoxy else ""
 		layout_class += " product-layout--artificial-turf" if is_artificial_turf else ""
 		layout_class += " product-layout--playground-safety" if is_playground_safety else ""
+		layout_class += " product-layout--rubber-tiles" if is_epdm_flooring else ""
 		image_stack_class = "product-image-stack product-image-stack--epdm-granules" if is_epdm_granules else "product-image-stack"
 		image_stack_class += " product-image-stack--epdm-flooring" if is_epdm_flooring else ""
 		image_stack_class += " product-image-stack--running-track" if is_running_track else ""

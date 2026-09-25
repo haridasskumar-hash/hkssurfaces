@@ -4,6 +4,7 @@
   --text:#0b294a;--muted:#667789;--line:#e2e7eb;--white:#fff;--bg:#f7f9fb;
 }
 .product-layout--playground-safety .product-image-stack{width:min(100%,900px);justify-self:center}
+.product-layout.product-layout--playground-safety{grid-template-columns:minmax(0,1fr)}
 .product-layout--padel .product-image-stack{width:min(100%,900px);justify-self:center}
 .product-layout.product-layout--padel{grid-template-columns:minmax(0,1fr)}
 .product-layout--pickleball .product-image-stack{width:min(100%,900px);justify-self:center}
@@ -12,6 +13,7 @@
 .product-layout.product-layout--badminton{grid-template-columns:minmax(0,1fr)}
 .product-layout--rubber-tiles .product-image-stack{width:min(100%,900px);justify-self:center}
 .product-layout.product-layout--rubber-tiles{grid-template-columns:minmax(0,1fr)}
+.product-layout.product-layout--rubber-tiles.product-layout--epdm-flooring{grid-template-columns:minmax(0,1fr)}
 .product-layout--gym .product-image-stack{width:min(100%,900px);justify-self:center}
 .product-layout.product-layout--gym{grid-template-columns:minmax(0,1fr)}
 .product-layout--wet-area-epdm .product-image-stack{width:min(100%,900px);justify-self:center}
@@ -104,4 +106,7 @@ nav a{padding:42px 0 34px;position:relative}nav a.active{color:var(--green)}nav 
 @media(max-width:650px){.top-contact .container{padding:6px 0;gap:10px;flex-wrap:wrap}.navbar{height:74px}.brand{width:98px}.brand-logo{width:98px;height:98px}.navbar nav{top:74px}.lang{display:flex;align-items:center;gap:6px;margin-left:auto;font-size:13px}.lang a{padding:7px 4px}.page-hero{padding:65px 0 58px}.page-hero p{font-size:17px}.grid-3,.product-layout,.grid2,.contact-page-grid,.footer .container{grid-template-columns:1fr}.product-layout{gap:28px}.card h2,.card h3{font-size:21px}.image-gallery{grid-template-columns:1fr}.article h2,.product-layout h2,.main h2{font-size:25px}}
 
 .product-image-stack img{object-fit:contain;object-position:center top}
-.product-image-stack--epdm-flooring img,.product-image-stack--running-track img{clip-path:none;transform:none}
+.product-image-stack--epdm-flooring{overflow:visible}
+.product-image-stack--epdm-flooring img{clip-path:none !important;transform:none !important;object-fit:initial !important;object-position:initial !important;height:auto !important}
+.product-layout--playground-safety .product-image-stack img{aspect-ratio:auto !important;height:auto !important;object-fit:contain !important;object-position:center top !important}
+.product-layout--playground-safety .product-image-stack img{aspect-ratio:2.35/1;height:auto;object-fit:cover;object-position:center bottom}
