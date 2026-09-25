@@ -40,8 +40,8 @@ nav a{padding:42px 0 34px;position:relative}nav a.active{color:var(--green)}nav 
 .hero{position:relative;min-height:560px;background:url('../images/home/hks-surfaces-playground-pickleball-hero.png') center/cover no-repeat;color:#fff}
 .hero:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(3,33,67,.62) 0%,rgba(3,33,67,.44) 46%,rgba(3,33,67,.16) 70%,rgba(3,33,67,.12) 100%)}
 .hero .container{position:relative;z-index:2;display:grid;grid-template-columns:1.15fr .52fr;gap:60px;align-items:center;min-height:560px}
-.homepage-hero .container{grid-template-columns:1fr}
-.homepage-hero .hero-copy{text-align:center;padding-left:0;margin:0 auto}
+.homepage-hero .container{grid-template-columns:1fr;align-items:end}
+.homepage-hero .hero-copy{text-align:center;padding:0 0 36px;margin:0 auto}
 .homepage-hero .hero-copy>h1{font-size:clamp(28px,3vw,48px);white-space:nowrap}
 .homepage-hero .hero-copy>h1,.homepage-hero .hero-copy>.tagline,.homepage-hero .hero-copy>p{text-align:center;width:100%}
 .homepage-hero .hero-copy>h2{display:block;width:max-content;max-width:100%;margin-left:auto;margin-right:auto;text-align:center}
@@ -71,9 +71,9 @@ nav a{padding:42px 0 34px;position:relative}nav a.active{color:var(--green)}nav 
 }
 @media(max-width:650px){
  .topbar .container{padding:6px 0}.topbar .left{gap:10px;flex-wrap:wrap}.topbar .right{display:none}
- .logo-wrap img{width:98px;height:98px}.logo-wrap{width:98px}.mainnav .container{height:74px}.homepage-hero .hero-copy>h1{white-space:normal}
- nav{top:74px}.hero{min-height:auto}.homepage-hero{background-size:cover;background-position:center top;background-color:#123e69}.hero .container{display:block}.hero-copy{padding:120px 0 30px}.hero h1{font-size:42px}.hero h2{font-size:24px}.tagline{font-size:18px}.benefits{gap:14px}.hero-actions{flex-direction:column}
-  nav{top:74px;max-height:calc(100vh - 74px)}.hero{min-height:auto}.hero .container{display:block}.hero-copy{padding:120px 0 30px}.hero h1{font-size:42px}.hero h2{font-size:24px}.tagline{font-size:18px}.benefits{gap:14px}.hero-actions{flex-direction:column}.featured-heading{align-items:flex-start;flex-direction:column;gap:8px}.featured-heading h2{font-size:30px}
+ .logo-wrap img{width:98px;height:98px}.logo-wrap{width:98px}.mainnav .container{height:74px}.homepage-hero{min-height:620px}.homepage-hero .container{min-height:620px;display:flex;align-items:flex-end}.homepage-hero .hero-copy>h1{white-space:normal}
+ nav{top:74px}.hero{min-height:auto}.homepage-hero{background-size:cover;background-position:center top;background-color:#123e69}.hero .container{display:block}.homepage-hero .container{display:flex;align-items:flex-end}.hero-copy{padding:120px 0 30px}.hero h1{font-size:42px}.hero h2{font-size:24px}.tagline{font-size:18px}.benefits{gap:14px}.hero-actions{flex-direction:column}
+  nav{top:74px;max-height:calc(100vh - 74px)}.hero{min-height:auto}.hero .container{display:block}.hero-copy{padding:120px 0 30px}.homepage-hero .hero-copy{padding:0 0 30px}.hero h1{font-size:42px}.hero h2{font-size:24px}.tagline{font-size:18px}.benefits{gap:14px}.hero-actions{flex-direction:column}.featured-heading{align-items:flex-start;flex-direction:column;gap:8px}.featured-heading h2{font-size:30px}
  .quote-card{margin-bottom:25px}.category-grid{grid-template-columns:1fr 1fr}.stats-grid,.content-grid,.footer-grid{grid-template-columns:1fr}.stat{border-right:0}.section{padding:55px 0}.section-head h2{font-size:34px}
 }
 
