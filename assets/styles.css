@@ -126,6 +126,10 @@ nav a{padding:42px 0 34px;position:relative}nav a.active{color:var(--green)}nav 
  .internal-page .mainnav .container{height:var(--mainnav-height)}
 }
 
+@media(max-width:1100px){
+ .site-footer .footer-quick-links{position:static;top:auto;right:auto;bottom:auto;left:auto;max-height:none;overflow:visible;background:transparent;padding:0}
+}
+
 @media(max-width:1100px){.homepage-hero .hero-copy>h1{white-space:normal}}
 
 .homepage .mainnav{--mainnav-height:110px;--mainnav-logo-size:110px}
@@ -142,5 +146,5 @@ nav a{padding:42px 0 34px;position:relative}nav a.active{color:var(--green)}nav 
 }
 
 .page-hero{display:grid;place-items:center;min-height:360px;padding:84px 0}
-.page-hero .container{transform:translateY(3rem)}
+.page-hero .eyebrow{transform:translateY(-2rem);font-size:16px}
 @media(max-width:650px){.page-hero{padding:65px 0}}

@@ -116,6 +116,13 @@ window.addEventListener('scroll',()=>{
 	}
 },{passive:true});
 
+window.addEventListener('pageshow',()=>{
+	if(mainNavigation?.classList.contains('open')){
+		mainNavigation.classList.remove('open');
+		menuButton?.setAttribute('aria-expanded','false');
+	}
+});
+
 const pickleballPlaceholder=document.querySelector('[data-lightbox-src*="project-pickleball.svg"]');
 if(pickleballPlaceholder){
 	const pickleballFiles=['pickleball court.jpg','pickleball court 2.jpg','pickleball court 3.jpg','pickleball court 4.jpg'];
