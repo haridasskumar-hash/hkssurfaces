@@ -250,7 +250,7 @@ def document(title, description, prefix, language, active, body, settings, produ
 			**breadcrumb_schema([(home_label, localized_route("index.html", language)), (title, route_path)], settings),
 		}, ensure_ascii=False).replace("<", "\\u003c")
 		metadata += f'<script type="application/ld+json">{schema_json}</script>'
-	body_class = ' class="internal-page"' if active != "home" else ""
+	body_class = ' class="homepage"' if active == "home" else ' class="internal-page"'
 	return f'''<!doctype html><html lang="{language}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">{metadata}<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"><link rel="stylesheet" href="{prefix}assets/styles.css"><link rel="icon" href="{prefix}images/hks-surfaces-logo.png"></head><body{body_class}>{nav(prefix, language, active, settings, products, show_quote)}{body}{footer(prefix, language, settings)}<script src="{prefix}assets/site.js"></script></body></html>'''
 
 

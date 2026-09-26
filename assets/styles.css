@@ -126,6 +126,21 @@ nav a{padding:42px 0 34px;position:relative}nav a.active{color:var(--green)}nav 
  .internal-page .mainnav .container{height:var(--mainnav-height)}
 }
 
+@media(max-width:1100px){.homepage-hero .hero-copy>h1{white-space:normal}}
+
+.homepage .mainnav{--mainnav-height:110px;--mainnav-logo-size:110px}
+.homepage .mainnav .container{height:var(--mainnav-height)}
+.homepage .logo-wrap{width:var(--mainnav-logo-size);height:var(--mainnav-logo-size);align-self:center}
+.homepage .logo-wrap img{width:100%;height:100%}
+@media(max-width:1100px){
+ .homepage .mainnav{--mainnav-height:86px;--mainnav-logo-size:86px}
+ .homepage .mainnav .container{height:var(--mainnav-height)}
+}
+@media(max-width:650px){
+ .homepage .mainnav{--mainnav-height:74px;--mainnav-logo-size:74px}
+ .homepage .mainnav .container{height:var(--mainnav-height)}
+}
+
 .page-hero{display:grid;place-items:center;min-height:360px;padding:84px 0}
 .page-hero .container{transform:translateY(3rem)}
 @media(max-width:650px){.page-hero{padding:65px 0}}
