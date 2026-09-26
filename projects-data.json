@@ -146,7 +146,33 @@
     "loc_en": "Pickleball Court Flooring Project",
     "desc_th": "ตัวอย่างโครงการพื้นสนามพิคเคิลบอลสำหรับสนามใหม่หรือการปรับปรุงสนามเดิม",
     "desc_en": "Sample pickleball court flooring project for new builds or court renovation.",
-    "image": "project-pickleball.svg"
+    "image": "Project Images/pickleball court.jpg",
+    "images": [
+      {
+        "file": "Project Images/pickleball court.jpg",
+        "alt_th": "ผลงานพื้นสนามพิคเคิลบอล",
+        "alt_en": "Pickleball court flooring project",
+        "primary": true
+      },
+      {
+        "file": "Project Images/pickleball court 2.jpg",
+        "alt_th": "มุมมองพื้นสนามพิคเคิลบอล",
+        "alt_en": "Pickleball court surface view",
+        "primary": false
+      },
+      {
+        "file": "Project Images/pickleball court 3.jpg",
+        "alt_th": "รายละเอียดโครงการสนามพิคเคิลบอล",
+        "alt_en": "Pickleball court project detail",
+        "primary": false
+      },
+      {
+        "file": "Project Images/pickleball court 4.jpg",
+        "alt_th": "พื้นที่สนามพิคเคิลบอลในโครงการ",
+        "alt_en": "Pickleball court project area",
+        "primary": false
+      }
+    ]
   },
   {
     "slug": "artificial-grass",
