@@ -250,11 +250,13 @@ def document(title, description, prefix, language, active, body, settings, produ
 			**breadcrumb_schema([(home_label, localized_route("index.html", language)), (title, route_path)], settings),
 		}, ensure_ascii=False).replace("<", "\\u003c")
 		metadata += f'<script type="application/ld+json">{schema_json}</script>'
-	return f'''<!doctype html><html lang="{language}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">{metadata}<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"><link rel="stylesheet" href="{prefix}assets/styles.css"><link rel="icon" href="{prefix}images/hks-surfaces-logo.png"></head><body>{nav(prefix, language, active, settings, products, show_quote)}{body}{footer(prefix, language, settings)}<script src="{prefix}assets/site.js"></script></body></html>'''
+	body_class = ' class="internal-page"' if active != "home" else ""
+	return f'''<!doctype html><html lang="{language}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">{metadata}<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"><link rel="stylesheet" href="{prefix}assets/styles.css"><link rel="icon" href="{prefix}images/hks-surfaces-logo.png"></head><body{body_class}>{nav(prefix, language, active, settings, products, show_quote)}{body}{footer(prefix, language, settings)}<script src="{prefix}assets/site.js"></script></body></html>'''
 
 
 def hero(title, description, eyebrow):
-	return f'<section class="page-hero"><div class="container"><div class="eyebrow">{text(eyebrow)}</div><h1>{text(title)}</h1><p>{text(description)}</p></div></section>'
+	eyebrow_markup = f'<div class="eyebrow">{text(eyebrow)}</div>' if eyebrow else ""
+	return f'<section class="page-hero"><div class="container">{eyebrow_markup}<h1>{text(title)}</h1><p>{text(description)}</p></div></section>'
 
 
 def product_image(product, prefix, language=None):
@@ -511,7 +513,7 @@ def build_about(products, settings, language):
 	commitment = "At HKS Surfaces, our goal is to create surfaces that are safe, durable, functional and built for everyday use." if english else "ที่ HKS Surfaces เรามุ่งมั่นที่จะสร้างพื้นผิวที่ปลอดภัย ทนทาน ใช้งานได้จริง และพร้อมรองรับการใช้งานในระยะยาว"
 	commitment_2 = "Whether it is a colourful EPDM playground, a professional sports court, a running track, a gym or a commercial flooring project, we work to provide the right surface solution for every space." if english else "ไม่ว่าจะเป็นสนามเด็กเล่น EPDM ที่มีสีสัน สนามกีฬา ลู่วิ่ง พื้นยิม หรือระบบพื้นสำหรับโครงการเชิงพาณิชย์ เราพร้อมนำเสนอโซลูชันพื้นที่เหมาะสมสำหรับทุกพื้นที่"
 	hero_description = "Sports flooring, safety surfacing and material solutions for projects throughout Thailand." if english else "โซลูชันพื้นสนามกีฬา พื้นเพื่อความปลอดภัย และวัสดุสำหรับโครงการทั่วประเทศไทย"
-	body = hero(title, hero_description, "ABOUT HKS SURFACES") + f'''<main class="section about-page"><div class="container"><section class="about-intro"><h2>{text(intro_title)}</h2><p>{text(intro)}</p><p>{text(location)}</p></section><section class="about-block"><h2>{text(solutions_title)}</h2><ul class="feature-list about-solutions">{"".join(f"<li>{text(item)}</li>" for item in solutions)}</ul></section><section class="about-block"><h2>{text(what_title)}</h2><p>{text(what_text)}</p><p>{text(what_text_2)}</p></section><section class="about-block"><h2>{text(why_title)}</h2><div class="content-grid">{why_cards}</div></section><section class="about-commitment"><h2>{text(commitment_title)}</h2><p>{text(commitment)}</p><p>{text(commitment_2)}</p><strong>HKS Surfaces</strong><em>Safety • Sports • Performance Surfaces</em></section></div></main>'''
+	body = hero(title, hero_description, "HKS SURFACES") + f'''<main class="section about-page"><div class="container"><section class="about-intro"><h2>{text(intro_title)}</h2><p>{text(intro)}</p><p>{text(location)}</p></section><section class="about-block"><h2>{text(solutions_title)}</h2><ul class="feature-list about-solutions">{"".join(f"<li>{text(item)}</li>" for item in solutions)}</ul></section><section class="about-block"><h2>{text(what_title)}</h2><p>{text(what_text)}</p><p>{text(what_text_2)}</p></section><section class="about-block"><h2>{text(why_title)}</h2><div class="content-grid">{why_cards}</div></section><section class="about-commitment"><h2>{text(commitment_title)}</h2><p>{text(commitment)}</p><p>{text(commitment_2)}</p><strong>HKS Surfaces</strong><em>Safety • Sports • Performance Surfaces</em></section></div></main>'''
 	route_path = ("en/" if english else "") + "about/index.html"
 	write(route_path, document(title, description, prefix, language, "about", body, settings, products, route_path))
 
