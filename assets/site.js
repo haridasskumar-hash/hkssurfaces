@@ -56,6 +56,7 @@ if(contactForm){
 			return;
 		}
 		submitButton.disabled=true;
+		status.style.cssText='margin:12px 0 0';
 		status.textContent=lang?'Sending...':'กำลังส่ง...';
 		try{
 			const response=await fetch('https://api.web3forms.com/submit',{
@@ -72,9 +73,12 @@ if(contactForm){
 			});
 			const result=await response.json();
 			if(!result.success)throw new Error(result.message);
-			status.textContent=lang?'Thank you! Your enquiry has been sent.':'ขอบคุณ ส่งข้อมูลเรียบร้อยแล้ว';
+			status.textContent=lang?'✓ Thank you! Your enquiry has been sent successfully. We will contact you soon.':'✓ ขอบคุณ ส่งข้อมูลเรียบร้อยแล้ว เราจะติดต่อกลับโดยเร็วที่สุด';
+			status.style.cssText='margin:12px 0 0;padding:12px 14px;border-radius:8px;background:#e6f6ea;color:#14672a;font-weight:600;border:1px solid #14672a';
+			status.scrollIntoView({behavior:'smooth',block:'nearest'});
 			[name,phone,email,details,mathAnswer].forEach(field=>field.value='');
 		}catch(error){
+			status.style.cssText='margin:12px 0 0;padding:12px 14px;border-radius:8px;background:#fdeaea;color:#a11;font-weight:600;border:1px solid #a11';
 			status.textContent=lang?'Sorry, something went wrong. Please try again or call us.':'ขออภัย เกิดข้อผิดพลาด กรุณาลองอีกครั้งหรือโทรหาเรา';
 			updateSubmitState();
 			return;
