@@ -43,6 +43,14 @@ if(contactForm){
 	};
 	mathAnswer.addEventListener('input',updateSubmitState);
 	updateSubmitState();
+	submitButton.addEventListener('click',()=>{
+		if(submitButton.disabled)return;
+		const [name,phone,email]=contactForm.querySelectorAll('input:not(.math-answer)');
+		const details=contactForm.querySelector('textarea');
+		const recipient=(document.querySelector('a[href^="mailto:"]')?.getAttribute('href')||'mailto:info@hkssurfaces.com').replace(/^mailto:/,'').split('?')[0];
+		const body=`Name: ${name.value}\nPhone: ${phone.value}\nEmail: ${email.value}\n\n${details.value}`;
+		location.href=`mailto:${recipient}?subject=${encodeURIComponent('Website enquiry from '+name.value)}&body=${encodeURIComponent(body)}`;
+	});
 }
 
 const siteNavigation=document.querySelector('nav');
