@@ -43,13 +43,43 @@ if(contactForm){
 	};
 	mathAnswer.addEventListener('input',updateSubmitState);
 	updateSubmitState();
-	submitButton.addEventListener('click',()=>{
+	const status=document.createElement('p');
+	status.setAttribute('role','status');
+	contactForm.appendChild(status);
+	submitButton.addEventListener('click',async()=>{
 		if(submitButton.disabled)return;
 		const [name,phone,email]=contactForm.querySelectorAll('input:not(.math-answer)');
 		const details=contactForm.querySelector('textarea');
-		const recipient=(document.querySelector('a[href^="mailto:"]')?.getAttribute('href')||'mailto:info@hkssurfaces.com').replace(/^mailto:/,'').split('?')[0];
-		const body=`Name: ${name.value}\nPhone: ${phone.value}\nEmail: ${email.value}\n\n${details.value}`;
-		location.href=`mailto:${recipient}?subject=${encodeURIComponent('Website enquiry from '+name.value)}&body=${encodeURIComponent(body)}`;
+		const lang=/(?:^|\/)en(?:\/|$)/.test(location.pathname);
+		if(!name.value.trim()||!email.validity.valid||!email.value||!details.value.trim()){
+			status.textContent=lang?'Please enter your name, a valid email and project details.':'กรุณากรอกชื่อ อีเมลที่ถูกต้อง และรายละเอียดโครงการ';
+			return;
+		}
+		submitButton.disabled=true;
+		status.textContent=lang?'Sending...':'กำลังส่ง...';
+		try{
+			const response=await fetch('https://api.web3forms.com/submit',{
+				method:'POST',
+				headers:{'Content-Type':'application/json',Accept:'application/json'},
+				body:JSON.stringify({
+					access_key:'bb8eb3af-f5be-4fe1-bd9e-1bd0de89a82b',
+					subject:'Website enquiry from '+name.value,
+					name:name.value,
+					phone:phone.value,
+					email:email.value,
+					message:details.value
+				})
+			});
+			const result=await response.json();
+			if(!result.success)throw new Error(result.message);
+			status.textContent=lang?'Thank you! Your enquiry has been sent.':'ขอบคุณ ส่งข้อมูลเรียบร้อยแล้ว';
+			[name,phone,email,details,mathAnswer].forEach(field=>field.value='');
+		}catch(error){
+			status.textContent=lang?'Sorry, something went wrong. Please try again or call us.':'ขออภัย เกิดข้อผิดพลาด กรุณาลองอีกครั้งหรือโทรหาเรา';
+			updateSubmitState();
+			return;
+		}
+		updateSubmitState();
 	});
 }
 
