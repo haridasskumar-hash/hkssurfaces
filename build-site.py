@@ -10,6 +10,19 @@ import xml.etree.ElementTree as ET
 
 
 ROOT = Path(__file__).parent
+GTM_HEAD = '''<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-T7CW66VQ');</script>'''
+GTM_BODY = '<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T7CW66VQ" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>'
+HOME_ANALYTICS = '''<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZZP8K86FQK"></script>
+<script>
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-ZZP8K86FQK');
+</script>'''
 
 SEO_PRODUCT_TITLES = {
 	"playground-safety-flooring": ("พื้นสนามเด็กเล่น EPDM พื้นยางกันกระแทก | HKS Surfaces", "Playground EPDM Safety Flooring | HKS Surfaces"),
@@ -251,7 +264,8 @@ def document(title, description, prefix, language, active, body, settings, produ
 		}, ensure_ascii=False).replace("<", "\\u003c")
 		metadata += f'<script type="application/ld+json">{schema_json}</script>'
 	body_class = ' class="homepage"' if active == "home" else ' class="internal-page"'
-	return f'''<!doctype html><html lang="{language}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">{metadata}<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"><link rel="stylesheet" href="{prefix}assets/styles.css"><link rel="icon" href="{prefix}images/hks-surfaces-logo.png"></head><body{body_class}>{nav(prefix, language, active, settings, products, show_quote)}{body}{footer(prefix, language, settings)}<script src="{prefix}assets/site.js"></script></body></html>'''
+	analytics = HOME_ANALYTICS if active == "home" and language == "th" else ""
+	return f'''<!doctype html><html lang="{language}"><head>{GTM_HEAD}<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">{metadata}{analytics}<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"><link rel="stylesheet" href="{prefix}assets/styles.css"><link rel="icon" href="{prefix}images/hks-surfaces-logo.png"></head><body{body_class}>{GTM_BODY}{nav(prefix, language, active, settings, products, show_quote)}{body}{footer(prefix, language, settings)}<script src="{prefix}assets/site.js"></script></body></html>'''
 
 
 def hero(title, description, eyebrow):
